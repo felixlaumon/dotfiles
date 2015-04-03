@@ -1,0 +1,6 @@
+bind diff Up move-up
+bind diff Down move-down
+
+bind stage 1 stage-update-line
+
+bind status D !@?rm %(file)

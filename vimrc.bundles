@@ -15,6 +15,9 @@ Plugin 'rking/ag.vim'
 Plugin 'troydm/easybuffer.vim'
 Plugin 'Spaceghost/vim-matchit'
 
+" Tmux
+Plugin 'christoomey/vim-tmux-navigator'
+
 " Fancy
 Plugin 'bling/vim-airline'
 

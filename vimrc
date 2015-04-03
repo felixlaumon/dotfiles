@@ -63,6 +63,9 @@ set colorcolumn=+1
 set number
 set numberwidth=5
 
+" Paste mode
+set pastetoggle=<leader>p
+
 " Show current line
 augroup cline
     au!
@@ -101,7 +104,9 @@ augroup vimrcEx
   autocmd FileType css,scss,sass setlocal iskeyword+=-
 augroup END
 
-" Open new split in right and below
+" Split
+nnoremap <leader>v <C-w>v<C-w>l
+nnoremap <leader>h <C-w>s<C-w>j
 set splitbelow
 set splitright
 
