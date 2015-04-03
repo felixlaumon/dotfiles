@@ -1,20 +1,30 @@
-if &compatible
-  set nocompatible
-end
-
+set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
+set rtp+=~/.vim/bundle/Vundle.vim
 
+call vundle#begin()
 " Let Vundle manage Vundle
 Plugin 'gmarik/Vundle.vim'
 
-" Define bundles via Github repos
+" Basic
+Plugin 'editorconfig/editorconfig-vim'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'rking/ag.vim'
+Plugin 'troydm/easybuffer.vim'
+Plugin 'Spaceghost/vim-matchit'
+
+" Fancy
+Plugin 'bling/vim-airline'
+
+" Color
+Plugin 'tomasr/molokai'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
 endif
 
 call vundle#end()
-filetype on
+
+filetype plugin indent on

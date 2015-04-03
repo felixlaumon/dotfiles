@@ -1,5 +1,140 @@
- filereadable(expand("~/.vimrc.bundles"))
+let mapleader = ","
+
+if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
+endif
+
+let s:dotvim = fnamemodify(globpath(&rtp, 'vimified.dir'), ':p:h')
+
+" Softtabs, 2 spaces
+set tabstop=2
+set shiftwidth=2
+set shiftround
+set expandtab
+set textwidth=80
+set wrap
+
+" Prevent delay
+set notimeout
+set ttimeout
+set ttimeoutlen=10
+
+" color
+colorscheme molokai
+
+" Nerdtree
+nmap <tab> :NERDTreeToggle<cr>
+set winfixwidth
+
+" ag.vim
+nnoremap <leader>a :Ag -i<space>
+set grepprg=ag\ --nogroup\ --nocolor
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+let g:ctrlp_use_caching = 0
+
+" easybuffer
+nmap <leader>be :EasyBufferToggle<cr>
+
+" Airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+
+" NERDCommenter
+nmap <leader># :call NERDComment(0, "invert")<cr>
+vmap <leader># :call NERDComment(0, "invert")<cr>
+
+filetype plugin indent on
+syntax on
+
+" Be a real VIM user
+noremap <left> <nop>
+noremap <up> <nop>
+noremap <down> <nop>
+noremap <right> <nop>
+
+" Clear highlight after search
+noremap <silent><Leader>/ :nohls<CR>
+
+" Show the 80th character
+set textwidth=80
+set colorcolumn=+1
+
+" Line number
+set number
+set numberwidth=5
+
+" Show current line
+augroup cline
+    au!
+    au WinLeave * set nocursorline
+    au WinEnter * set cursorline
+    au InsertEnter * set nocursorline
+    au InsertLeave * set cursorline
+augroup END
+
+augroup vimrcEx
+  autocmd!
+
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it for commit messages, when the position is invalid, or when
+  " inside an event handler (happens when dropping a file on gvim).
+  autocmd BufReadPost *
+    \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+
+  " Set syntax highlighting for specific file types
+  autocmd BufRead,BufNewFile Appraisals set filetype=ruby
+  autocmd BufRead,BufNewFile *.md set filetype=markdown
+
+  " Enable spellchecking for Markdown
+  autocmd FileType markdown setlocal spell
+
+  " Automatically wrap at 80 characters for Markdown
+  autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+
+  " Automatically wrap at 72 characters and spell check git commit messages
+  autocmd FileType gitcommit setlocal textwidth=72
+  autocmd FileType gitcommit setlocal spell
+
+  " Allow stylesheets to autocomplete hyphenated words
+  autocmd FileType css,scss,sass setlocal iskeyword+=-
+augroup END
+
+" Open new split in right and below
+set splitbelow
+set splitright
+
+" Other settings
+set encoding=utf-8
+set history=1000
+set incsearch
+set laststatus=2
+set list
+set ruler
+set backspace=2
+set showmatch
+set hlsearch
+set autoread
+set binary
+set exrc
+set secure
+set dictionary=/usr/share/dict/words
+
+" Auto reload vimrc
+autocmd! BufWritePost vimrc source $MYVIMRC
+
+" Invisiable character
+set list listchars=tab:»·,trail:·,nbsp:·
+
+set noswapfile
+
+if has('persistent_undo')
+  " undo files
+  exec 'set undodir='.s:dotvim.'/tmp/undo//'
+  set undofile
+  set undolevels=3000
+  set undoreload=10000
 endif
 
 " Local config
