@@ -1,5 +1,7 @@
 #!/bin/sh
 
+mkdir -p ~/local/bin
+
 mkdir -p ~/tools
 
 mkdir -p ~/.vim/tmp/undo
@@ -25,4 +27,14 @@ fi
 
 if [ ! -e $HOME/tools/tmux-powerline ]; then
     git clone https://github.com/erikw/tmux-powerline.git $HOME/tools/tmux-powerline
+fi
+
+if [ ! -e $HOME/tools/tmux-mem-cpu-load ]; then
+    git clone https://github.com/thewtex/tmux-mem-cpu-load.git $HOME/tools/tmux-mem-cpu-load
+    cd $HOME/tools/tmux-mem-cpu-load
+    brew install cmake || {}
+    cmake .
+    make -j4
+    chmod +x tmux-mem-cpu-load
+    ln -f -s $HOME/tools/tmux-mem-cpu-load/tmux-mem-cpu-load $HOME/local/bin
 fi

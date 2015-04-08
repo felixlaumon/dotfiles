@@ -153,7 +153,6 @@ set softtabstop=4
 set shiftwidth=4
 set textwidth=80
 set expandtab
-set wrap
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")

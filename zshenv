@@ -2,6 +2,9 @@
 export VISUAL=vim
 export EDITOR=$VISUAL
 
+# Override system executables with local ones
+export PATH=$HOME/local/bin:$PATH
+
 # CUDA
 export PATH=$PATH:/usr/local/cuda/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64
