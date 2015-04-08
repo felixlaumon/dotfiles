@@ -18,6 +18,8 @@ export CPATH=$CPATH:~/tools/cudnn-6.5-linux-x64-R1
 
 # Tmuxifier
 export PATH="$HOME/.tmuxifier/bin:$PATH"
+export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts"
+[[ -d ~/.tmuxifier ]] && eval "$(~/.tmuxifier/bin/tmuxifier init -)"
 
 # Caffe
 export PATH=$PATH:$HOME/devel/caffe/build/tools

@@ -47,6 +47,7 @@ let NERDSpaceDelims=1
 " Yankring
 let g:yankring_replace_n_pkey = '<leader>['
 let g:yankring_replace_n_nkey = '<leader>]'
+let g:yankring_history_dir = '~/.vim/tmp'
 nmap <leader>y :YRShow<cr>
 
 " Be a real VIM user
@@ -70,13 +71,7 @@ set numberwidth=5
 set pastetoggle=<leader>p
 
 " Show current line
-augroup cline
-    au!
-    au WinLeave * set nocursorline
-    au WinEnter * set cursorline
-    au InsertEnter * set nocursorline
-    au InsertLeave * set cursorline
-augroup END
+set cursorline
 
 augroup vimrcEx
     autocmd!
