@@ -6,13 +6,16 @@ endif
 
 let s:dotvim = fnamemodify(globpath(&rtp, 'vimified.dir'), ':p:h')
 
-" Softtabs, 2 spaces
-set tabstop=2
-set shiftwidth=2
-set shiftround
-set expandtab
+filetype plugin indent on
+syntax on
+set autoindent
+set tabstop=4
+set softtabstop=4
 set textwidth=80
+set shiftwidth=4
+set expandtab
 set wrap
+set formatoptions=qrn1
 
 " Prevent delay
 set notimeout
@@ -42,9 +45,12 @@ let g:airline_powerline_fonts = 1
 " NERDCommenter
 nmap <leader># :call NERDComment(0, "invert")<cr>
 vmap <leader># :call NERDComment(0, "invert")<cr>
+let NERDSpaceDelims=1
 
-filetype plugin indent on
-syntax on
+" Yankring
+let g:yankring_replace_n_pkey = '<leader>['
+let g:yankring_replace_n_nkey = '<leader>]'
+nmap <leader>y :YRShow<cr>
 
 " Be a real VIM user
 noremap <left> <nop>
@@ -125,6 +131,8 @@ set binary
 set exrc
 set secure
 set dictionary=/usr/share/dict/words
+set ignorecase
+set smartcase
 
 " Auto reload vimrc
 autocmd! BufWritePost vimrc source $MYVIMRC

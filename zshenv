@@ -19,5 +19,9 @@ export CPATH=$CPATH:~/tools/cudnn-6.5-linux-x64-R1
 # Tmuxifier
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 
+# Caffe
+export PATH=$PATH:$HOME/devel/caffe/build/tools
+export PYTHONPATH=$PYTHONPATH:$HOME/devel/selective_search_ijcv_with_python
+
 # Local config
 [[ -f ~/.zshenv.local ]] && source ~/.zshenv.local
