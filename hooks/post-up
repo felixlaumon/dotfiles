@@ -3,7 +3,7 @@
 mkdir -p ~/tools
 
 if [ ! -e $HOME/.tmuxifier ]; then
-    git clone https://github.com/jimeh/tmuxifier.git ~/.tmuxifier $HOME/.tmuxifier
+    git clone https://github.com/jimeh/tmuxifier.git $HOME/.tmuxifier
 fi
 
 if [ ! -e $HOME/tools/zgen ]; then
