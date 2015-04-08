@@ -2,15 +2,23 @@
 
 mkdir -p ~/tools
 
+if [ ! -e $HOME/.tmuxifier ]; then
+    git clone https://github.com/jimeh/tmuxifier.git ~/.tmuxifier $HOME/.tmuxifier
+fi
+
+if [ ! -e $HOME/tools/zgen ]; then
+    git clone https://github.com/tarjoilija/zgen.git $HOME/tools/zgen
+fi
+
 if [ ! -e $HOME/.vim/bundle/Vundle.vim ]; then
-  git clone https://github.com/gmarik/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
+    git clone https://github.com/gmarik/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 fi
 vim -u $HOME/.vimrc.bundles +PluginInstall +PluginClean! +qa
 
 if [ ! -e $HOME/tools/z ]; then
-  git clone git@github.com:rupa/z.git $HOME/tools/z
+    git clone https://github.com/rupa/z.git $HOME/tools/z
 fi
 
 if [ ! -e $HOME/tools/tmux-powerline ]; then
-  git clone https://github.com/erikw/tmux-powerline.git $HOME/tools/tmux-powerline
+    git clone https://github.com/erikw/tmux-powerline.git $HOME/tools/tmux-powerline
 fi
