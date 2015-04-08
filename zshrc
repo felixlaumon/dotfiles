@@ -4,6 +4,8 @@ HISTFILE=~/.zhistory
 HISTSIZE=4096
 SAVEHIST=4096
 
+export TERM="xterm-256color"
+
 # handy keybindings
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
