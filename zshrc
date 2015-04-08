@@ -41,6 +41,15 @@ if ! zgen saved; then
     zgen save
 fi
 
+# Tmuxifier
+[[ -d ~/.tmuxifier ]] && eval "$(tmuxifier init -)"
+
+# ssh agent
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+    eval `ssh-agent -s`
+    ssh-add
+fi
+
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 

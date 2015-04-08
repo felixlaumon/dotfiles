@@ -2,6 +2,10 @@
 
 mkdir -p ~/tools
 
+mkdir -p ~/.vim/tmp/undo
+mkdir -p ~/.vim/tmp/backup
+mkdir -p ~/.vim/tmp/swap
+
 if [ ! -e $HOME/.tmuxifier ]; then
     git clone https://github.com/jimeh/tmuxifier.git $HOME/.tmuxifier
 fi

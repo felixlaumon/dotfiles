@@ -26,7 +26,7 @@ Plugin 'bling/vim-airline'
 Plugin 'tomasr/molokai'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
-  source ~/.vimrc.bundles.local
+    source ~/.vimrc.bundles.local
 endif
 
 call vundle#end()
