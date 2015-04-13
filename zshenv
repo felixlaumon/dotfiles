@@ -29,6 +29,7 @@ export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts"
 
 # Caffe
 export PATH=$PATH:$HOME/devel/caffe/build/tools
+export PYTHONPATH=$PYTHONPATH:$HOME/devel/caffe/python
 export PYTHONPATH=$PYTHONPATH:$HOME/devel/selective_search_ijcv_with_python
 
 # Local config
