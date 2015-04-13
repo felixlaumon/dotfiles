@@ -13,5 +13,8 @@ alias path='echo $PATH | tr -s ":" "\n"'
 # Tmuxifier
 alias tmd='tmuxifier load-window default'
 
+# Matlab REPL
+alias matlabrepl='matlab -nodesktop -nosplash'
+
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
