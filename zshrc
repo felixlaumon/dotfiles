@@ -39,6 +39,9 @@ if ! zgen saved; then
     # theme
     zgen oh-my-zsh themes/bureau
 
+    # autoupdate
+    zgen load unixorn/autoupdate-zgen
+
     # save all to init script
     zgen save
 fi
