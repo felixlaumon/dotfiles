@@ -1,4 +1,7 @@
 log
 tags
 tmp
+.pyc
+.pickle
 .git/
+
