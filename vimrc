@@ -23,6 +23,7 @@ colorscheme molokai
 " Nerdtree
 nmap <tab> :NERDTreeToggle<cr>
 set winfixwidth
+let NERDTreeRespectWildIgnore = 1
 
 " ag.vim
 nnoremap <leader>a :Ag -i<space>
@@ -47,8 +48,12 @@ let NERDSpaceDelims=1
 " Yankring
 let g:yankring_replace_n_pkey = '<leader>['
 let g:yankring_replace_n_nkey = '<leader>]'
-let g:yankring_history_dir = '~/.vim/tmp'
+" let g:yankring_history_dir = '~/.vim/tmp'
 nmap <leader>y :YRShow<cr>
+
+" python-mode
+let g:pymode_folding = 0
+let g:pymode_lint_options_pep8 = { 'max_line_length': 120 }
 
 " Be a real VIM user
 noremap <left> <nop>
@@ -72,6 +77,9 @@ set pastetoggle=<leader>p
 
 " Show current line
 set cursorline
+
+set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,.DS_Store,*.aux,*.out,*.toc,tmp,*.scssc,*.pyc,*.pickle,*.npy,*.zip,*.npy
+set wildmenu
 
 augroup vimrcEx
     autocmd!

@@ -25,6 +25,9 @@ Plugin 'bling/vim-airline'
 " Color
 Plugin 'tomasr/molokai'
 
+" Python
+Plugin 'klen/python-mode'
+
 if filereadable(expand("~/.vimrc.bundles.local"))
     source ~/.vimrc.bundles.local
 endif
