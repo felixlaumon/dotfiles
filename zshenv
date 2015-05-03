@@ -32,5 +32,9 @@ export PATH=$PATH:$HOME/devel/caffe/build/tools
 export PYTHONPATH=$PYTHONPATH:$HOME/devel/caffe/python
 export PYTHONPATH=$PYTHONPATH:$HOME/devel/selective_search_ijcv_with_python
 
+# Base16 Shell
+BASE16_SHELL="$HOME/tools/base16-shell/base16-default.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
 # Local config
 [[ -f ~/.zshenv.local ]] && source ~/.zshenv.local

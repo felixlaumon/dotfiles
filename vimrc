@@ -18,7 +18,9 @@ set ttimeout
 set ttimeoutlen=10
 
 " color
-colorscheme molokai
+set background=dark
+let base16colorspace=256
+colorscheme base16-bright
 
 " Nerdtree
 nmap <tab> :NERDTreeToggle<cr>
@@ -31,15 +33,163 @@ let g:ctrlp_use_caching = 0
 
 " vim-ags
 nnoremap <leader>a :Ags<space>
+let g:ags_edit_show_line_numbers = 1
 
 " easybuffer
 nmap <leader>be :EasyBufferToggle<cr>
 noremap <leader>bp :bprevious<cr>
 noremap <leader>bn :bnext<cr>
 
-" Airline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
+" lightline
+let g:bufferline_echo = 0
+" https://github.com/timss/vimconf/blob/44c3b9202316a544e351aea30e6147b2ebfadb62/.vimrc#L382-L531
+let g:lightline = {
+    \ 'colorscheme': 'jellybeans',
+    \ 'active': {
+    \     'left': [
+    \         ['mode', 'paste'],
+    \         ['fugitive', 'readonly'],
+    \         ['ctrlpmark', 'bufferline']
+    \     ],
+    \     'right': [
+    \         ['lineinfo'],
+    \         ['percent'],
+    \         ['fileformat', 'fileencoding', 'filetype', 'syntastic']
+    \     ]
+    \ },
+    \ 'component': {
+    \     'paste': '%{&paste?"!":""}'
+    \ },
+    \ 'component_function': {
+    \     'mode'         : 'MyMode',
+    \     'fugitive'     : 'MyFugitive',
+    \     'readonly'     : 'MyReadonly',
+    \     'ctrlpmark'    : 'CtrlPMark',
+    \     'bufferline'   : 'MyBufferline',
+    \     'fileformat'   : 'MyFileformat',
+    \     'fileencoding' : 'MyFileencoding',
+    \     'filetype'     : 'MyFiletype'
+    \ },
+    \ 'component_expand': {
+    \     'syntastic': 'SyntasticStatuslineFlag',
+    \ },
+    \ 'component_type': {
+    \     'syntastic': 'middle',
+    \ },
+    \ 'subseparator': {
+    \     'left': '|', 'right': '|'
+    \ }
+    \ }
+
+let g:lightline.mode_map = {
+    \ 'n'      : ' N ',
+    \ 'i'      : ' I ',
+    \ 'R'      : ' R ',
+    \ 'v'      : ' V ',
+    \ 'V'      : 'V-L',
+    \ 'c'      : ' C ',
+    \ "\<C-v>" : 'V-B',
+    \ 's'      : ' S ',
+    \ 'S'      : 'S-L',
+    \ "\<C-s>" : 'S-B',
+    \ '?'      : '      ' }
+
+function! MyMode()
+    let fname = expand('%:t')
+    return fname == '__Tagbar__' ? 'Tagbar' :
+            \ fname == 'ControlP' ? 'CtrlP' :
+            \ winwidth('.') > 60 ? lightline#mode() : ''
+endfunction
+
+function! MyFugitive()
+    try
+        if expand('%:t') !~? 'Tagbar' && exists('*fugitive#head')
+            let mark = '∓ '
+            let _ = fugitive#head()
+            return strlen(_) ? mark._ : ''
+        endif
+    catch
+    endtry
+    return ''
+endfunction
+
+function! MyReadonly()
+    return &ft !~? 'help' && &readonly ? '⭤' : ''
+endfunction
+
+function! CtrlPMark()
+    if expand('%:t') =~ 'ControlP'
+        call lightline#link('iR'[g:lightline.ctrlp_regex])
+        return lightline#concatenate([g:lightline.ctrlp_prev, g:lightline.ctrlp_item
+            \ , g:lightline.ctrlp_next], 0)
+    else
+        return ''
+    endif
+endfunction
+
+function! MyBufferline()
+    call bufferline#refresh_status()
+    let b = g:bufferline_status_info.before
+    let c = g:bufferline_status_info.current
+    let a = g:bufferline_status_info.after
+    let alen = strlen(a)
+    let blen = strlen(b)
+    let clen = strlen(c)
+    let w = winwidth(0) * 4 / 11
+    if w < alen+blen+clen
+        let whalf = (w - strlen(c)) / 2
+        let aa = alen > whalf && blen > whalf ? a[:whalf] : alen + blen < w - clen || alen < whalf ? a : a[:(w - clen - blen)]
+        let bb = alen > whalf && blen > whalf ? b[-(whalf):] : alen + blen < w - clen || blen < whalf ? b : b[-(w - clen - alen):]
+        return (strlen(bb) < strlen(b) ? '...' : '') . bb . c . aa . (strlen(aa) < strlen(a) ? '...' : '')
+    else
+        return b . c . a
+    endif
+endfunction
+
+function! MyFileformat()
+    return winwidth('.') > 90 ? &fileformat : ''
+endfunction
+
+function! MyFileencoding()
+    return winwidth('.') > 80 ? (strlen(&fenc) ? &fenc : &enc) : ''
+endfunction
+
+function! MyFiletype()
+    return winwidth('.') > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
+endfunction
+
+let g:ctrlp_status_func = {
+    \ 'main': 'CtrlPStatusFunc_1',
+    \ 'prog': 'CtrlPStatusFunc_2',
+    \ }
+
+function! CtrlPStatusFunc_1(focus, byfname, regex, prev, item, next, marked)
+    let g:lightline.ctrlp_regex = a:regex
+    let g:lightline.ctrlp_prev = a:prev
+    let g:lightline.ctrlp_item = a:item
+    let g:lightline.ctrlp_next = a:next
+    return lightline#statusline(0)
+endfunction
+
+function! CtrlPStatusFunc_2(str)
+    return lightline#statusline(0)
+endfunction
+
+let g:tagbar_status_func = 'TagbarStatusFunc'
+
+function! TagbarStatusFunc(current, sort, fname, ...) abort
+    let g:lightline.fname = a:fname
+    return lightline#statusline(0)
+endfunction
+
+augroup AutoSyntastic
+    autocmd!
+    autocmd BufWritePost *.c,*.cpp,*.perl,*py call s:syntastic()
+augroup END
+function! s:syntastic()
+    SyntasticCheck
+    call lightline#update()
+endfunction
 
 " NERDCommenter
 nmap <leader># :call NERDComment(0, "invert")<cr>
@@ -52,9 +202,21 @@ let g:yankring_replace_n_nkey = '<leader>]'
 " let g:yankring_history_dir = '~/.vim/tmp'
 nmap <leader>y :YRShow<cr>
 
-" python-mode
-let g:pymode_folding = 0
-let g:pymode_lint_options_pep8 = { 'max_line_length': 120 }
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+let g:syntastic_python_checkers = ['pep8', 'flake8', 'pyflakes', 'pylint']
+let g:syntastic_python_pep8_args='--ignore=E501'
+
+" vim-jedi
+let g:jedi#auto_vim_configuration = 0
+
 
 " Be a real VIM user
 noremap <left> <nop>
@@ -62,7 +224,7 @@ noremap <up> <nop>
 noremap <down> <nop>
 noremap <right> <nop>
 
-" Clear highlight after search
+" Clear highlight
 noremap <silent><Leader>/ :nohls<CR>
 
 " Show the 80th character
@@ -139,9 +301,6 @@ set dictionary=/usr/share/dict/words
 set ignorecase
 set smartcase
 set list
-
-" Auto reload vimrc
-autocmd! BufWritePost vimrc source $MYVIMRC
 
 " Invisiable character
 set listchars=tab:»·,trail:·,nbsp:·
