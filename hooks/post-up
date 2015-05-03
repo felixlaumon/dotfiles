@@ -8,6 +8,11 @@ mkdir -p ~/.vim/tmp/undo
 mkdir -p ~/.vim/tmp/backup
 mkdir -p ~/.vim/tmp/swap
 
+if [ ! -e $HOME/.vim/bundle/Vundle.vim ]; then
+    git clone https://github.com/gmarik/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
+fi
+vim -u $HOME/.vimrc.bundles +PluginInstall +PluginClean! +qa
+
 if [ ! -e $HOME/.tmuxifier ]; then
     git clone https://github.com/jimeh/tmuxifier.git $HOME/.tmuxifier
 fi
@@ -15,11 +20,6 @@ fi
 if [ ! -e $HOME/tools/zgen ]; then
     git clone https://github.com/tarjoilija/zgen.git $HOME/tools/zgen
 fi
-
-if [ ! -e $HOME/.vim/bundle/Vundle.vim ]; then
-    git clone https://github.com/gmarik/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
-fi
-vim -u $HOME/.vimrc.bundles +PluginInstall +PluginClean! +qa
 
 if [ ! -e $HOME/tools/z ]; then
     git clone https://github.com/rupa/z.git $HOME/tools/z
@@ -38,4 +38,12 @@ if [ ! -e $HOME/tools/tmux-mem-cpu-load ]; then
     make -j4
     chmod +x tmux-mem-cpu-load
     ln -f -s $HOME/tools/tmux-mem-cpu-load/tmux-mem-cpu-load $HOME/local/bin
+fi
+
+if [ ! -e $HOME/tools/the_silver_searcher ]; then
+    git clone https://github.com/ggreer/the_silver_searcher.git $HOME/tools/the_silver_searcher
+    cd $HOME/tools/the_silver_searcher
+    ./build.sh
+    make
+    ln -f $HOME/tools/the_silver_searcher/ag $HOME/local/bin
 fi

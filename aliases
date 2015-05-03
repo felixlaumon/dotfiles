@@ -16,5 +16,8 @@ alias tmd='tmuxifier load-window default'
 # Matlab REPL
 alias matlabrepl='matlab -nodesktop -nosplash'
 
+# iPython notebook
+alias nb='ipython notebook --no-browser --ip="*"'
+
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local

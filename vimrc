@@ -25,11 +25,12 @@ nmap <tab> :NERDTreeToggle<cr>
 set winfixwidth
 let NERDTreeRespectWildIgnore = 1
 
-" ag.vim
-nnoremap <leader>a :Ag -i<space>
-set grepprg=ag\ --nogroup\ --nocolor
+" ctrl-p
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 let g:ctrlp_use_caching = 0
+
+" vim-ags
+nnoremap <leader>a :Ags<space>
 
 " easybuffer
 nmap <leader>be :EasyBufferToggle<cr>
@@ -80,6 +81,11 @@ set cursorline
 
 set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,.DS_Store,*.aux,*.out,*.toc,tmp,*.scssc,*.pyc,*.pickle,*.npy,*.zip,*.npy
 set wildmenu
+
+" Yank content in OS's clipboard. `o` stands for "OS's Clipoard".
+vnoremap <leader>yo "*y
+" Paste content from OS's clipboard
+nnoremap <leader>po "*p
 
 augroup vimrcEx
     autocmd!
