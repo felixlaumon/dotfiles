@@ -23,8 +23,9 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'itchyny/lightline.vim'
 Plugin 'bling/vim-bufferline'
 
-" TODO use ctags
-" Plugin 'majutsushi/tagbar'
+" Ctags
+Plugin 'majutsushi/tagbar'
+Plugin 'szw/vim-tags'
 
 " Color
 Plugin 'chriskempson/base16-vim'

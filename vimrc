@@ -30,6 +30,7 @@ let NERDTreeRespectWildIgnore = 1
 " ctrl-p
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 let g:ctrlp_use_caching = 0
+nnoremap <leader>. :CtrlPTag<cr>
 
 " vim-ags
 nnoremap <leader>a :Ags<space>
