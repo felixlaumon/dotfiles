@@ -17,13 +17,13 @@ Plugin 'Spaceghost/vim-matchit'
 Plugin 'vim-scripts/YankRing.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mtth/scratch.vim'
+Plugin 'milkypostman/vim-togglelist'
 
 " Tmux
 Plugin 'christoomey/vim-tmux-navigator'
 
 " Fancy
-Plugin 'itchyny/lightline.vim'
-Plugin 'bling/vim-bufferline'
+Plugin 'bling/vim-airline'
 
 " Ctags
 Plugin 'majutsushi/tagbar'
@@ -35,6 +35,7 @@ Plugin 'chriskempson/base16-vim'
 " Programming
 Plugin 'scrooloose/syntastic'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'ervandew/supertab'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
     source ~/.vimrc.bundles.local
