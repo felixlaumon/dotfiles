@@ -20,7 +20,7 @@ set ttimeoutlen=10
 " color
 set background=dark
 let base16colorspace=256
-colorscheme base16-bright
+colorscheme base16-isotope
 
 " Nerdtree
 nmap <tab> :NERDTreeToggle<cr>
@@ -192,6 +192,10 @@ function! s:syntastic()
     call lightline#update()
 endfunction
 
+" tagbar
+nnoremap <leader>t :TagbarToggle<CR>
+let g:vim_tags_ignore_files = ['.gitignore', '.svnignore', '.cvsignore', '.agignore']
+
 " NERDCommenter
 nmap <leader># :call NERDComment(0, "invert")<cr>
 vmap <leader># :call NERDComment(0, "invert")<cr>
@@ -200,6 +204,7 @@ let NERDSpaceDelims=1
 " Yankring
 let g:yankring_replace_n_pkey = '<leader>['
 let g:yankring_replace_n_nkey = '<leader>]'
+" TODO why cannot save to the dir?
 " let g:yankring_history_dir = '~/.vim/tmp'
 nmap <leader>y :YRShow<cr>
 
@@ -209,11 +214,11 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
-let g:syntastic_python_checkers = ['pep8', 'flake8', 'pyflakes', 'pylint']
-let g:syntastic_python_pep8_args='--ignore=E501'
+let g:syntastic_python_checkers = ['pep8']
+let g:syntastic_python_pep8_args='--ignore=E501,E241'
 
 " vim-jedi
 let g:jedi#auto_vim_configuration = 0
@@ -236,19 +241,24 @@ set colorcolumn=+1
 set number
 set numberwidth=5
 
-" Paste mode
-set pastetoggle=<leader>p
-
 " Show current line
 set cursorline
 
 set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,.DS_Store,*.aux,*.out,*.toc,tmp,*.scssc,*.pyc,*.pickle,*.npy,*.zip,*.npy
 set wildmenu
 
-" Yank content in OS's clipboard. `o` stands for "OS's Clipoard".
-vnoremap <leader>yo "*y
-" Paste content from OS's clipboard
-nnoremap <leader>po "*p
+" quickfix toggle
+nnoremap <leader>l :call QuickfixToggle()<cr>
+let g:quickfix_is_open = 0
+function! QuickfixToggle()
+    if g:quickfix_is_open
+        lopen
+        let g:quickfix_is_open = 0
+    else
+        lclose
+        let g:quickfix_is_open = 1
+    endif
+endfunction
 
 augroup vimrcEx
     autocmd!
@@ -327,6 +337,27 @@ set softtabstop=4
 set shiftwidth=4
 set textwidth=80
 set expandtab
+
+" Make use of Xterm bracked paste mode
+" https://github.com/wincent/wincent/blob/3b0b2950cdcb09d23c87f0167c207d8c837cb1b2/.vim/plugin/term.vim#L93-114
+" http://www.xfree86.org/current/ctlseqs.html#Bracketed%20Paste%20Mode
+" http://stackoverflow.com/questions/5585129
+function! s:BeginXTermPaste(ret)
+    set paste
+    return a:ret
+endfunction
+" enable bracketed paste mode on entering Vim
+let &t_ti .= "\e[?2004h"
+" disable bracketed paste mode on leaving Vim
+let &t_te = "\e[?2004l" . &t_te
+set pastetoggle=<Esc>[201~
+inoremap <expr> <Esc>[200~ <SID>BeginXTermPaste("")
+nnoremap <expr> <Esc>[200~ <SID>BeginXTermPaste("i")
+vnoremap <expr> <Esc>[200~ <SID>BeginXTermPaste("c")
+cnoremap <Esc>[200~ <nop>
+cnoremap <Esc>[201~ <nop>
+
+
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
