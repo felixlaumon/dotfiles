@@ -8,10 +8,13 @@ mkdir -p ~/.vim/tmp/undo
 mkdir -p ~/.vim/tmp/backup
 mkdir -p ~/.vim/tmp/swap
 
-if [ ! -e $HOME/.vim/bundle/Vundle.vim ]; then
-    git clone https://github.com/gmarik/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
+touch $HOME/.psqlrc.local
+
+if [ ! -e $HOME/.vim/autoload/plug.vim ]; then
+  curl -fkLo $HOME/.vim/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
-vim -u $HOME/.vimrc.bundles +PluginInstall +PluginClean! +qa
+vim -u $HOME/.vimrc.bundles +PlugInstall +PlugClean! +qa
 
 if [ ! -e $HOME/.tmuxifier ]; then
     git clone https://github.com/jimeh/tmuxifier.git $HOME/.tmuxifier

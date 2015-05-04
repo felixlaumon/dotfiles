@@ -1,46 +1,40 @@
 set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
 
-call vundle#begin()
-" Let Vundle manage Vundle
-Plugin 'gmarik/Vundle.vim'
+call plug#begin('~/.vim/bundle')
 
 " Basic
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'gabesoft/vim-ags'
-Plugin 'troydm/easybuffer.vim'
-Plugin 'Spaceghost/vim-matchit'
-Plugin 'vim-scripts/YankRing.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'mtth/scratch.vim'
-Plugin 'milkypostman/vim-togglelist'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'gabesoft/vim-ags'
+Plug 'troydm/easybuffer.vim'
+Plug 'Spaceghost/vim-matchit'
+Plug 'vim-scripts/YankRing.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'mtth/scratch.vim'
+Plug 'milkypostman/vim-togglelist'
 
 " Tmux
-Plugin 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-navigator'
 
 " Fancy
-Plugin 'bling/vim-airline'
+Plug 'bling/vim-airline'
 
 " Ctags
-Plugin 'majutsushi/tagbar'
-Plugin 'szw/vim-tags'
+Plug 'majutsushi/tagbar'
+Plug 'szw/vim-tags'
 
 " Color
-Plugin 'chriskempson/base16-vim'
+Plug 'chriskempson/base16-vim'
 
 " Programming
-Plugin 'scrooloose/syntastic'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'ervandew/supertab'
+Plug 'scrooloose/syntastic'
+Plug 'davidhalter/jedi-vim'
+Plug 'ervandew/supertab'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
     source ~/.vimrc.bundles.local
 endif
 
-call vundle#end()
-
-filetype plugin indent on
+call plug#end()
