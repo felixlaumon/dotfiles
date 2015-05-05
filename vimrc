@@ -26,9 +26,14 @@ nmap <tab> :NERDTreeToggle<cr>
 set winfixwidth
 let NERDTreeRespectWildIgnore = 1
 
+" gitgutter
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
+
 " ctrl-p
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 let g:ctrlp_use_caching = 0
+let g:ctrlp_mruf_case_sensitive = 0
 nnoremap <leader>. :CtrlPTag<cr>
 
 " vim-ags
@@ -43,6 +48,7 @@ noremap <leader>bn :bnext<cr>
 " airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
+let g:airline#extensions#branch#enabled = 0
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'base16'
 

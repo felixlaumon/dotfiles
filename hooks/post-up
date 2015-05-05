@@ -48,7 +48,18 @@ if [ ! -e $HOME/tools/the_silver_searcher ]; then
     cd $HOME/tools/the_silver_searcher
     ./build.sh
     make
-    ln -f $HOME/tools/the_silver_searcher/ag $HOME/local/bin
+    ln -f -s $HOME/tools/the_silver_searcher/ag $HOME/local/bin
+fi
+
+if [ ! -e $HOME/tools/ctags ]; then
+    cd /tmp
+    wget http://prdownloads.sourceforge.net/ctags/ctags-5.8.tar.gz
+    tar xfz ctags-5.8.tar.gz
+    mv ctags-5.8 $HOME/tools/ctags
+    cd $HOME/tools/ctags
+    ./configure --prefix=$HOME/local
+    make
+    ln -f -s $HOME/tools/ctags/ctags $HOME/local/bin
 fi
 
 if [ ! -e $HOME/.nvimrc ]; then

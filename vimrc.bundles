@@ -14,6 +14,7 @@ Plug 'vim-scripts/YankRing.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'mtth/scratch.vim'
 Plug 'milkypostman/vim-togglelist'
+Plug 'airblade/vim-gitgutter'
 
 " Tmux
 Plug 'christoomey/vim-tmux-navigator'
