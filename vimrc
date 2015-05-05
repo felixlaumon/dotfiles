@@ -54,6 +54,7 @@ let g:airline_theme = 'base16'
 
 " tagbar
 nnoremap <leader>t :TagbarToggle<CR>
+let g:vim_tags_ctags_binary = '~/local/bin/ctags'
 let g:vim_tags_ignore_files = ['.ctagsignore', '.gitignore', '.agignore']
 let g:vim_tags_directories = []
 let g:vim_tags_main_file = '.tags'

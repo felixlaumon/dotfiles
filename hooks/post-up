@@ -64,4 +64,5 @@ fi
 
 if [ ! -e $HOME/.nvimrc ]; then
     ln -f $HOME/.vimrc $HOME/.nvimrc
+    ln -s $HOME/.vim $HOME/.nvim
 fi
