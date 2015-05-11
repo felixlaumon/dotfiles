@@ -19,7 +19,7 @@ set ttimeoutlen=10
 
 " color
 set background=dark
-colorscheme base16-tomorrow
+colorscheme base16-solarized
 
 " Nerdtree
 nmap <tab> :NERDTreeToggle<cr>
