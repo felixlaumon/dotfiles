@@ -59,11 +59,6 @@ let g:vim_tags_ignore_files = ['.ctagsignore', '.gitignore', '.agignore']
 let g:vim_tags_directories = []
 let g:vim_tags_main_file = '.tags'
 
-" NERDCommenter
-nmap <leader># :call NERDComment(0, "invert")<cr>
-vmap <leader># :call NERDComment(0, "invert")<cr>
-let NERDSpaceDelims=1
-
 " Yankring
 let g:yankring_replace_n_pkey = '<leader>['
 let g:yankring_replace_n_nkey = '<leader>]'
@@ -214,8 +209,6 @@ nnoremap <expr> <Esc>[200~ <SID>BeginXTermPaste("i")
 vnoremap <expr> <Esc>[200~ <SID>BeginXTermPaste("c")
 cnoremap <Esc>[200~ <nop>
 cnoremap <Esc>[201~ <nop>
-
-
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")

@@ -6,7 +6,7 @@ call plug#begin('~/.vim/bundle')
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-commentary'
 Plug 'gabesoft/vim-ags'
 Plug 'troydm/easybuffer.vim'
 Plug 'Spaceghost/vim-matchit'
