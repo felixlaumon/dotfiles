@@ -45,6 +45,9 @@ nmap <leader>be :EasyBufferToggle<cr>
 noremap <leader>bp :bprevious<cr>
 noremap <leader>bn :bnext<cr>
 
+" Goyo
+nnoremap <silent> <leader>z :Goyo<cr>
+
 " airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1

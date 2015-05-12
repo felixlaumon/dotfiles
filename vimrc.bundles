@@ -12,6 +12,7 @@ Plug 'troydm/easybuffer.vim'
 Plug 'Spaceghost/vim-matchit'
 Plug 'vim-scripts/YankRing.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'mtth/scratch.vim', { 'on': 'Scratch' }
 Plug 'milkypostman/vim-togglelist'
 Plug 'airblade/vim-gitgutter'
