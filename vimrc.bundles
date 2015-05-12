@@ -5,14 +5,14 @@ call plug#begin('~/.vim/bundle')
 " Basic
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'tpope/vim-commentary'
 Plug 'gabesoft/vim-ags'
 Plug 'troydm/easybuffer.vim'
 Plug 'Spaceghost/vim-matchit'
 Plug 'vim-scripts/YankRing.vim'
 Plug 'tpope/vim-fugitive'
-Plug 'mtth/scratch.vim'
+Plug 'mtth/scratch.vim', { 'on': 'Scratch' }
 Plug 'milkypostman/vim-togglelist'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
@@ -24,7 +24,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'bling/vim-airline'
 
 " Ctags
-Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar', { 'on': 'Tabbar' }
 Plug 'szw/vim-tags'
 
 " Color
