@@ -21,6 +21,10 @@ bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
 # load zgen
 source "${HOME}/tools/zgen/zgen.zsh"
 
+ZGEN_AUTOUPDATE_VERBOSE=1
+ZGEN_SYSTEM_UPDATE_DAYS=7
+ZGEN_PLUGIN_UPDATE_DAYS=7
+
 # check if there's no init script
 if ! zgen saved; then
     echo "Creating a zgen save"

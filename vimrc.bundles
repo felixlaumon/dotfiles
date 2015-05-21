@@ -33,7 +33,7 @@ Plug 'chriskempson/base16-vim'
 
 " Programming
 Plug 'scrooloose/syntastic'
-Plug 'ervandew/supertab'
+Plug 'Shougo/neocomplete.vim'
 
 " Python
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
