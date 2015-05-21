@@ -25,7 +25,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'bling/vim-airline'
 
 " Ctags
-Plug 'majutsushi/tagbar', { 'on': 'Tabbar' }
+Plug 'majutsushi/tagbar'
 Plug 'szw/vim-tags'
 
 " Color
