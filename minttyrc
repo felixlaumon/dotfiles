@@ -6,7 +6,8 @@ Charset=UTF-8
 Font=PragmataPro for Powerline
 FontHeight=8
 FontQuality=Full
-
+CopyOnSelect=no
+CopyAsRTF=no
 
 ForegroundColour=131,148,150
 BackgroundColour=0,43,54
