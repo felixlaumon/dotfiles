@@ -35,6 +35,7 @@ if ! zgen saved; then
 
     # completions
     zgen load zsh-users/zsh-completions src
+    zgen load tarruda/zsh-autosuggestions
 
     # theme
     zgen oh-my-zsh themes/bureau
@@ -42,6 +43,12 @@ if ! zgen saved; then
     # save all to init script
     zgen save
 fi
+
+# Enable auto suggest
+zle-line-init() {
+    zle autosuggest-start
+}
+zle -N zle-line-init
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
