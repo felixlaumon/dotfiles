@@ -112,9 +112,6 @@ let g:jedi#rename_command = ""
 " Prevent the docstring window from popping up
 autocmd FileType python setlocal completeopt-=preview
 
-" supertab
-let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-
 " Be a real VIM user
 noremap <left> <nop>
 noremap <up> <nop>

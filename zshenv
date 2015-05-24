@@ -38,6 +38,7 @@ export PYTHONPATH=$PYTHONPATH:$HOME/devel/selective_search_ijcv_with_python
 # NVM
 export NVM_DIR=$HOME/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+source $(brew --prefix nvm)/nvm.sh
 
 # Local config
 [[ -f ~/.zshenv.local ]] && source ~/.zshenv.local
