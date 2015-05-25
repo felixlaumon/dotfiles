@@ -12,7 +12,6 @@ Plug 'troydm/easybuffer.vim'
 Plug 'Spaceghost/vim-matchit'
 Plug 'vim-scripts/YankRing.vim'
 Plug 'tpope/vim-fugitive'
-Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'mtth/scratch.vim', { 'on': 'Scratch' }
 Plug 'milkypostman/vim-togglelist'
 Plug 'airblade/vim-gitgutter'
@@ -24,6 +23,11 @@ Plug 'christoomey/vim-tmux-navigator'
 " Fancy
 Plug 'bling/vim-airline'
 
+" Writing
+Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+Plug 'reedes/vim-pencil'
+Plug 'wavded/vim-stylus', { 'for': 'stylus' }
+
 " Ctags
 Plug 'majutsushi/tagbar'
 Plug 'szw/vim-tags'
@@ -33,7 +37,7 @@ Plug 'chriskempson/base16-vim'
 
 " Programming
 Plug 'scrooloose/syntastic'
-Plug 'Shougo/neocomplete.vim'
+Plug 'Valloric/YouCompleteMe'
 
 " Python
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
