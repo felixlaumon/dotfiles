@@ -7,7 +7,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tpope/vim-commentary'
-Plug 'gabesoft/vim-ags'
 Plug 'troydm/easybuffer.vim'
 Plug 'Spaceghost/vim-matchit'
 Plug 'vim-scripts/YankRing.vim'
@@ -41,6 +40,7 @@ Plug 'Valloric/YouCompleteMe'
 
 " Python
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+Plug 'jmcantrell/vim-virtualenv', { 'for': 'python' }
 
 " Web dev
 Plug 'groenewege/vim-less', { 'for': 'less' }

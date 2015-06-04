@@ -36,10 +36,6 @@ let g:ctrlp_use_caching = 0
 let g:ctrlp_mruf_case_sensitive = 0
 nnoremap <leader>. :CtrlPTag<cr>
 
-" vim-ags
-nnoremap <leader>a :Ags<space>
-let g:ags_edit_show_line_numbers = 1
-
 " easybuffer
 nmap <leader>be :EasyBufferToggle<cr>
 noremap <leader>bp :bprevious<cr>
@@ -101,6 +97,9 @@ noremap <left> <nop>
 noremap <up> <nop>
 noremap <down> <nop>
 noremap <right> <nop>
+" Move cursor by displayed line when wrapping
+noremap <buffer> <silent> k gk
+noremap <buffer> <silent> j gj
 
 " Clear highlight
 noremap <silent><Leader>/ :nohls<CR>
@@ -178,6 +177,13 @@ set dictionary=/usr/share/dict/words
 set ignorecase
 set smartcase
 set list
+
+" Use ag instead of grep
+set grepprg=ag\ --nogroup\ --nocolor
+
+" Define Ag to use ag
+command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+nnoremap \ :Ag<SPACE>
 
 " Invisiable character
 set listchars=tab:»·,trail:·,nbsp:·
