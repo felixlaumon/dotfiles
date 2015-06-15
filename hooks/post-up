@@ -17,6 +17,10 @@ fi
 vim -u $HOME/.vimrc.bundles +PlugInstall +PlugClean! +qa
 # $HOME/.vim/bundle/YouCompleteMe/install.sh --clang-completer
 
+if [ ! -e $HOME/.config/base16-shell ]; then
+    git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+fi
+
 if [ ! -e $HOME/.tmuxifier ]; then
     git clone https://github.com/jimeh/tmuxifier.git $HOME/.tmuxifier
 fi
