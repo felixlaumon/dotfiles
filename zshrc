@@ -53,6 +53,9 @@ zle-line-init() {
 }
 zle -N zle-line-init
 
+# Prevent exiting shell by ctrl-d
+set -o ignoreeof
+
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 

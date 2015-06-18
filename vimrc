@@ -4,6 +4,9 @@ set nocompatible
 filetype on
 filetype off
 
+" For neovim
+let g:python_host_prog = '~/anaconda/bin/python'
+
 if filereadable(expand("~/.vimrc.bundles"))
     source ~/.vimrc.bundles
 endif
