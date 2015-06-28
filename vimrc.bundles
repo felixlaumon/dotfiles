@@ -5,7 +5,8 @@ call plug#begin('~/.vim/bundle')
 " Basic
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+" Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-commentary'
 Plug 'troydm/easybuffer.vim'
 Plug 'Spaceghost/vim-matchit'
@@ -25,7 +26,6 @@ Plug 'bling/vim-airline'
 " Writing
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'reedes/vim-pencil'
-Plug 'wavded/vim-stylus', { 'for': 'stylus' }
 
 " Ctags
 Plug 'majutsushi/tagbar'
@@ -44,6 +44,7 @@ Plug 'jmcantrell/vim-virtualenv', { 'for': 'python' }
 
 " Web dev
 Plug 'groenewege/vim-less', { 'for': 'less' }
+Plug 'wavded/vim-stylus', { 'for': 'stylus' }
 
 if filereadable(expand("~/.vimrc.bundles.local"))
     source ~/.vimrc.bundles.local

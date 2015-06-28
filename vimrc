@@ -25,10 +25,10 @@ let base16colorspace=256
 set background=dark
 colorscheme base16-solarized
 
-" Nerdtree
-nmap <tab> :NERDTreeToggle<cr>
-set winfixwidth
-let NERDTreeRespectWildIgnore = 1
+" " Nerdtree
+" nmap <tab> :NERDTreeToggle<cr>
+" set winfixwidth
+" let NERDTreeRespectWildIgnore = 1
 
 " gitgutter
 let g:gitgutter_realtime = 0
