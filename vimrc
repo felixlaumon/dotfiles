@@ -45,6 +45,8 @@ let g:gitgutter_eager = 0
 " ctrl-p
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 let g:ctrlp_mruf_case_sensitive = 0
+let g:ctrlp_use_caching = 0
+let g:ctrlp_match_func = { 'match' : 'matcher#cmatch' }
 nnoremap <leader>. :CtrlPTag<cr>
 
 " easybuffer

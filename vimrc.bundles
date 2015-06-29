@@ -5,6 +5,7 @@ call plug#begin('~/.vim/bundle')
 " Basic
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'JazzCore/ctrlp-cmatcher', { 'do': './install.sh' }
 Plug 'scrooloose/nerdtree'
 " Plug 'tpope/vim-vinegar'
 Plug 'dhruvasagar/vim-vinegar'
