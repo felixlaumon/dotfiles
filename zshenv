@@ -25,6 +25,10 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/tools/cudnn-6.5-linux-R1
 export LIBRARY_PATH=$LIBRARY_PATH:~/tools/cudnn-6.5-linux-R1
 export CPATH=$CPATH:~/tools/cudnn-6.5-linux-x64-R1
 
+# Minerva
+export PYTHONPATH=~/devel/minerva/owl:$PYTHONPATH
+export OWL_ENABLED=true
+
 # Tmuxifier
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts"

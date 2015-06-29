@@ -5,8 +5,9 @@ call plug#begin('~/.vim/bundle')
 " Basic
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ctrlpvim/ctrlp.vim'
-" Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'tpope/vim-vinegar'
+Plug 'scrooloose/nerdtree'
+" Plug 'tpope/vim-vinegar'
+Plug 'dhruvasagar/vim-vinegar'
 Plug 'tpope/vim-commentary'
 Plug 'troydm/easybuffer.vim'
 Plug 'Spaceghost/vim-matchit'

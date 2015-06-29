@@ -4,6 +4,9 @@ set nocompatible
 filetype on
 filetype off
 
+" Sorry Uganda
+set shortmess+=I
+
 " For neovim
 let g:python_host_prog = '~/anaconda/bin/python'
 
@@ -20,15 +23,20 @@ set notimeout
 set ttimeout
 set ttimeoutlen=10
 
+" Use jj for Esc
+imap jk <Esc>
+
 " color
 let base16colorspace=256
 set background=dark
 colorscheme base16-solarized
 
-" " Nerdtree
-" nmap <tab> :NERDTreeToggle<cr>
-" set winfixwidth
-" let NERDTreeRespectWildIgnore = 1
+" Plugins =================================================================
+
+" Nerdtree
+nmap <tab> :NERDTreeToggle<cr>
+set winfixwidth
+let NERDTreeRespectWildIgnore = 1
 
 " gitgutter
 let g:gitgutter_realtime = 0
@@ -36,7 +44,6 @@ let g:gitgutter_eager = 0
 
 " ctrl-p
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-let g:ctrlp_use_caching = 0
 let g:ctrlp_mruf_case_sensitive = 0
 nnoremap <leader>. :CtrlPTag<cr>
 
@@ -96,11 +103,14 @@ let g:jedi#rename_command = ""
 " Prevent the docstring window from popping up
 autocmd FileType python setlocal completeopt-=preview
 
+" Misc ====================================================================
+
 " Be a real VIM user
 noremap <left> <nop>
 noremap <up> <nop>
 noremap <down> <nop>
 noremap <right> <nop>
+
 " Move cursor by displayed line when wrapping
 noremap <buffer> <silent> k gk
 noremap <buffer> <silent> j gj
@@ -175,12 +185,26 @@ set showmatch
 set hlsearch
 set autoread
 set binary
-set exrc
 set secure
 set dictionary=/usr/share/dict/words
 set ignorecase
 set smartcase
 set list
+
+" Center search
+nmap n nzz
+nmap N Nzz
+nmap } }zz
+nmap { {zz
+
+" Always show 5 lines below / above the cursor
+set scrolloff=10
+
+" Replace all occurences by default
+set gdefault
+
+" Use Q for formatting instead Ex
+nnoremap <silent> Q gwip
 
 " Use ag instead of grep
 set grepprg=ag\ --nogroup\ --nocolor
@@ -188,6 +212,9 @@ set grepprg=ag\ --nogroup\ --nocolor
 " Define Ag to use ag
 command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 nnoremap \ :Ag<SPACE>
+
+" Use sh for vim-tmux-navigator for fast switch out
+set shell=/bin/sh\ -i
 
 " Invisiable character
 set listchars=tab:»·,trail:·,nbsp:·
