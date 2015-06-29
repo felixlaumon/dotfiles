@@ -13,11 +13,13 @@ Plug 'tpope/vim-commentary'
 Plug 'troydm/easybuffer.vim'
 Plug 'Spaceghost/vim-matchit'
 Plug 'vim-scripts/YankRing.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'mtth/scratch.vim', { 'on': 'Scratch' }
 Plug 'milkypostman/vim-togglelist'
-Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
+Plug 'terryma/vim-multiple-cursors'
+
+" Git
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 " Tmux
 Plug 'christoomey/vim-tmux-navigator'
@@ -28,6 +30,7 @@ Plug 'bling/vim-airline'
 " Writing
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'reedes/vim-pencil'
+Plug 'mtth/scratch.vim', { 'on': 'Scratch' }
 
 " Ctags
 Plug 'majutsushi/tagbar'

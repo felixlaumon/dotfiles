@@ -37,6 +37,8 @@ colorscheme base16-solarized
 nmap <tab> :NERDTreeToggle<cr>
 set winfixwidth
 let NERDTreeRespectWildIgnore = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
 
 " gitgutter
 let g:gitgutter_realtime = 0
@@ -53,6 +55,21 @@ nnoremap <leader>. :CtrlPTag<cr>
 nmap <leader>be :EasyBufferToggle<cr>
 noremap <leader>bp :bprevious<cr>
 noremap <leader>bn :bnext<cr>
+
+" multiple-cursor
+" Called once right before you start selecting multiple cursors
+function! Multiple_cursors_before()
+  if exists(':NeoCompleteLock')==2
+    exe 'NeoCompleteLock'
+  endif
+endfunction
+
+" Called once only when the multiple selection is canceled (default <Esc>)
+function! Multiple_cursors_after()
+  if exists(':NeoCompleteUnlock')==2
+    exe 'NeoCompleteUnlock'
+  endif
+endfunction
 
 " Goyo
 nnoremap <silent> <leader>z :Goyo<cr>
