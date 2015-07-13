@@ -4,7 +4,7 @@ HISTFILE=~/.zhistory
 HISTSIZE=4096
 SAVEHIST=4096
 
-export TERM="xterm-256color"
+export TERM="screen-256color"
 
 BASE16_SHELL="$HOME/.config/base16-shell/base16-solarized.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL

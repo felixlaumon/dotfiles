@@ -45,10 +45,13 @@ let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
 
 " ctrl-p
-let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --hidden -g ""'
 let g:ctrlp_mruf_case_sensitive = 0
 let g:ctrlp_use_caching = 0
 let g:ctrlp_match_func = { 'match' : 'matcher#cmatch' }
+let g:ctrlp_lazy_update = 100
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_max_files = 0
 nnoremap <leader>. :CtrlPTag<cr>
 
 " easybuffer
@@ -83,10 +86,13 @@ let g:airline_theme = 'base16'
 
 " tagbar
 nnoremap <leader>t :TagbarToggle<CR>
+
+" vim-tags
 let g:vim_tags_ctags_binary = '~/local/bin/ctags'
 let g:vim_tags_ignore_files = ['.ctagsignore', '.gitignore', '.agignore']
 let g:vim_tags_directories = []
 let g:vim_tags_main_file = '.tags'
+let g:vim_tags_auto_generate = 0
 
 " Yankring
 let g:yankring_replace_n_pkey = '<leader>['
@@ -233,7 +239,7 @@ command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 nnoremap \ :Ag<SPACE>
 
 " Use sh for vim-tmux-navigator for fast switch out
-set shell=/bin/sh\ -i
+set shell=/bin/sh
 
 " Invisiable character
 set listchars=tab:»·,trail:·,nbsp:·
