@@ -49,7 +49,7 @@ let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ign
 let g:ctrlp_mruf_case_sensitive = 0
 let g:ctrlp_use_caching = 0
 let g:ctrlp_match_func = { 'match' : 'matcher#cmatch' }
-let g:ctrlp_lazy_update = 100
+let g:ctrlp_lazy_update = 250
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_max_files = 0
 nnoremap <leader>. :CtrlPTag<cr>
@@ -110,8 +110,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
-let g:syntastic_python_checkers = ['pep8']
-let g:syntastic_python_pep8_args='--ignore=E501,E241'
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_args='--ignore=E501,E241'
 
 " vim-jedi
 let g:jedi#completions_enabled=0
@@ -221,6 +221,9 @@ nmap n nzz
 nmap N Nzz
 nmap } }zz
 nmap { {zz
+
+" Insert new line with enter without going to insert mode
+nmap <CR> :a<CR><CR>.<CR>
 
 " Always show 5 lines below / above the cursor
 set scrolloff=10
