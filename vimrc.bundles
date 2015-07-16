@@ -7,7 +7,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'JazzCore/ctrlp-cmatcher', { 'do': './install.sh' }
 Plug 'scrooloose/nerdtree'
-" Plug 'tpope/vim-vinegar'
 Plug 'dhruvasagar/vim-vinegar'
 Plug 'tpope/vim-commentary'
 Plug 'troydm/easybuffer.vim'
@@ -16,6 +15,7 @@ Plug 'vim-scripts/YankRing.vim'
 Plug 'milkypostman/vim-togglelist'
 Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'easymotion/vim-easymotion'
 
 " Git
 Plug 'tpope/vim-fugitive'
