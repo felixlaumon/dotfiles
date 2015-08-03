@@ -59,21 +59,6 @@ nmap <leader>be :EasyBufferToggle<cr>
 noremap <leader>bp :bprevious<cr>
 noremap <leader>bn :bnext<cr>
 
-" multiple-cursor
-" Called once right before you start selecting multiple cursors
-function! Multiple_cursors_before()
-  if exists(':NeoCompleteLock')==2
-    exe 'NeoCompleteLock'
-  endif
-endfunction
-
-" Called once only when the multiple selection is canceled (default <Esc>)
-function! Multiple_cursors_after()
-  if exists(':NeoCompleteUnlock')==2
-    exe 'NeoCompleteUnlock'
-  endif
-endfunction
-
 " Goyo
 nnoremap <silent> <leader>z :Goyo<cr>
 
@@ -115,10 +100,10 @@ let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args='--ignore=E501,E241'
 
 " vim-jedi
-let g:jedi#completions_enabled=0
+let g:jedi#completions_enabled = 1
 let g:jedi#auto_vim_configuration = 0
-let g:jedi#show_call_signatures = "1"
-let g:jedi#popup_on_dot = 0
+let g:jedi#show_call_signatures = "0"
+let g:jedi#popup_on_dot = 1
 let g:jedi#popup_select_first = 0
 let g:jedi#use_tabs_not_buffers = 0
 let g:jedi#documentation_command = "K"
@@ -126,8 +111,13 @@ let g:jedi#goto_assignments_command = "<leader>g"
 let g:jedi#goto_definitions_command = "<leader>d"
 let g:jedi#usages_command = "<leader>n"
 let g:jedi#rename_command = ""
+
 " Prevent the docstring window from popping up
 autocmd FileType python setlocal completeopt-=preview
+
+" youcompleteme
+" let g:ycm_allow_changing_updatetime = 0
+" let g:ycm_register_as_syntastic_checker = 0
 
 " Misc ====================================================================
 
@@ -224,7 +214,7 @@ nmap } }zz
 nmap { {zz
 
 " Insert new line with enter without going to insert mode
-nmap <CR> :a<CR><CR>.<CR>
+nmap <leader><CR> :a<CR><CR>.<CR>
 
 " Always show 5 lines below / above the cursor
 set scrolloff=10

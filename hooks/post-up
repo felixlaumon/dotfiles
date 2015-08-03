@@ -40,7 +40,7 @@ fi
 if [ ! -e $HOME/tools/tmux-mem-cpu-load ]; then
     git clone https://github.com/thewtex/tmux-mem-cpu-load.git $HOME/tools/tmux-mem-cpu-load
     cd $HOME/tools/tmux-mem-cpu-load
-    brew install cmake || sudo apt-get install cmake
+    # brew install cmake || sudo apt-get install cmake
     cmake .
     make -j4
     chmod +x tmux-mem-cpu-load
