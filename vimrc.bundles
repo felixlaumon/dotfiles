@@ -5,7 +5,7 @@ call plug#begin('~/.vim/bundle')
 " Basic
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'FelikZ/ctrlp-py-matcher'
+Plug 'nixprime/cpsm', { 'do': './install.sh' }
 Plug 'scrooloose/nerdtree'
 Plug 'dhruvasagar/vim-vinegar'
 Plug 'tpope/vim-commentary'
@@ -41,6 +41,7 @@ Plug 'chriskempson/base16-vim'
 
 " Programming
 Plug 'scrooloose/syntastic'
+Plug 'ervandew/supertab'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 
 " Python

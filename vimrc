@@ -8,7 +8,8 @@ filetype off
 set shortmess+=I
 
 " For neovim
-let g:python_host_prog = '~/anaconda/bin/python'
+" let g:python_host_prog = '~/anaconda/bin/python'
+" runtime! plugin/python_setup.vim
 
 if filereadable(expand("~/.vimrc.bundles"))
     source ~/.vimrc.bundles
@@ -48,9 +49,8 @@ let g:gitgutter_eager = 0
 let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --hidden -g ""'
 let g:ctrlp_mruf_case_sensitive = 0
 let g:ctrlp_use_caching = 0
-" let g:ctrlp_match_func = { 'match' : 'matcher#cmatch' }
-let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
-let g:ctrlp_lazy_update = 250
+let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
+let g:ctrlp_lazy_update = 50
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_max_files = 0
 nnoremap <leader>. :CtrlPTag<cr>
@@ -116,9 +116,16 @@ let g:jedi#rename_command = ""
 " Prevent the docstring window from popping up
 autocmd FileType python setlocal completeopt-=preview
 
-" youcompleteme
-" let g:ycm_allow_changing_updatetime = 0
-" let g:ycm_register_as_syntastic_checker = 0
+" YouCompleteMe
+let g:ycm_allow_changing_updatetime = 0
+let g:ycm_autoclose_preview_window_after_completion = 0
+let g:ycm_register_as_syntastic_checker = 0
+let g:ycm_autoclose_preview_window_after_insertion = 0
+let g:ycm_min_num_of_chars_for_completion = 1
+nnoremap <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" Supertab
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " Misc ====================================================================
 
