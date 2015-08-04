@@ -24,7 +24,7 @@ set notimeout
 set ttimeout
 set ttimeoutlen=10
 
-" Use jj for Esc
+" Use jk for Esc
 imap jk <Esc>
 
 " color
@@ -101,15 +101,15 @@ let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args='--ignore=E501,E241'
 
 " vim-jedi
-let g:jedi#completions_enabled = 1
+let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
-let g:jedi#show_call_signatures = "0"
+let g:jedi#show_call_signatures = 1
 let g:jedi#popup_on_dot = 1
-let g:jedi#popup_select_first = 0
+let g:jedi#popup_select_first = 1
 let g:jedi#use_tabs_not_buffers = 0
 let g:jedi#documentation_command = "K"
-let g:jedi#goto_assignments_command = "<leader>g"
-let g:jedi#goto_definitions_command = "<leader>d"
+let g:jedi#goto_assignments_command = ""
+let g:jedi#goto_definitions_command = ""
 let g:jedi#usages_command = "<leader>n"
 let g:jedi#rename_command = ""
 
