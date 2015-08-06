@@ -135,6 +135,9 @@ noremap <up> <nop>
 noremap <down> <nop>
 noremap <right> <nop>
 
+" Disable mouse support on neovim
+set mouse=c
+
 " Move cursor by displayed line when wrapping
 noremap <buffer> <silent> k gk
 noremap <buffer> <silent> j gj
@@ -214,6 +217,7 @@ set dictionary=/usr/share/dict/words
 set ignorecase
 set smartcase
 set list
+set autowrite
 
 " Center search
 nmap n nzz
