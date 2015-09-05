@@ -228,6 +228,9 @@ nmap { {zz
 " Insert new line with enter without going to insert mode
 nmap <leader><CR> :a<CR><CR>.<CR>
 
+" Map W to :w
+nnoremap W :w<CR>
+
 " Always show 5 lines below / above the cursor
 set scrolloff=10
 
