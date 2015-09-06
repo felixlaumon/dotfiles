@@ -3,8 +3,8 @@ CursorType=block
 Locale=C
 Charset=UTF-8
 
-Font=PragmataPro for Powerline
-FontHeight=8
+Font=InputMono
+FontHeight=7
 FontQuality=Full
 CopyOnSelect=no
 CopyAsRTF=no
