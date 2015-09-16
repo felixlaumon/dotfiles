@@ -15,7 +15,7 @@ Plug 'vim-scripts/YankRing.vim'
 Plug 'milkypostman/vim-togglelist'
 Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'easymotion/vim-easymotion'
+Plug 'justinmk/vim-sneak'
 
 " Git
 Plug 'tpope/vim-fugitive'

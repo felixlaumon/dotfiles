@@ -61,6 +61,9 @@ nmap <leader>be :EasyBufferToggle<cr>
 noremap <leader>bp :bprevious<cr>
 noremap <leader>bn :bnext<cr>
 
+" easymotion
+let g:sneak#streak = 1
+
 " Goyo
 nnoremap <silent> <leader>z :Goyo<cr>
 
