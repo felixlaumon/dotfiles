@@ -12,6 +12,9 @@ alias path='echo $PATH | tr -s ":" "\n"'
 
 # Tmuxifier
 alias tmd='tmuxifier load-window default'
+alias tmmonitor='tmuxifier load-window monitor'
+alias tmvmonitor='tmuxifier load-window vmonitor'
+alias tmvd='tmuxifier load-window vdefault'
 
 # Matlab REPL
 alias matlabrepl='matlab -nodesktop -nosplash'

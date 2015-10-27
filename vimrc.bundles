@@ -16,6 +16,7 @@ Plug 'milkypostman/vim-togglelist'
 Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'justinmk/vim-sneak'
+Plug 'ConradIrwin/vim-bracketed-paste'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -51,6 +52,9 @@ Plug 'jmcantrell/vim-virtualenv', { 'for': 'python' }
 " Web dev
 Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'wavded/vim-stylus', { 'for': 'stylus' }
+
+" Misc
+Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
 
 if filereadable(expand("~/.vimrc.bundles.local"))
     source ~/.vimrc.bundles.local
