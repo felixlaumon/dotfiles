@@ -93,16 +93,22 @@ let g:yankring_replace_n_nkey = '<leader>]'
 nmap <leader>y :YRShow<cr>
 
 " syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_args='--ignore=E501,E241'
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 0
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 1
+" let g:syntastic_python_checkers = ['flake8']
+" let g:syntastic_python_flake8_args='--ignore=E501,E241'
+
+" neomake
+autocmd! BufWritePost * Neomake
+let g:neomake_python_enabled_makers = ['flake8', 'pep8']
+let g:neomake_python_flake8_maker = { 'args': ['--ignore=E501'], }
+let g:neomake_python_pep8_maker = { 'args': ['--max-line-length=105'], }
 
 " vim-jedi
 let g:jedi#completions_enabled = 0
@@ -130,6 +136,12 @@ nnoremap <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " Supertab
 let g:SuperTabDefaultCompletionType = "<c-n>"
+
+" vim-julia
+let g:latex_to_unicode_suggestions = 0
+let g:latex_to_unicode_eager = 0
+let g:latex_to_unicode_auto = 0
+
 
 " Misc ====================================================================
 

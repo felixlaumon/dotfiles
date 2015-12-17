@@ -16,7 +16,7 @@ Plug 'milkypostman/vim-togglelist'
 Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'justinmk/vim-sneak'
-Plug 'ConradIrwin/vim-bracketed-paste'
+" Plug 'ConradIrwin/vim-bracketed-paste'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -41,7 +41,8 @@ Plug 'szw/vim-tags'
 Plug 'chriskempson/base16-vim'
 
 " Programming
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
+Plug 'benekastah/neomake'
 Plug 'ervandew/supertab'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 

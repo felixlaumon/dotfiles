@@ -1,5 +1,5 @@
 # use neovim as the visual editor
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR=$VISUAL
 
 # Override system executables with local ones
