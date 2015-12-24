@@ -51,37 +51,6 @@ if [ ! -e $HOME/tools/tmux-mem-cpu-load ]; then
     ln -f -s $HOME/tools/tmux-mem-cpu-load/tmux-mem-cpu-load $HOME/local/bin
 fi
 
-if [ ! -e $HOME/tools/the_silver_searcher ]; then
-    git clone https://github.com/ggreer/the_silver_searcher.git $HOME/tools/the_silver_searcher
-    cd $HOME/tools/the_silver_searcher
-    ./build.sh
-    make
-    ln -f -s $HOME/tools/the_silver_searcher/ag $HOME/local/bin
-fi
-
-if [ ! -e $HOME/tools/ctags ]; then
-    cd /tmp
-    wget http://prdownloads.sourceforge.net/ctags/ctags-5.8.tar.gz
-    tar xfz ctags-5.8.tar.gz
-    mv ctags-5.8 $HOME/tools/ctags
-    cd $HOME/tools/ctags
-    ./configure --prefix=$HOME/local
-    make
-    ln -f -s $HOME/tools/ctags/ctags $HOME/local/bin
-fi
-
-if [ ! -e $HOME/tools/tig ]; then
-    cd /tmp
-    wget http://jonas.nitro.dk/tig/releases/tig-2.1.tar.gz
-    tar xfz tig-2.1.tar.gz
-    mv tig-2.1 $HOME/tools/tig
-    cd $HOME/tools/tig
-    ./autogen.sh
-    ./configure --prefix=$HOME/local
-    make
-    ln -f -s $HOME/tools/tig/src/tig $HOME/local/bin
-fi
-
 if [ ! -e $HOME/.config/nvim ]; then
     mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
     ln -s ~/.vim $XDG_CONFIG_HOME/nvim
