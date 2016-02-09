@@ -150,8 +150,8 @@ noremap <right> <nop>
 set mouse=c
 
 " Move cursor by displayed line when wrapping
-noremap <buffer> <silent> k gk
-noremap <buffer> <silent> j gj
+noremap <silent> k gk
+noremap <silent> j gj
 
 " Clear highlight
 noremap <silent><Leader>/ :nohls<CR>
