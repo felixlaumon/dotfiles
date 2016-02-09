@@ -45,16 +45,18 @@ let NERDTreeDirArrows = 1
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
 
-" ctrl-p
-let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --hidden -g ""'
-let g:ctrlp_mruf_case_sensitive = 0
-let g:ctrlp_use_caching = 0
-let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
-let g:ctrlp_lazy_update = 50
-let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_max_files = 0
-let g:ctrlp_working_path_mode = 0
-nnoremap <leader>. :CtrlPTag<cr>
+" FZF
+if has('nvim')
+  let $FZF_DEFAULT_OPTS .= ' --inline-info'
+  let $FZF_DEFAULT_COMMAND='ag -g ""'
+endif
+
+nnoremap <silent> <c-p> :Files<CR>
+nnoremap <silent> \ :Ag<space>
+nnoremap <silent> <leader>. :Tags<CR>
+
+let g:fzf_layout = { 'down': '~20%' }
+let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
 
 " easybuffer
 nmap <leader>be :EasyBufferToggle<cr>
@@ -66,6 +68,11 @@ let g:sneak#streak = 1
 
 " Goyo
 nnoremap <silent> <leader>z :Goyo<cr>
+
+" vim-markdown
+let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_math=1
+let g:vim_markdown_frontmatter=1
 
 " airline
 let g:airline#extensions#tabline#enabled = 1
@@ -91,18 +98,6 @@ let g:yankring_replace_n_nkey = '<leader>]'
 " TODO why cannot save to the dir?
 " let g:yankring_history_dir = '~/.vim/tmp'
 nmap <leader>y :YRShow<cr>
-
-" syntastic
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 0
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 1
-" let g:syntastic_python_checkers = ['flake8']
-" let g:syntastic_python_flake8_args='--ignore=E501,E241'
 
 " neomake
 autocmd! BufWritePost * Neomake
@@ -244,9 +239,6 @@ nmap { {zz
 " Insert new line with enter without going to insert mode
 nmap <leader><CR> :a<CR><CR>.<CR>
 
-" Map W to :w
-nnoremap W :w<CR>
-
 " Always show 5 lines below / above the cursor
 set scrolloff=10
 
@@ -257,11 +249,7 @@ set gdefault
 nnoremap <silent> Q gwip
 
 " Use ag instead of grep
-set grepprg=ag\ --nogroup\ --nocolor
-
-" Define Ag to use ag
-command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-nnoremap \ :Ag<SPACE>
+" set grepprg=ag\ --nogroup\ --nocolor
 
 " Use sh for vim-tmux-navigator for fast switch out
 set shell=/bin/sh
@@ -289,6 +277,11 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
+
+" Map W to :w and Q to :q
+nnoremap W :w<CR>
+nnoremap Q :q<CR>
+
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")

@@ -6,6 +6,7 @@ alias -g L='| wc -l'
 alias -g ONE="| awk '{ print \$1}'"
 alias e='$EDITOR'
 alias v='$VISUAL'
+alias rcp='rsync -avz --progress'
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'

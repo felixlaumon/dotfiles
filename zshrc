@@ -38,7 +38,7 @@ if ! zgen saved; then
     zgen load zsh-users/zsh-completions src
     zgen load tarruda/zsh-autosuggestions
 
-    zgen load caiogondim/bullet-train-oh-my-zsh-theme bullet-train
+    zgen oh-my-zsh themes/ys
     zgen load tarruda/zsh-autosuggestions
 
     # save all to init script

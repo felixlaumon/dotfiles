@@ -4,19 +4,22 @@ call plug#begin('~/.vim/bundle')
 
 " Basic
 Plug 'editorconfig/editorconfig-vim'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'nixprime/cpsm', { 'do': './install.sh' }
+" Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'nixprime/cpsm', { 'do': './install.sh' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'dhruvasagar/vim-vinegar'
 Plug 'tpope/vim-commentary'
 Plug 'troydm/easybuffer.vim'
 Plug 'Spaceghost/vim-matchit'
-Plug 'vim-scripts/YankRing.vim'
+" Plug 'vim-scripts/YankRing.vim'
 Plug 'milkypostman/vim-togglelist'
 Plug 'tpope/vim-surround'
+Plug 'wellle/targets.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'justinmk/vim-sneak'
-" Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'ConradIrwin/vim-bracketed-paste'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -26,12 +29,14 @@ Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
 
 " Fancy
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Writing
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
-Plug 'reedes/vim-pencil'
 Plug 'mtth/scratch.vim', { 'on': 'Scratch' }
+" Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+Plug 'reedes/vim-pencil', { 'for': 'markdown' }
 
 " Ctags
 Plug 'majutsushi/tagbar'

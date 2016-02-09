@@ -34,5 +34,9 @@ export NVM_DIR=$HOME/.nvm
 export PATH="$PATH:$HOME/.rvm/bin"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
+# FZF
+export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
 # Local config
 [[ -f ~/.zshenv.local ]] && source ~/.zshenv.local
