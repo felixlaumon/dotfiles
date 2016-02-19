@@ -55,9 +55,10 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'jmcantrell/vim-virtualenv', { 'for': 'python' }
 
-" Web dev
+" Languages
 Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'wavded/vim-stylus', { 'for': 'stylus' }
+Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 
 " Misc
 Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }

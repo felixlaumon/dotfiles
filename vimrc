@@ -162,7 +162,7 @@ set colorcolumn=+1
 
 " Line number
 set number
-set numberwidth=5
+set numberwidth=4
 
 " Show current line
 set cursorline

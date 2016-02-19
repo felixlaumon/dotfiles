@@ -39,7 +39,6 @@ if ! zgen saved; then
     zgen load tarruda/zsh-autosuggestions
 
     zgen oh-my-zsh themes/ys
-    zgen load tarruda/zsh-autosuggestions
 
     # save all to init script
     zgen save
