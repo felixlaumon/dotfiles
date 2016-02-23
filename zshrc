@@ -45,9 +45,6 @@ if ! zgen saved; then
 fi
 
 # Enable auto suggest
-zle-line-init() {
-    zle autosuggest-start
-}
 zle -N zle-line-init
 
 # Prevent exiting shell by ctrl-d

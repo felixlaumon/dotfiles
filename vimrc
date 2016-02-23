@@ -36,7 +36,7 @@ colorscheme base16-solarized
 
 " Nerdtree
 nmap <tab> :NERDTreeToggle<cr>
-set winfixwidth
+autocmd VimEnter * set winfixwidth
 let NERDTreeRespectWildIgnore = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
@@ -52,6 +52,7 @@ if has('nvim')
 endif
 
 nnoremap <silent> <c-p> :Files<CR>
+nnoremap <silent> <c-b> :Buffers<CR>
 nnoremap <silent> \ :Ag<space>
 nnoremap <silent> <leader>. :Tags<CR>
 

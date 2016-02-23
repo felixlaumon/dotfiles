@@ -4,6 +4,8 @@ export EDITOR=$VISUAL
 
 # Override system executables with local ones
 export PATH=$HOME/local/bin:$PATH
+export LD_LIBRARY_PATH=$HOME/local/lib:$LD_LIBRARY_PATH
+export LD_RUN_PATH=$HOME/local/lib:$LD_RUN_PATH
 
 # Anaconda
 export PATH=$HOME/anaconda/bin:$PATH

@@ -20,6 +20,7 @@ Plug 'wellle/targets.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'justinmk/vim-sneak'
 Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'bronson/vim-visual-star-search'
 
 " Git
 Plug 'tpope/vim-fugitive'
