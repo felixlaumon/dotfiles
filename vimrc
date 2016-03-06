@@ -1,4 +1,4 @@
-let mapleader = ","
+let mapleader = " "
 
 set nocompatible
 filetype on
@@ -60,9 +60,9 @@ let g:fzf_layout = { 'down': '~20%' }
 let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
 
 " easybuffer
-nmap <leader>be :EasyBufferToggle<cr>
-noremap <leader>bp :bprevious<cr>
-noremap <leader>bn :bnext<cr>
+nmap <leader>b :EasyBufferToggle<cr>
+noremap <leader>p :bprevious<cr>
+noremap <leader>n :bnext<cr>
 
 " easymotion
 let g:sneak#streak = 1
@@ -92,13 +92,6 @@ let g:vim_tags_ignore_files = ['.ctagsignore', '.gitignore', '.agignore']
 let g:vim_tags_directories = []
 let g:vim_tags_main_file = '.tags'
 let g:vim_tags_auto_generate = 0
-
-" Yankring
-let g:yankring_replace_n_pkey = '<leader>['
-let g:yankring_replace_n_nkey = '<leader>]'
-" TODO why cannot save to the dir?
-" let g:yankring_history_dir = '~/.vim/tmp'
-nmap <leader>y :YRShow<cr>
 
 " neomake
 autocmd! BufWritePost * Neomake
@@ -130,14 +123,10 @@ let g:ycm_autoclose_preview_window_after_insertion = 0
 let g:ycm_min_num_of_chars_for_completion = 1
 nnoremap <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
-" Supertab
-let g:SuperTabDefaultCompletionType = "<c-n>"
-
 " vim-julia
 let g:latex_to_unicode_suggestions = 0
 let g:latex_to_unicode_eager = 0
 let g:latex_to_unicode_auto = 0
-
 
 " Misc ====================================================================
 
