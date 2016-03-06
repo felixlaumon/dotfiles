@@ -32,20 +32,20 @@ if ! zgen saved; then
 
     # plugins
     zgen oh-my-zsh plugins/git
+    zgen oh-my-zsh plugins/sudo
+    zgen oh-my-zsh plugins/command-not-found
+
     zgen load zsh-users/zsh-syntax-highlighting
 
     # completions
+    zgen load zsh-users/zsh-autosuggestions
     zgen load zsh-users/zsh-completions src
-    zgen load tarruda/zsh-autosuggestions
 
-    zgen oh-my-zsh themes/ys
+    zgen oh-my-zsh themes/tjkirch
 
     # save all to init script
     zgen save
 fi
-
-# Enable auto suggest
-zle -N zle-line-init
 
 # Prevent exiting shell by ctrl-d
 set -o ignoreeof
