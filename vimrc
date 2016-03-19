@@ -1,4 +1,4 @@
-let mapleader = " "
+let mapleader = ","
 
 set nocompatible
 filetype on
@@ -47,9 +47,15 @@ let g:gitgutter_eager = 0
 
 " FZF
 if has('nvim')
-  let $FZF_DEFAULT_OPTS .= ' --inline-info'
-  let $FZF_DEFAULT_COMMAND='ag -g ""'
+    let $FZF_DEFAULT_OPTS .= ' --inline-info'
+    let $FZF_DEFAULT_COMMAND='ag -g ""'
+    let $SHELL='/bin/sh'
 endif
+
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
 
 nnoremap <silent> <c-p> :Files<CR>
 nnoremap <silent> <c-b> :Buffers<CR>
@@ -239,7 +245,7 @@ set gdefault
 nnoremap <silent> Q gwip
 
 " Use ag instead of grep
-" set grepprg=ag\ --nogroup\ --nocolor
+set grepprg=ag\ --nogroup\ --nocolor
 
 " Use sh for vim-tmux-navigator for fast switch out
 set shell=/bin/sh
