@@ -4,6 +4,7 @@ export EDITOR=$VISUAL
 
 # Auto-update zinit
 ZGEN_RESET_ON_CHANGE=(${HOME}/.zshrc ${HOME}/.zshrc.local)
+
 # Override system executables with local ones
 export PATH=$HOME/local/bin:$PATH
 export LD_LIBRARY_PATH=$HOME/local/lib:$LD_LIBRARY_PATH
