@@ -1,3 +1,5 @@
+let g:python_host_prog="/home/felix/.virtualenvs/alvafit-new/bin/python"
+
 let mapleader = ","
 
 set nocompatible
@@ -40,6 +42,15 @@ autocmd VimEnter * set winfixwidth
 let NERDTreeRespectWildIgnore = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
+
+" vim-asterisk
+map *  <Plug>(asterisk-z*)
+map #  <Plug>(asterisk-z#)
+map g* <Plug>(asterisk-gz*)
+map g# <Plug>(asterisk-gz#)
+" map * <Plug>(asterisk-gz*)
+" map # <Plug>(asterisk-gz#)
+let g:asterisk#keeppos = 1
 
 " gitgutter
 let g:gitgutter_realtime = 0
@@ -108,7 +119,7 @@ let g:neomake_python_pep8_maker = { 'args': ['--max-line-length=105'], }
 " vim-jedi
 let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
-let g:jedi#show_call_signatures = 1
+let g:jedi#show_call_signatures = 0
 let g:jedi#popup_on_dot = 1
 let g:jedi#popup_select_first = 1
 let g:jedi#use_tabs_not_buffers = 0
