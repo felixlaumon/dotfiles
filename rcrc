@@ -1,2 +1,2 @@
-EXCLUDES="README.md LICENSE ubuntu.sh"
+EXCLUDES="README.md LICENSE ubuntu-install.sh ubuntu-ppa.sh"
 DOTFILES_DIRS="$HOME/dotfiles-local $HOME/dotfiles"

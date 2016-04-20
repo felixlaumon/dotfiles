@@ -53,9 +53,10 @@ fi
 # Prevent exiting shell by ctrl-d
 set -o ignoreeof
 
+# gitignore.io
+function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
+
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
-# Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
-function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}

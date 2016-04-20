@@ -1,3 +1,0 @@
-update:
-	git pull
-	rcup
