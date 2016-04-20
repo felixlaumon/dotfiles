@@ -10,11 +10,15 @@ export PATH=$HOME/local/bin:$PATH
 export LD_LIBRARY_PATH=$HOME/local/lib:$LD_LIBRARY_PATH
 export LD_RUN_PATH=$HOME/local/lib:$LD_RUN_PATH
 
+# Anaconda with Python 3
+# export PATH=$HOME/anaconda3/bin:$PATH
+
 # Anaconda
 export PATH=$HOME/anaconda/bin:$PATH
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:$HOME/anaconda/lib/
 
 # For vim to recognize packages in Anaconda
-export PYTHONPATH=$PYTHONPATH:$HOME/anaconda/lib/python2.7/site-packages
+# export PYTHONPATH=$PYTHONPATH:$HOME/anaconda/lib/python2.7/site-packages
 
 # CUDA
 export PATH=$PATH:/usr/local/cuda/bin

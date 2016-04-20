@@ -6,6 +6,9 @@ SAVEHIST=4096
 
 export TERM="xterm-256color"
 
+# I hate emails
+unset MAILCHECK
+
 BASE16_SHELL="$HOME/.config/base16-shell/base16-solarized.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
@@ -55,3 +58,4 @@ set -o ignoreeof
 
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}

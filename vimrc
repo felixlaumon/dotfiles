@@ -1,17 +1,15 @@
-let g:python_host_prog="/home/felix/.virtualenvs/alvafit-new/bin/python"
+" For neovim
+let g:python_host_prog = '/home/felixlau/anaconda/bin/python'
+" let g:python3_host_prog = '/home/felixlau/anaconda3/bin/python'
+runtime! plugin/python_setup.vim
 
 let mapleader = ","
 
 set nocompatible
-filetype on
 filetype off
 
 " Sorry Uganda
 set shortmess+=I
-
-" For neovim
-" let g:python_host_prog = '~/anaconda/bin/python'
-" runtime! plugin/python_setup.vim
 
 if filereadable(expand("~/.vimrc.bundles"))
     source ~/.vimrc.bundles
@@ -116,16 +114,15 @@ let g:neomake_python_enabled_makers = ['flake8', 'pep8']
 let g:neomake_python_flake8_maker = { 'args': ['--ignore=E501'], }
 let g:neomake_python_pep8_maker = { 'args': ['--max-line-length=105'], }
 
-" vim-jedi
+" jedi-vim
 let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
-let g:jedi#show_call_signatures = 0
-let g:jedi#popup_on_dot = 1
+let g:jedi#show_call_signatures = 1
+let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 1
 let g:jedi#use_tabs_not_buffers = 0
 let g:jedi#documentation_command = "K"
 let g:jedi#goto_assignments_command = ""
-let g:jedi#goto_definitions_command = ""
 let g:jedi#usages_command = "<leader>n"
 let g:jedi#rename_command = ""
 
@@ -140,10 +137,20 @@ let g:ycm_autoclose_preview_window_after_insertion = 0
 let g:ycm_min_num_of_chars_for_completion = 1
 nnoremap <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
+" deoplete.vim
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+
+" echodoc.vim
+let g:echodoc_enable_at_startup = 1
+
 " vim-julia
 let g:latex_to_unicode_suggestions = 0
 let g:latex_to_unicode_eager = 0
 let g:latex_to_unicode_auto = 0
+
+" surround.vim
+nmap <silent> dsf ds)db
 
 " Misc ====================================================================
 
@@ -152,6 +159,11 @@ noremap <left> <nop>
 noremap <up> <nop>
 noremap <down> <nop>
 noremap <right> <nop>
+
+nnoremap <Left> :vertical resize +2<CR>
+nnoremap <Right> :vertical resize -2<CR>
+nnoremap <Up> :resize -2<CR>
+nnoremap <Down> :resize +2<CR>
 
 " Disable mouse support on neovim
 set mouse=c

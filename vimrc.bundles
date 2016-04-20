@@ -48,8 +48,23 @@ Plug 'chriskempson/base16-vim'
 " Programming
 Plug 'benekastah/neomake'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+Plug 'davidhalter/jedi-vim'
+
+" function! DoRemote(arg)
+"     UpdateRemotePlugins
+" endfunction
+" Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+" Plug 'Shougo/deoplete.nvim'
+" Plug 'zchee/deoplete-jedi'
+" Plug 'carlitux/deoplete-ternjs'
+" Plug 'Shougo/context_filetype.vim'
+" Plug 'Shougo/echodoc.vim'
+
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
 
 " Python
+Plug 'davidhalter/jedi', { 'for': 'python' }
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'jmcantrell/vim-virtualenv', { 'for': 'python' }
 
