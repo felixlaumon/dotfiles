@@ -152,6 +152,14 @@ let g:latex_to_unicode_auto = 0
 " surround.vim
 nmap <silent> dsf ds)db
 
+" vim-tmux-navigator
+let g:tmux_navigator_no_mappings = 1
+" nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
+nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
+
 " Misc ====================================================================
 
 " Be a real VIM user
@@ -177,7 +185,7 @@ noremap <silent><Leader>/ :nohls<CR>
 
 " Show the 80th character
 set textwidth=80
-set colorcolumn=+1
+set colorcolumn=80
 
 " Line number
 set number
