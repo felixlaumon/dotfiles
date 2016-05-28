@@ -47,18 +47,11 @@ Plug 'chriskempson/base16-vim'
 
 " Programming
 Plug 'benekastah/neomake'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
-Plug 'davidhalter/jedi-vim'
 
-" function! DoRemote(arg)
-"     UpdateRemotePlugins
-" endfunction
-" Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
-" Plug 'Shougo/deoplete.nvim'
-" Plug 'zchee/deoplete-jedi'
-" Plug 'carlitux/deoplete-ternjs'
-" Plug 'Shougo/context_filetype.vim'
-" Plug 'Shougo/echodoc.vim'
+function! DoRemote(arg)
+  UpdateRemotePlugins
+endfunction
+Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 
 " Plug 'SirVer/ultisnips'
 " Plug 'honza/vim-snippets'
@@ -67,14 +60,14 @@ Plug 'davidhalter/jedi-vim'
 Plug 'davidhalter/jedi', { 'for': 'python' }
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'jmcantrell/vim-virtualenv', { 'for': 'python' }
+Plug 'zchee/deoplete-jedi', { 'for': 'python' }
 
-" Languages
+" Web dev
+Plug 'carlitux/deoplete-ternjs', { 'for': 'js' }
 Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'wavded/vim-stylus', { 'for': 'stylus' }
 Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 Plug 'alvan/vim-closetag', { 'for': 'html' }
-
-" Misc
 Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
 
 if filereadable(expand("~/.vimrc.bundles.local"))

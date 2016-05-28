@@ -117,32 +117,21 @@ let g:neomake_python_pep8_maker = { 'args': ['--max-line-length=105'], }
 " jedi-vim
 let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
-let g:jedi#show_call_signatures = 1
+let g:jedi#show_call_signatures = 0
 let g:jedi#popup_on_dot = 0
-let g:jedi#popup_select_first = 1
+let g:jedi#popup_select_first = 0
 let g:jedi#use_tabs_not_buffers = 0
 let g:jedi#documentation_command = "K"
-let g:jedi#goto_assignments_command = ""
+let g:jedi#goto_assignments_command = "<leader>d"
 let g:jedi#usages_command = "<leader>n"
 let g:jedi#rename_command = ""
 
 " Prevent the docstring window from popping up
 autocmd FileType python setlocal completeopt-=preview
 
-" YouCompleteMe
-let g:ycm_allow_changing_updatetime = 0
-let g:ycm_autoclose_preview_window_after_completion = 0
-let g:ycm_register_as_syntastic_checker = 0
-let g:ycm_autoclose_preview_window_after_insertion = 0
-let g:ycm_min_num_of_chars_for_completion = 1
-nnoremap <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
 " deoplete.vim
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
-
-" echodoc.vim
-let g:echodoc_enable_at_startup = 1
 
 " vim-julia
 let g:latex_to_unicode_suggestions = 0
@@ -154,7 +143,7 @@ nmap <silent> dsf ds)db
 
 " vim-tmux-navigator
 let g:tmux_navigator_no_mappings = 1
-" nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+" Use <BS> so it works on neovim
 nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
@@ -255,6 +244,7 @@ set ignorecase
 set smartcase
 set list
 set autowrite
+set spell
 
 " Center search
 nmap n nzz
