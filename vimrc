@@ -30,7 +30,7 @@ imap jk <Esc>
 " color
 let base16colorspace=256
 set background=dark
-colorscheme base16-solarized
+colorscheme base16-tomorrow
 
 " Plugins =================================================================
 
