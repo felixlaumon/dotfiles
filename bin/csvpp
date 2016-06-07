@@ -1,0 +1,49 @@
+#!/bin/bash
+# Author: Mehrad Mahmoudian
+# Contact:
+#    email: m[dot]mahmoudian[at]gmail[dot]com
+#    twitter: @mmahmoudian
+# Date: 2015.08.26 (yyyy.mm.dd)
+#
+# What this file do:
+#    This file inspects the file extention and present the file in
+#    propper format in terminal. For example it shows CSV files in 
+#    eye-friendly and human readable format:
+#      1 Year  month   Win8  Win7  Vista  NT*  WinXP  Linux  Mac   Mobile
+#      2 2011  201101  0     31.1  8.6    1    45.3   5      7.8   0.7
+#      3 2011  201102  0     32.2  8.3    1    44.2   5.1    8.1   0.7
+#      4 2011  201103  0     34.1  7.9    0.9  42.9   5.1    8     0.7
+#      5 2011  201104  0     35.9  7.6    0.9  40.9   5.1    8.3   0.8
+#
+# Usage:
+#    You can use the shell as is:
+#        sh view.sh mydata.csv
+#
+#    Add to alias:
+#        add the following line to the end of your aliases:
+#            alias view="sh path_to_your_shells/view.sh"
+#        remember to substitute the path_to_your_shells with the correct
+#        directory.
+#
+# Credits:
+#    * CSV
+#        1. https://chrisjean.com/view-csv-data-from-the-command-line/
+#        2. http://stackoverflow.com/questions/1875305/command-line-csv-viewer
+# check if the provided file exists
+if [ ! -f ${1} ]; then
+    echo "file not exist!"
+    exit
+fi
+
+
+# extract the file extention
+EXTENTION=$(echo ${1} | rev | cut -d '.' -f 1 | rev | tr '[:upper:]' '[:lower:]')
+
+# check the file extention
+if [ "${EXTENTION}" = "csv" ]; then
+    # View CSV in propper format
+    cat "${1}" | sed -e 's/,,/, ,/g' | column -s, -t | less -#5 -N -S
+else
+    # if not installed, open with less
+    less ${1}
+fi

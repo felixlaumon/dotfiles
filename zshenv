@@ -43,5 +43,8 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # FZF
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
+# Utilities
+export PATH=$PATH:$HOME/.bin
+
 # Local config
 [[ -f ~/.zshenv.local ]] && source ~/.zshenv.local
