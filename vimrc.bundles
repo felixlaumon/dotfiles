@@ -36,8 +36,8 @@ Plug 'vim-airline/vim-airline-themes'
 " Writing
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'mtth/scratch.vim', { 'on': 'Scratch' }
-" Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-Plug 'reedes/vim-pencil', { 'for': 'markdown' }
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+" Plug 'reedes/vim-pencil', { 'for': 'markdown' }
 
 " Ctags
 Plug 'majutsushi/tagbar'

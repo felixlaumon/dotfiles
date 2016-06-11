@@ -89,6 +89,7 @@ nnoremap <silent> <leader>z :Goyo<cr>
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_math=1
 let g:vim_markdown_frontmatter=1
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
 
 " airline
 let g:airline#extensions#tabline#enabled = 1
@@ -106,7 +107,7 @@ let g:vim_tags_ctags_binary = '~/local/bin/ctags'
 let g:vim_tags_ignore_files = ['.ctagsignore', '.gitignore', '.agignore']
 let g:vim_tags_directories = []
 let g:vim_tags_main_file = '.tags'
-let g:vim_tags_auto_generate = 0
+let g:vim_tags_auto_generate = 1
 
 " neomake
 autocmd! BufWritePost * Neomake
@@ -126,9 +127,6 @@ let g:jedi#goto_assignments_command = "<leader>d"
 let g:jedi#usages_command = "<leader>n"
 let g:jedi#rename_command = ""
 
-" Prevent the docstring window from popping up
-autocmd FileType python setlocal completeopt-=preview
-
 " deoplete.vim
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
@@ -145,6 +143,7 @@ nmap <silent> dsf ds)db
 let g:tmux_navigator_no_mappings = 1
 " Use <BS> so it works on neovim
 nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
+nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
@@ -198,8 +197,7 @@ augroup vimrcEx
     \ endif
 
     " Set syntax highlighting for specific file types
-    autocmd BufRead,BufNewFile Appraisals set filetype=ruby
-    autocmd BufRead,BufNewFile *.md set filetype=markdown
+    autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
     " Enable spellchecking for Markdown
     autocmd FileType markdown setlocal spell
