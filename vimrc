@@ -96,7 +96,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline#extensions#branch#enabled = 0
 let g:airline#extensions#syntastic#enabled = 1
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 let g:airline_theme = 'base16'
 
 " tagbar
@@ -111,9 +111,10 @@ let g:vim_tags_auto_generate = 1
 
 " neomake
 autocmd! BufWritePost * Neomake
-let g:neomake_python_enabled_makers = ['flake8', 'pep8']
+" let g:neomake_python_enabled_makers = ['flake8', 'pep8', 'pylint']
+let g:neomake_python_enabled_makers = ['flake8']
 let g:neomake_python_flake8_maker = { 'args': ['--ignore=E501'], }
-let g:neomake_python_pep8_maker = { 'args': ['--max-line-length=105'], }
+" let g:neomake_python_pep8_maker = { 'args': ['--max-line-length=105'], }
 
 " jedi-vim
 let g:jedi#completions_enabled = 0
@@ -147,6 +148,11 @@ nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
+
+" vim-slime
+let g:slime_target = "tmux"
+let g:slime_python_ipython = 1
+let g:slime_paste_file = "$HOME/.slime_paste"
 
 " Misc ====================================================================
 
@@ -295,7 +301,6 @@ set expandtab
 " Map W to :w and Q to :q
 nnoremap W :w<CR>
 nnoremap Q :q<CR>
-
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")

@@ -32,6 +32,10 @@ if [ ! -e $HOME/tools/zgen ]; then
     git clone https://github.com/tarjoilija/zgen.git $HOME/tools/zgen
 fi
 
+if [ ! -e $HOME/.rbenv ]; then
+    git clone https://github.com/rbenv/rbenv.git $HOME/.rbenv
+fi
+
 if [ ! -e $HOME/tools/z ]; then
     git clone https://github.com/rupa/z.git $HOME/tools/z
     touch ~/.z

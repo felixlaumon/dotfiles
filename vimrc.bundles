@@ -8,7 +8,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'dhruvasagar/vim-vinegar'
-Plug 'tpope/vim-commentary'
+" Plug 'tpope/vim-commentary'
 Plug 'troydm/easybuffer.vim'
 Plug 'Spaceghost/vim-matchit'
 Plug 'milkypostman/vim-togglelist'
@@ -21,6 +21,10 @@ Plug 'bronson/vim-visual-star-search'
 Plug 'tpope/vim-repeat'
 Plug 'haya14busa/vim-asterisk'
 Plug 'djoshea/vim-autoread'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'tyru/caw.vim'
+Plug 'Shougo/context_filetype.vim'
+Plug 'haya14busa/incsearch.vim'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -48,6 +52,7 @@ Plug 'chriskempson/base16-vim'
 
 " Programming
 Plug 'benekastah/neomake'
+Plug 'jpalardy/vim-slime'
 
 function! DoRemote(arg)
   UpdateRemotePlugins
