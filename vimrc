@@ -111,10 +111,9 @@ let g:vim_tags_auto_generate = 1
 
 " neomake
 autocmd! BufWritePost * Neomake
-" let g:neomake_python_enabled_makers = ['flake8', 'pep8', 'pylint']
-let g:neomake_python_enabled_makers = ['flake8']
-let g:neomake_python_flake8_maker = { 'args': ['--ignore=E501'], }
-" let g:neomake_python_pep8_maker = { 'args': ['--max-line-length=105'], }
+let g:neomake_python_enabled_makers = ['flake8', 'pep8', 'pylint']
+let g:neomake_python_flake8_maker = { 'args': ['--ignore=E501,E226'], }
+let g:neomake_python_pep8_maker = { 'args': ['--max-line-length=80'], }
 
 " jedi-vim
 let g:jedi#completions_enabled = 0

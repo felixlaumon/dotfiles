@@ -8,4 +8,13 @@ rerun.txt
 tags
 !tags/
 tmp/**/*
-!tmp/cache/.keep
+
+.idea
+.DS_Store
+notebooks/
+*.pyc
+tags
+*.sublime-project
+*.sublime-workspace
+.cache
+__pycache__
