@@ -29,6 +29,7 @@ Plug 'haya14busa/incsearch.vim'
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'lambdalisue/vim-gista'
 
 " Tmux
 Plug 'christoomey/vim-tmux-navigator'

@@ -26,5 +26,9 @@ alias matlabrepl='matlab -nodesktop -nosplash'
 # iPython notebook
 alias nb='ipython notebook --profile=nbserver'
 
+# GPU
+alias watch_gpu_util='watch -n 10 "nvidia-smi -q -d UTILIZATION | grep \"GPU Utilization Samples\" -A 5"'
+alias watch_gpu='watch -n 0.5 nvidia-smi'
+
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local

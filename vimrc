@@ -125,7 +125,7 @@ let g:jedi#use_tabs_not_buffers = 0
 let g:jedi#documentation_command = "K"
 let g:jedi#goto_assignments_command = "<leader>d"
 let g:jedi#usages_command = "<leader>n"
-let g:jedi#rename_command = ""
+let g:jedi#rename_command = "<leader>r"
 
 " deoplete.vim
 let g:deoplete#enable_at_startup = 1
