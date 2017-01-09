@@ -15,8 +15,8 @@ split_v 50
 select_pane 1
 run_cmd "glances -t 5"
 select_pane 4
-run_cmd "watch -n 5 sensors"
+run_cmd "watch_gpu_util"
 select_pane 5
-run_cmd "watch -n 0.5 nvidia-smi"
+run_cmd "watch_gpu"
 
 select_pane 1
