@@ -11,6 +11,9 @@ alias dm='docker-machine'
 alias vboxmanage='VBoxManage'
 alias download='aria2c -x 8 -s 8'
 
+# Git
+alias gwip='gunwip; gwip'
+
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
