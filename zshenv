@@ -28,6 +28,9 @@ export PATH=$PATH:$HOME/devel/caffe/build/tools
 export PYTHONPATH=$PYTHONPATH:$HOME/devel/caffe/python
 export PYTHONPATH=$PYTHONPATH:$HOME/devel/selective_search_ijcv_with_python
 
+# Tensorflow
+export TF_CPP_MIN_LOG_LEVEL=1
+
 # NVM
 export NVM_DIR=$HOME/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
