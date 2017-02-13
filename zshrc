@@ -44,7 +44,8 @@ if ! zgen saved; then
     zgen load zsh-users/zsh-autosuggestions
     zgen load zsh-users/zsh-completions src
 
-    zgen oh-my-zsh themes/tjkirch
+    # Theme
+    zgen oh-my-zsh themes/frisk
 
     # save all to init script
     zgen save

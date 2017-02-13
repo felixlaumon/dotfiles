@@ -25,6 +25,9 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tyru/caw.vim'
 Plug 'Shougo/context_filetype.vim'
 Plug 'haya14busa/incsearch.vim'
+Plug 'matze/vim-move'
+Plug 'wellle/targets.vim'
+Plug 'ervandew/supertab'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -41,8 +44,7 @@ Plug 'vim-airline/vim-airline-themes'
 " Writing
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'mtth/scratch.vim', { 'on': 'Scratch' }
-Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-" Plug 'reedes/vim-pencil', { 'for': 'markdown' }
+Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 
 " Ctags
 Plug 'majutsushi/tagbar'

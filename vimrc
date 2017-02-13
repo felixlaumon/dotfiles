@@ -89,7 +89,7 @@ nnoremap <silent> <leader>z :Goyo<cr>
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_math=1
 let g:vim_markdown_frontmatter=1
-let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
+let g:markdown_fenced_languages = ['html', 'css', 'javascript', 'ruby', 'python', 'bash=sh', 'yaml', 'json']
 
 " airline
 let g:airline#extensions#tabline#enabled = 1
@@ -153,6 +153,8 @@ let g:slime_target = "tmux"
 let g:slime_python_ipython = 1
 let g:slime_paste_file = "$HOME/.slime_paste"
 
+" vim-move
+let g:move_key_modifier = 'C'
 " Misc ====================================================================
 
 " Be a real VIM user
@@ -216,12 +218,6 @@ augroup vimrcEx
 
     " Allow stylesheets to autocomplete hyphenated words
     autocmd FileType css,scss,sass setlocal iskeyword+=-
-augroup END
-
-let g:pencil#wrapModeDefault = 'soft'
-augroup pencil
-  autocmd!
-  autocmd FileType markdown,mkd call pencil#init()
 augroup END
 
 " Split
