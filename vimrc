@@ -154,7 +154,7 @@ let g:slime_python_ipython = 1
 let g:slime_paste_file = "$HOME/.slime_paste"
 
 " vim-move
-let g:move_key_modifier = 'C'
+let g:move_key_modifier = 'C-S'
 " Misc ====================================================================
 
 " Be a real VIM user

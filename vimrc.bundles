@@ -25,6 +25,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tyru/caw.vim'
 Plug 'Shougo/context_filetype.vim'
 Plug 'haya14busa/incsearch.vim'
+Plug 'matze/vim-move'
 Plug 'wellle/targets.vim'
 Plug 'ervandew/supertab'
 

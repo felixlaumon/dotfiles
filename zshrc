@@ -42,6 +42,9 @@ if ! zgen saved; then
 
     # completions
     zgen load zsh-users/zsh-autosuggestions
+    # Prevent delay when pasting text
+    ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+
     zgen load zsh-users/zsh-completions src
 
     # Theme
