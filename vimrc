@@ -32,6 +32,8 @@ let base16colorspace=256
 set background=dark
 colorscheme base16-tomorrow
 
+" Copy to localhost:8378
+nnoremap <leader>Y :call system('nc 0.0.0.0 8378', @0)<CR>
 " Plugins =================================================================
 
 " Nerdtree
