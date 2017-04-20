@@ -9,8 +9,9 @@ export TERM="xterm-256color"
 # I hate emails
 unset MAILCHECK
 
-BASE16_SHELL="$HOME/.config/base16-shell/base16-tomorrow.dark.sh"
-[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+base16_tomorrow-night
 
 # handy keybindings
 bindkey "^A" beginning-of-line
@@ -42,6 +43,9 @@ if ! zgen saved; then
 
     # completions
     zgen load zsh-users/zsh-autosuggestions
+    # Prevent delay when pasting text
+    ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+
     zgen load zsh-users/zsh-completions src
 
     # Theme

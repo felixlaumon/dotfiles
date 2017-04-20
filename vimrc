@@ -32,6 +32,8 @@ let base16colorspace=256
 set background=dark
 colorscheme base16-tomorrow
 
+" Copy to localhost:8378
+nnoremap <leader>Y :call system('nc 0.0.0.0 8378', @0)<CR>
 " Plugins =================================================================
 
 " Nerdtree
@@ -154,8 +156,6 @@ let g:slime_python_ipython = 1
 let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.2"}
 let g:slime_paste_file = "$HOME/.slime_paste"
 
-" vim-move
-let g:move_key_modifier = 'C'
 " Misc ====================================================================
 
 " Be a real VIM user
@@ -298,6 +298,8 @@ set expandtab
 nnoremap W :w<CR>
 nnoremap Q :q<CR>
 
+" Trim whitespace when saving
+autocmd BufWritePre * %s/\s\+$//e
 " Local config
 if filereadable($HOME . "/.vimrc.local")
     source ~/.vimrc.local
