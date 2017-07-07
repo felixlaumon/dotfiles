@@ -1,6 +1,5 @@
 " For neovim
 let g:python_host_prog = '/home/felixlau/anaconda/bin/python'
-" let g:python3_host_prog = '/home/felixlau/anaconda3/bin/python'
 runtime! plugin/python_setup.vim
 
 let mapleader = ","
@@ -24,16 +23,18 @@ set notimeout
 set ttimeout
 set ttimeoutlen=10
 
+" Color
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
+
 " Use jk for Esc
 imap jk <Esc>
 
-" color
-let base16colorspace=256
-set background=dark
-colorscheme base16-tomorrow
-
 " Copy to localhost:8378
 nnoremap <leader>Y :call system('nc 0.0.0.0 8378', @0)<CR>
+
 " Plugins =================================================================
 
 " Nerdtree
@@ -48,8 +49,6 @@ map *  <Plug>(asterisk-z*)
 map #  <Plug>(asterisk-z#)
 map g* <Plug>(asterisk-gz*)
 map g# <Plug>(asterisk-gz#)
-" map * <Plug>(asterisk-gz*)
-" map # <Plug>(asterisk-gz#)
 let g:asterisk#keeppos = 1
 
 " gitgutter

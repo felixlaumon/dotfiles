@@ -58,9 +58,6 @@ Plug 'jpalardy/vim-slime'
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
-" Plug 'SirVer/ultisnips'
-" Plug 'honza/vim-snippets'
-
 " Python
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'jmcantrell/vim-virtualenv', { 'for': 'python' }

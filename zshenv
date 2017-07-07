@@ -3,7 +3,7 @@ export VISUAL=nvim
 export EDITOR=$VISUAL
 
 # Auto-update zinit
-ZGEN_RESET_ON_CHANGE=(${HOME}/.zshrc ${HOME}/.zshrc.local)
+ZGEN_RESET_ON_CHANGE=(${HOME}/.zshrc ${HOME}/.zshrc.local ${HOME}/.zshenv ${HOME}/.zshenv.local)
 
 # Override system executables with local ones
 export PATH=$HOME/local/bin:$PATH
@@ -23,11 +23,6 @@ export CUDA_DEVICE_ORDER=PCI_BUS_ID  # Match nvidia-smi device id with CUDA
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts"
 [[ -d ~/.tmuxifier ]] && eval "$(~/.tmuxifier/bin/tmuxifier init -)"
-
-# Caffe
-export PATH=$PATH:$HOME/devel/caffe/build/tools
-export PYTHONPATH=$PYTHONPATH:$HOME/devel/caffe/python
-export PYTHONPATH=$PYTHONPATH:$HOME/devel/selective_search_ijcv_with_python
 
 # Tensorflow
 export TF_CPP_MIN_LOG_LEVEL=1

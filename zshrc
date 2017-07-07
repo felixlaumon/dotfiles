@@ -11,7 +11,7 @@ unset MAILCHECK
 
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
-base16_tomorrow-night
+base16_ir-black
 
 # handy keybindings
 bindkey "^A" beginning-of-line
@@ -65,3 +65,5 @@ function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 [[ -f ~/.aliases ]] && source ~/.aliases
 
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
