@@ -93,7 +93,8 @@ let g:vim_markdown_frontmatter=1
 let g:markdown_fenced_languages = ['html', 'css', 'javascript', 'ruby', 'python', 'bash=sh', 'yaml', 'json']
 
 " airline
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
+let g:airline_detect_spell = 0
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline#extensions#branch#enabled = 0
 let g:airline#extensions#syntastic#enabled = 1
