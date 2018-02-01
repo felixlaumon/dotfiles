@@ -44,7 +44,8 @@ if ! zgen saved; then
     # completions
     zgen load zsh-users/zsh-autosuggestions
     # Prevent delay when pasting text
-    ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+    ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=50
+    ZSH_AUTOSUGGEST_USE_ASYNC=1
 
     zgen load zsh-users/zsh-completions src
 
@@ -65,5 +66,3 @@ function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 [[ -f ~/.aliases ]] && source ~/.aliases
 
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

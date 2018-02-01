@@ -32,5 +32,8 @@ alias jn='jupyter notebook'
 alias watch_gpu_util='watch -n 10 "nvidia-smi -q -d UTILIZATION | grep \"GPU Utilization Samples\" -A 5"'
 alias watch_gpu='watch -n 0.5 nvidia-smi'
 
+# xvfb
+alias xvfb="xvfb-run -f ~/.Xauthority -a -s '-screen 0 1400x900x24'"
+
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
