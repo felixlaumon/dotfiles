@@ -11,7 +11,7 @@ unset MAILCHECK
 
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
-base16_ir-black
+base16_irblack
 
 # handy keybindings
 bindkey "^A" beginning-of-line
