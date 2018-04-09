@@ -39,6 +39,8 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/sudo
     zgen oh-my-zsh plugins/command-not-found
 
+    export NVM_LAZY_LOAD=true
+    zgen load lukechilds/zsh-nvm
     zgen load zsh-users/zsh-syntax-highlighting
 
     # completions
