@@ -7,20 +7,17 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'dhruvasagar/vim-vinegar'
 Plug 'tpope/vim-commentary'
 Plug 'troydm/easybuffer.vim'
 Plug 'Spaceghost/vim-matchit'
 Plug 'milkypostman/vim-togglelist'
 Plug 'tpope/vim-surround'
 Plug 'wellle/targets.vim'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'justinmk/vim-sneak'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'bronson/vim-visual-star-search'
 Plug 'tpope/vim-repeat'
 Plug 'haya14busa/vim-asterisk'
-Plug 'djoshea/vim-autoread'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tyru/caw.vim'
 Plug 'Shougo/context_filetype.vim'
@@ -31,7 +28,6 @@ Plug 'ervandew/supertab'
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'lambdalisue/vim-gista'
 
 " Tmux
 Plug 'christoomey/vim-tmux-navigator'
@@ -42,7 +38,6 @@ Plug 'vim-airline/vim-airline-themes'
 
 " Writing
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
-Plug 'mtth/scratch.vim', { 'on': 'Scratch' }
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 
 " Ctags
@@ -55,12 +50,11 @@ Plug 'chriskempson/base16-vim'
 " Programming
 Plug 'benekastah/neomake'
 Plug 'jpalardy/vim-slime'
-
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Python
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
-Plug 'jmcantrell/vim-virtualenv', { 'for': 'python' }
+" Plug 'jmcantrell/vim-virtualenv', { 'for': 'python' }
 Plug 'zchee/deoplete-jedi', { 'for': 'python' }
 
 " Web dev

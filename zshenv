@@ -27,14 +27,9 @@ export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts"
 # Tensorflow
 export TF_CPP_MIN_LOG_LEVEL=1
 
-# NVM
-export NVM_DIR=$HOME/.nvm
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "brew" ] && source $(brew --prefix nvm)/nvm.sh   # Source nvm on Mac
-
 # rbenv
-export PATH=$HOME/.rbenv/bin:$PATH
-eval "$(rbenv init -)"
+# export PATH=$HOME/.rbenv/bin:$PATH
+# eval "$(rbenv init -)"
 
 # Java
 export JAVA_HOME=/usr/lib/jvm/java-8-oracle

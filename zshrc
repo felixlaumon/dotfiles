@@ -36,8 +36,6 @@ if ! zgen saved; then
 
     # plugins
     zgen oh-my-zsh plugins/git
-    zgen oh-my-zsh plugins/sudo
-    zgen oh-my-zsh plugins/command-not-found
 
     export NVM_LAZY_LOAD=true
     zgen load lukechilds/zsh-nvm
