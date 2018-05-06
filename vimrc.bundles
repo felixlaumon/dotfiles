@@ -7,6 +7,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'dhruvasagar/vim-vinegar'
 Plug 'tpope/vim-commentary'
 Plug 'troydm/easybuffer.vim'
 Plug 'Spaceghost/vim-matchit'

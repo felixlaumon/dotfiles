@@ -35,5 +35,7 @@ alias watch_gpu='watch -n 0.5 nvidia-smi'
 # xvfb
 alias xvfb="xvfb-run -f ~/.Xauthority -a -s '-screen 0 1400x900x24'"
 
+# kubectl
+alias k=kubectl
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local

@@ -113,14 +113,13 @@ let g:vim_tags_auto_generate = 1
 
 " neomake
 autocmd! BufWritePost * Neomake
-let g:neomake_python_enabled_makers = ['flake8', 'pep8', 'pylint']
+let g:neomake_python_enabled_makers = ['flake8', 'pylint']
 let g:neomake_python_flake8_maker = { 'args': ['--ignore=E501,E226'], }
-let g:neomake_python_pep8_maker = { 'args': ['--max-line-length=80'], }
 
 " jedi-vim
 let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
-let g:jedi#show_call_signatures = 0
+let g:jedi#show_call_signatures = 1
 let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 0
 let g:jedi#use_tabs_not_buffers = 0
