@@ -40,7 +40,7 @@ alias k=kubectl
 
 # Utility methods
 function run_nb() {
-    jupyter nbconvert --to python $notebook --stdout | python
+    jupyter nbconvert --to python $1 --stdout | python
 }
 
 # Include custom aliases
