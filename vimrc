@@ -46,9 +46,6 @@ let NERDTreeDirArrows = 1
 
 " vim-asterisk
 map *  <Plug>(asterisk-z*)
-map #  <Plug>(asterisk-z#)
-map g* <Plug>(asterisk-gz*)
-map g# <Plug>(asterisk-gz#)
 let g:asterisk#keeppos = 1
 
 " gitgutter
@@ -62,11 +59,6 @@ if has('nvim')
     let $SHELL='/bin/sh'
 endif
 
-imap <c-x><c-k> <plug>(fzf-complete-word)
-imap <c-x><c-f> <plug>(fzf-complete-path)
-imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-imap <c-x><c-l> <plug>(fzf-complete-line)
-
 nnoremap <silent> <c-p> :Files<CR>
 nnoremap <silent> <c-b> :Buffers<CR>
 nnoremap <silent> \ :Ag<space>
@@ -74,6 +66,8 @@ nnoremap <silent> <leader>. :Tags<CR>
 
 let g:fzf_layout = { 'down': '~20%' }
 let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+
+nnoremap <silent> <Leader>a :Ag <C-R><C-W><CR>
 
 " easybuffer
 nmap <leader>b :EasyBufferToggle<cr>
@@ -112,9 +106,10 @@ let g:vim_tags_main_file = '.tags'
 let g:vim_tags_auto_generate = 1
 
 " neomake
-autocmd! BufWritePost * Neomake
+let g:neomake_open_list = 2
 let g:neomake_python_enabled_makers = ['flake8', 'pylint']
-let g:neomake_python_flake8_maker = { 'args': ['--ignore=E501,E226'], }
+let g:neomake_python_flake8_maker = { 'args': ['--ignore=E501,E226,E741,W504'], }
+call neomake#configure#automake('w')
 
 " jedi-vim
 let g:jedi#completions_enabled = 0
@@ -243,7 +238,11 @@ set ignorecase
 set smartcase
 set list
 set autowrite
+
+" Spellcheck
 set spell
+hi clear SpellBad
+hi SpellBad cterm=underline
 
 " Center search
 nmap n nzz

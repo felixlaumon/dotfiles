@@ -37,5 +37,11 @@ alias xvfb="xvfb-run -f ~/.Xauthority -a -s '-screen 0 1400x900x24'"
 
 # kubectl
 alias k=kubectl
+
+# Utility methods
+function run_nb() {
+    jupyter nbconvert --to python $notebook --stdout | python
+}
+
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
