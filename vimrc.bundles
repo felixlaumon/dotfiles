@@ -8,13 +8,10 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'dhruvasagar/vim-vinegar'
-Plug 'tpope/vim-commentary'
 Plug 'troydm/easybuffer.vim'
-Plug 'Spaceghost/vim-matchit'
 Plug 'milkypostman/vim-togglelist'
 Plug 'tpope/vim-surround'
 Plug 'wellle/targets.vim'
-Plug 'justinmk/vim-sneak'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'bronson/vim-visual-star-search'
 Plug 'tpope/vim-repeat'
@@ -34,8 +31,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
 
 " Fancy
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
+Plug 'mgee/lightline-bufferline'
 
 " Writing
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
@@ -49,14 +46,14 @@ Plug 'szw/vim-tags'
 Plug 'chriskempson/base16-vim'
 
 " Programming
-Plug 'benekastah/neomake'
+Plug 'w0rp/ale'
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+Plug 'autozimu/LanguageClient-neovim', {
+  \ 'branch': 'next',
+  \ 'do': 'bash install.sh',
+  \ }
 Plug 'jpalardy/vim-slime'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
-" Python
-Plug 'davidhalter/jedi-vim', { 'for': 'python' }
-" Plug 'jmcantrell/vim-virtualenv', { 'for': 'python' }
-Plug 'zchee/deoplete-jedi', { 'for': 'python' }
 
 " Web dev
 Plug 'carlitux/deoplete-ternjs', { 'for': 'js' }
