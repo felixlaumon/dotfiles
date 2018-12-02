@@ -2,11 +2,12 @@ set nocompatible
 
 call plug#begin('~/.vim/bundle')
 
-" Basic
+" General
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'dhruvasagar/vim-vinegar'
 Plug 'troydm/easybuffer.vim'
 Plug 'milkypostman/vim-togglelist'
@@ -46,14 +47,18 @@ Plug 'szw/vim-tags'
 Plug 'chriskempson/base16-vim'
 
 " Programming
+Plug 'tpope/vim-commentary'
 Plug 'w0rp/ale'
-Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
-Plug 'autozimu/LanguageClient-neovim', {
-  \ 'branch': 'next',
-  \ 'do': 'bash install.sh',
-  \ }
+Plug 'ncm2/ncm2'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-path'
 Plug 'jpalardy/vim-slime'
+
+" Python
+Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+Plug 'HansPinckaers/ncm2-jedi', { 'for': 'python' }
+Plug 'tweekmonster/impsort.vim', { 'for': 'python' }
 
 " Web dev
 Plug 'carlitux/deoplete-ternjs', { 'for': 'js' }

@@ -104,14 +104,23 @@ let g:ale_list_window_size = 5
 " ncm2
 autocmd BufEnter * call ncm2#enable_for_buffer()
 set completeopt=noinsert,menuone,noselect
-g:ncm2#popup_delay = 100
+let ncm2#popup_delay = 5
+let ncm2#complete_length = [[1, 1]]
+let g:ncm2#matcher = 'substrfuzzy'
 
-" LanguageClient
-let g:LanguageClient_serverCommands = {
-    \ 'python': ['/Users/felixlau/anaconda/bin/pyls']
-    \ }
-nnoremap <silent> <leader>d :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> <leader>r :call LanguageClient#textDocument_rename()<CR>
+" jedi-vim
+let g:jedi#auto_initialization = 1
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#smart_auto_mappings = 0
+let g:jedi#popup_on_dot = 0
+let g:jedi#completions_command = ""
+let g:jedi#show_call_signatures = "1"
+let g:jedi#goto_command = "<leader>d"
+let g:jedi#goto_assignments_command = "<leader>g"
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<leader>n"
+let g:jedi#rename_command = "<leader>r"
 
 " vim-julia
 let g:latex_to_unicode_suggestions = 0
