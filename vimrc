@@ -7,9 +7,6 @@ let mapleader = ","
 set nocompatible
 filetype off
 
-" Sorry Uganda
-set shortmess+=I
-
 if filereadable(expand("~/.vimrc.bundles"))
     source ~/.vimrc.bundles
 endif
@@ -46,9 +43,6 @@ let NERDTreeDirArrows = 1
 
 " vim-asterisk
 map *  <Plug>(asterisk-z*)
-map #  <Plug>(asterisk-z#)
-map g* <Plug>(asterisk-gz*)
-map g# <Plug>(asterisk-gz#)
 let g:asterisk#keeppos = 1
 
 " gitgutter
@@ -62,11 +56,6 @@ if has('nvim')
     let $SHELL='/bin/sh'
 endif
 
-imap <c-x><c-k> <plug>(fzf-complete-word)
-imap <c-x><c-f> <plug>(fzf-complete-path)
-imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-imap <c-x><c-l> <plug>(fzf-complete-line)
-
 nnoremap <silent> <c-p> :Files<CR>
 nnoremap <silent> <c-b> :Buffers<CR>
 nnoremap <silent> \ :Ag<space>
@@ -75,13 +64,12 @@ nnoremap <silent> <leader>. :Tags<CR>
 let g:fzf_layout = { 'down': '~20%' }
 let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
 
+nnoremap <silent> <Leader>a :Ag <C-R><C-W><CR>
+
 " easybuffer
 nmap <leader>b :EasyBufferToggle<cr>
 noremap <leader>p :bprevious<cr>
 noremap <leader>n :bnext<cr>
-
-" easymotion
-let g:sneak#streak = 1
 
 " Goyo
 nnoremap <silent> <leader>z :Goyo<cr>
@@ -91,15 +79,6 @@ let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_math=1
 let g:vim_markdown_frontmatter=1
 let g:markdown_fenced_languages = ['html', 'css', 'javascript', 'ruby', 'python', 'bash=sh', 'yaml', 'json']
-
-" airline
-let g:airline#extensions#tabline#enabled = 0
-let g:airline_detect_spell = 0
-let g:airline#extensions#tagbar#enabled = 1
-let g:airline#extensions#branch#enabled = 0
-let g:airline#extensions#syntastic#enabled = 1
-let g:airline_powerline_fonts = 0
-let g:airline_theme = 'base16'
 
 " tagbar
 nnoremap <leader>t :TagbarToggle<CR>
@@ -111,26 +90,37 @@ let g:vim_tags_directories = []
 let g:vim_tags_main_file = '.tags'
 let g:vim_tags_auto_generate = 1
 
-" neomake
-autocmd! BufWritePost * Neomake
-let g:neomake_python_enabled_makers = ['flake8', 'pylint']
-let g:neomake_python_flake8_maker = { 'args': ['--ignore=E501,E226'], }
+" ale
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = 'E!'
+let g:ale_sign_warning = 'w'
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_open_list = 1
+let g:ale_keep_list_window_open = 1
+let g:ale_list_window_size = 5
+
+" ncm2
+autocmd BufEnter * call ncm2#enable_for_buffer()
+set completeopt=noinsert,menuone,noselect
+let ncm2#popup_delay = 5
+let ncm2#complete_length = [[1, 1]]
+let g:ncm2#matcher = 'substrfuzzy'
 
 " jedi-vim
+let g:jedi#auto_initialization = 1
 let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
-let g:jedi#show_call_signatures = 1
+let g:jedi#smart_auto_mappings = 0
 let g:jedi#popup_on_dot = 0
-let g:jedi#popup_select_first = 0
-let g:jedi#use_tabs_not_buffers = 0
+let g:jedi#completions_command = ""
+let g:jedi#show_call_signatures = "1"
+let g:jedi#goto_command = "<leader>d"
+let g:jedi#goto_assignments_command = "<leader>g"
 let g:jedi#documentation_command = "K"
-let g:jedi#goto_assignments_command = "<leader>d"
 let g:jedi#usages_command = "<leader>n"
 let g:jedi#rename_command = "<leader>r"
-
-" deoplete.vim
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
 
 " vim-julia
 let g:latex_to_unicode_suggestions = 0
@@ -154,6 +144,14 @@ let g:slime_target = "tmux"
 let g:slime_python_ipython = 1
 let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.2"}
 let g:slime_paste_file = "$HOME/.slime_paste"
+
+" lightline
+let g:lightline = {}
+let g:lightline.colorscheme = 'wombat'
+set showtabline=2
+let g:lightline.tabline = {'left': [['buffers']], 'right': [['close']]}
+let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
+let g:lightline.component_type = {'buffers': 'tabsel'}
 
 " Misc ====================================================================
 
@@ -243,7 +241,11 @@ set ignorecase
 set smartcase
 set list
 set autowrite
+
+" Spellcheck
 set spell
+hi clear SpellBad
+hi SpellBad cterm=underline
 
 " Center search
 nmap n nzz
@@ -254,10 +256,10 @@ nmap { {zz
 " Insert new line with enter without going to insert mode
 nmap <leader><CR> :a<CR><CR>.<CR>
 
-" Always show 5 lines below / above the cursor
+" Always show 10 lines below / above the cursor
 set scrolloff=10
 
-" Replace all occurences by default
+" Replace all occurrences by default
 set gdefault
 
 " Use Q for formatting instead Ex
@@ -269,7 +271,7 @@ set grepprg=ag\ --nogroup\ --nocolor
 " Use sh for vim-tmux-navigator for fast switch out
 set shell=/bin/sh
 
-" Invisiable character
+" Invisible character
 set listchars=tab:»·,trail:·,nbsp:·
 
 if has('persistent_undo')
