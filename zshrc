@@ -44,10 +44,6 @@ if ! zgen saved; then
 
     # completions
     zgen load zsh-users/zsh-autosuggestions
-    # Prevent delay when pasting text
-    ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=50
-    ZSH_AUTOSUGGEST_USE_ASYNC=1
-
     zgen load zsh-users/zsh-completions src
 
     # Theme
@@ -62,6 +58,17 @@ set -o ignoreeof
 
 # gitignore.io
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
+
+pasteinit() {
+  OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
+  zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
+}
+
+pastefinish() {
+  zle -N self-insert $OLD_SELF_INSERT
+}
+zstyle :bracketed-paste-magic paste-init pasteinit
+zstyle :bracketed-paste-magic paste-finish pastefinish
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
