@@ -30,7 +30,7 @@ endif
 imap jk <Esc>
 
 " Copy to localhost:8378
-nnoremap <leader>Y :call system('nc 0.0.0.0 8378', @0)<CR>
+nnoremap <leader>Y :call system('nc -q 1 0.0.0.0 8378', @0)<CR>
 
 " Plugins =================================================================
 
@@ -100,6 +100,7 @@ let g:ale_lint_on_text_changed = 'never'
 let g:ale_open_list = 1
 let g:ale_keep_list_window_open = 1
 let g:ale_list_window_size = 5
+let g:ale_python_pylint_change_directory = 0
 
 " ncm2
 autocmd BufEnter * call ncm2#enable_for_buffer()

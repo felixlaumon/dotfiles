@@ -11,7 +11,7 @@ export LD_LIBRARY_PATH=$HOME/local/lib:$LD_LIBRARY_PATH
 export LD_RUN_PATH=$HOME/local/lib:$LD_RUN_PATH
 
 # Anaconda
-export PATH=$HOME/anaconda/bin:$PATH
+. $HOME/anaconda/etc/profile.d/conda.sh
 
 # CUDA
 export CUDA_HOME=/usr/local/cuda
