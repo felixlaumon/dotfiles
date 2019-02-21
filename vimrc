@@ -97,8 +97,8 @@ let g:ale_sign_warning = 'w'
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_lint_on_text_changed = 'never'
-let g:ale_open_list = 1
-let g:ale_keep_list_window_open = 1
+let g:ale_open_list = 0
+let g:ale_keep_list_window_open = 0
 let g:ale_list_window_size = 5
 let g:ale_python_pylint_change_directory = 0
 
@@ -108,6 +108,11 @@ set completeopt=noinsert,menuone,noselect
 let ncm2#popup_delay = 5
 let ncm2#complete_length = [[1, 1]]
 let g:ncm2#matcher = 'substrfuzzy'
+set shortmess+=c
+inoremap <c-c> <ESC>
+inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " jedi-vim
 let g:jedi#auto_initialization = 1
