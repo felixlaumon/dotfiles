@@ -1,0 +1,2 @@
+#!/bin/sh
+while (true); do nc -l localhost 8378 | xclip -selection clipboard; done
