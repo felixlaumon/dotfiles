@@ -13,9 +13,10 @@ floating_modifier $super
 
 # autostart
 exec --no-startup-id feh --bg-fill ~/.wallpaper.jpg
-exec --no-startup-id xsettingsd &
+exec --no-startup-id xsettingsd
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
+exec --no-startup-id /home/felixlau/.bin/clipper
 # exec --no-startup-id compton -b
 
 # start a terminal
@@ -159,5 +160,6 @@ client.background       #2f343f
 
 # i3-gaps
 smart_borders on
+smart_gaps on
 gaps inner 10
 gaps outer 5
