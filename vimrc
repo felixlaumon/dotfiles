@@ -146,10 +146,12 @@ nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 
 " vim-slime
-let g:slime_target = "tmux"
-let g:slime_python_ipython = 1
-let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.2"}
-let g:slime_paste_file = "$HOME/.slime_paste"
+if !empty($TMUX)
+    let g:slime_target = "tmux"
+    let g:slime_python_ipython = 1
+    let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.2"}
+    let g:slime_paste_file = "$HOME/.slime_paste"
+endif
 
 " lightline
 let g:lightline = {}
