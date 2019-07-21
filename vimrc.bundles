@@ -23,6 +23,7 @@ Plug 'tyru/caw.vim'
 Plug 'Shougo/context_filetype.vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'wellle/targets.vim'
+Plug 'djoshea/vim-autoread'
 
 " Git
 Plug 'tpope/vim-fugitive'

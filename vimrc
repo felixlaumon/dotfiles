@@ -101,6 +101,7 @@ let g:ale_open_list = 0
 let g:ale_keep_list_window_open = 0
 let g:ale_list_window_size = 5
 let g:ale_python_pylint_change_directory = 0
+let g:ale_python_flake8_change_directory = 0
 
 " ncm2
 autocmd BufEnter * call ncm2#enable_for_buffer()
