@@ -49,11 +49,11 @@ chunkc set custom_bar_offset_left        0
 chunkc set custom_bar_offset_right       0
 
 chunkc set global_desktop_mode           bsp
-chunkc set global_desktop_offset_top     10
-chunkc set global_desktop_offset_bottom  10
-chunkc set global_desktop_offset_left    10
-chunkc set global_desktop_offset_right   10
-chunkc set global_desktop_offset_gap     15
+chunkc set global_desktop_offset_top     20
+chunkc set global_desktop_offset_bottom  20
+chunkc set global_desktop_offset_left    20
+chunkc set global_desktop_offset_right   20
+chunkc set global_desktop_offset_gap     20
 
 chunkc set desktop_padding_step_size     10.0
 chunkc set desktop_gap_step_size         5.0
@@ -80,7 +80,7 @@ chunkc set preselect_border_outline      0
 #       (https://github.com/koekeishiya/chwm-sa)
 #
 
-chunkc set window_float_topmost          0
+chunkc set window_float_topmost          1
 chunkc set window_fade_inactive          0
 chunkc set window_fade_alpha             0.85
 chunkc set window_fade_duration          0.25
@@ -96,7 +96,7 @@ chunkc set window_use_cgs_move           0
 
 chunkc set focused_border_color          0xff0f6288
 chunkc set focused_border_width          2
-chunkc set focused_border_radius         0
+chunkc set focused_border_radius         4
 chunkc set focused_border_outline        0
 chunkc set focused_border_skip_floating  0
 chunkc set focused_border_skip_monocle   0
@@ -125,12 +125,15 @@ chunkc tiling::rule --owner Finder --name Move --state float &
 chunkc tiling::rule --owner Finder --name Info --state float &
 chunkc tiling::rule --owner Finder --name Connect --state float &
 
-chunkc tiling::rule --owner \"Google Chrome\" --name \"Picture in Picture\" --state float &
+chunkc tiling::rule --owner \"Google Chrome\" --name \"Picture in Picture\" --state sticky &
 chunkc tiling::rule --owner Messages --state float &
 chunkc tiling::rule --owner iTunes --state float &
+chunkc tiling::rule --owner Music --state float &
 chunkc tiling::rule --owner \"Pocket Casts\" --state float &
 chunkc tiling::rule --owner FaceTime --state float &
+chunkc tiling::rule --owner Timer --state float &
 chunkc tiling::rule --owner \"App Store\" --state float &
 chunkc tiling::rule --owner \"Activity Monitor\" --state float &
 chunkc tiling::rule --owner \"Dictionary\" --state float &
+chunkc tiling::rule --owner \"Home\" --state float &
 chunkc tiling::rule --owner \"The Unarchiver\" --state float &
