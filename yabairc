@@ -33,10 +33,27 @@ yabai -m config mouse_action2                resize
 
 # general space settings
 yabai -m config layout                       bsp
-yabai -m config top_padding                  10
-yabai -m config bottom_padding               10
-yabai -m config left_padding                 10
-yabai -m config right_padding                10
+yabai -m config top_padding                  5
+yabai -m config bottom_padding               5
+yabai -m config left_padding                 5
+yabai -m config right_padding                5
 yabai -m config window_gap                   5
+
+# per-application rule
+yabai -m rule --add app="Finder" title=".*Copy.*" manage=off
+yabai -m rule --add app="Finder" title=".*Move.*" manage=off
+yabai -m rule --add app="Finder" title=".*Info.*" manage=off
+yabai -m rule --add app="Finder" title=".*Connect.*" manage=off
+
+yabai -m rule --add app="Messages" manage=off
+yabai -m rule --add app="iTunes" manage=off
+yabai -m rule --add app="Music" manage=off
+yabai -m rule --add app="Pocket Casts" manage=off
+yabai -m rule --add app="FaceTime" manage=off
+yabai -m rule --add app="App Store" manage=off
+yabai -m rule --add app="Activity Monitor" manage=off
+yabai -m rule --add app="Dictionary" manage=off
+yabai -m rule --add app="Home" manage=off
+yabai -m rule --add app="The Unarchiver" manage=off
 
 echo "yabai configuration loaded.."
