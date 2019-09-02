@@ -30,7 +30,7 @@ endif
 imap jk <Esc>
 
 " Copy to localhost:8378
-nnoremap <leader>Y :call system('nc -q 1 0.0.0.0 8378', @0)<CR>
+nnoremap <leader>Y :call system('nc 0.0.0.0 8378', @0)<CR>
 
 " Plugins =================================================================
 
@@ -90,44 +90,28 @@ let g:vim_tags_directories = []
 let g:vim_tags_main_file = '.tags'
 let g:vim_tags_auto_generate = 1
 
-" ale
-let g:ale_sign_column_always = 1
-let g:ale_sign_error = 'E!'
-let g:ale_sign_warning = 'w'
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_open_list = 0
-let g:ale_keep_list_window_open = 0
-let g:ale_list_window_size = 5
-let g:ale_python_pylint_change_directory = 0
-let g:ale_python_flake8_change_directory = 0
+" vim-lsp
+let g:lsp_signs_error = {'text': '✗'}
+let g:lsp_virtual_text_enabled = 0
+let g:lsp_highlight_references_enabled = 0
+nmap <leader>d :LspDefinition<cr>
+nmap <leader>r :LspRename<cr>
+nmap K :LspHover<cr>
+if executable('pyls')
+    " pip install python-language-server
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'whitelist': ['python'],
+        \ })
+endif
 
-" ncm2
-autocmd BufEnter * call ncm2#enable_for_buffer()
-set completeopt=noinsert,menuone,noselect
-let ncm2#popup_delay = 5
-let ncm2#complete_length = [[1, 1]]
-let g:ncm2#matcher = 'substrfuzzy'
-set shortmess+=c
-inoremap <c-c> <ESC>
-inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" asyncomplete.vim
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" jedi-vim
-let g:jedi#auto_initialization = 1
-let g:jedi#completions_enabled = 0
-let g:jedi#auto_vim_configuration = 0
-let g:jedi#smart_auto_mappings = 0
-let g:jedi#popup_on_dot = 0
-let g:jedi#completions_command = ""
-let g:jedi#show_call_signatures = "1"
-let g:jedi#goto_command = "<leader>d"
-let g:jedi#goto_assignments_command = "<leader>g"
-let g:jedi#documentation_command = "K"
-let g:jedi#usages_command = "<leader>n"
-let g:jedi#rename_command = "<leader>r"
+inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
+set completeopt+=preview
+autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " vim-julia
 let g:latex_to_unicode_suggestions = 0

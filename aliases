@@ -43,5 +43,9 @@ function run_nb() {
     jupyter nbconvert --to python $1 --stdout | python
 }
 
+function j() {
+    cd ~/devel/$1 && conda activate $1
+}
+
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local

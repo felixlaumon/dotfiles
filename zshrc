@@ -74,3 +74,5 @@ zstyle :bracketed-paste-magic paste-finish pastefinish
 [[ -f ~/.aliases ]] && source ~/.aliases
 
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
