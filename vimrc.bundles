@@ -15,13 +15,13 @@ Plug 'milkypostman/vim-togglelist'
 Plug 'tpope/vim-surround'
 Plug 'wellle/targets.vim'
 Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'bronson/vim-visual-star-search'
 Plug 'tpope/vim-repeat'
 Plug 'haya14busa/vim-asterisk'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tyru/caw.vim'
 Plug 'Shougo/context_filetype.vim'
-Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/is.vim'
+Plug 'haya14busa/vim-asterisk'
 Plug 'wellle/targets.vim'
 Plug 'djoshea/vim-autoread'
 
@@ -59,6 +59,7 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 " Python
 Plug 'tweekmonster/impsort.vim', { 'for': 'python' }
+Plug 'psf/black', { 'for': 'python' }
 
 " Web dev
 Plug 'groenewege/vim-less', { 'for': 'less' }

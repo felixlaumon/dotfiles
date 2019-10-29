@@ -68,8 +68,8 @@ nnoremap <silent> <Leader>a :Ag <C-R><C-W><CR>
 
 " easybuffer
 nmap <leader>b :EasyBufferToggle<cr>
-noremap <leader>p :bprevious<cr>
-noremap <leader>n :bnext<cr>
+noremap <leader>[ :bprevious<cr>
+noremap <leader>] :bnext<cr>
 
 " Goyo
 nnoremap <silent> <leader>z :Goyo<cr>
@@ -93,7 +93,8 @@ let g:vim_tags_auto_generate = 1
 " vim-lsp
 let g:lsp_signs_error = {'text': '✗'}
 let g:lsp_virtual_text_enabled = 0
-let g:lsp_highlight_references_enabled = 0
+let g:lsp_highlight_references_enabled = 1
+let g:lsp_preview_float = 1
 nmap <leader>d :LspDefinition<cr>
 nmap <leader>r :LspRename<cr>
 nmap K :LspHover<cr>
@@ -103,6 +104,13 @@ if executable('pyls')
         \ 'name': 'pyls',
         \ 'cmd': {server_info->['pyls']},
         \ 'whitelist': ['python'],
+        \ })
+endif
+if executable('docker-langserver')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'docker-langserver',
+        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'docker-langserver --stdio']},
+        \ 'whitelist': ['dockerfile'],
         \ })
 endif
 
@@ -124,7 +132,6 @@ nmap <silent> dsf ds)db
 " vim-tmux-navigator
 let g:tmux_navigator_no_mappings = 1
 " Use <BS> so it works on neovim
-nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
