@@ -42,8 +42,9 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
 " vim-asterisk
-map *  <Plug>(asterisk-z*)
 let g:asterisk#keeppos = 1
+map *   <Plug>(asterisk-*)<Plug>(is-nohl-1)
+map #   <Plug>(asterisk-#)<Plug>(is-nohl-1)
 
 " gitgutter
 let g:gitgutter_realtime = 0
@@ -91,9 +92,10 @@ let g:vim_tags_main_file = '.tags'
 let g:vim_tags_auto_generate = 1
 
 " vim-lsp
-let g:lsp_signs_error = {'text': '✗'}
+imap <c-space> <Plug>(asyncomplete_force_refresh)
+let g:lsp_diagnostics_enabled = 0  " use ale instead
+let g:lsp_highlight_references_enabled = 0
 let g:lsp_virtual_text_enabled = 0
-let g:lsp_highlight_references_enabled = 1
 let g:lsp_preview_float = 1
 nmap <leader>d :LspDefinition<cr>
 nmap <leader>r :LspRename<cr>
