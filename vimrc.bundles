@@ -24,6 +24,7 @@ Plug 'haya14busa/is.vim'
 Plug 'haya14busa/vim-asterisk'
 Plug 'wellle/targets.vim'
 Plug 'djoshea/vim-autoread'
+Plug 'mhinz/vim-startify'
 
 " Git
 Plug 'tpope/vim-fugitive'

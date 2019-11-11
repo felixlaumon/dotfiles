@@ -11,7 +11,7 @@ unset MAILCHECK
 
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
-base16_irblack
+base16_default-dark
 
 # handy keybindings
 bindkey "^A" beginning-of-line
@@ -76,3 +76,18 @@ zstyle :bracketed-paste-magic paste-finish pastefinish
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/felixlau/anaconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/felixlau/anaconda/etc/profile.d/conda.sh" ]; then
+        . "/Users/felixlau/anaconda/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/felixlau/anaconda/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<

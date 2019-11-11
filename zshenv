@@ -11,10 +11,6 @@ export PATH=$HOME/local/bin:$PATH
 export LD_LIBRARY_PATH=$HOME/local/lib:$LD_LIBRARY_PATH
 export LD_RUN_PATH=$HOME/local/lib:$LD_RUN_PATH
 
-# Anaconda
-. $HOME/anaconda/etc/profile.d/conda.sh
-conda activate base
-
 # CUDA
 export CUDA_HOME=/usr/local/cuda
 export PATH=$PATH:/usr/local/cuda/bin
