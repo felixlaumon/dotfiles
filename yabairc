@@ -56,6 +56,8 @@ yabai -m rule --add app="Home" manage=off
 yabai -m rule --add app="The Unarchiver" manage=off
 yabai -m rule --add app="Slack" manage=off
 
+yabai -m rule --add app="NVIDIA GeForce NOW" manage=off
+
 yabai -m rule --add app="App Store" manage=off
 yabai -m rule --add app="Activity Monitor" manage=off
 yabai -m rule --add app="System Preferences" manage=off

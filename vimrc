@@ -30,7 +30,7 @@ endif
 imap jk <Esc>
 
 " Copy to localhost:8378
-nnoremap <leader>Y :call system('nc 0.0.0.0 8378', @0)<CR>
+nnoremap <leader>Y :call system('nc -w 1 0.0.0.0 8378', @0)<CR>
 
 " Plugins =================================================================
 
