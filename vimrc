@@ -71,6 +71,7 @@ nnoremap <silent> <Leader>a :Ag <C-R><C-W><CR>
 nmap <leader>b :EasyBufferToggle<cr>
 noremap <leader>[ :bprevious<cr>
 noremap <leader>] :bnext<cr>
+noremap <leader>w :bdelete<cr>
 
 " Goyo
 nnoremap <silent> <leader>z :Goyo<cr>
@@ -252,6 +253,8 @@ set autowrite
 " Spellcheck
 set spell
 hi clear SpellBad
+hi clear SpellCap
+hi clear SpellRare
 hi SpellBad cterm=underline
 
 " Center search
