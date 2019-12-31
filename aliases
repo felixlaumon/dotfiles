@@ -38,9 +38,20 @@ alias xvfb="xvfb-run -f ~/.Xauthority -a -s '-screen 0 1400x900x24'"
 # kubectl
 alias k=kubectl
 
+# pip install toolchain
+
 # Utility methods
 function run_nb() {
-    jupyter nbconvert --to python $1 --stdout | python
+    file=$(mktemp)
+    jupyter nbconvert --to python $1 --output $file && ipython $file.py
+    rm $file
+}
+
+function pip_install_toolchain() {
+    pip install \
+        neovim flake8 pylint black \
+        ipython jupyter notebook jupyter_contrib_nbextensions \
+        numpy pandas matplotlib seaborn scikit-learn scikit-image
 }
 
 function j() {
