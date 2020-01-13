@@ -86,6 +86,9 @@ let g:markdown_fenced_languages = ['html', 'css', 'javascript', 'ruby', 'python'
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
+" js
+autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
+
 " tagbar
 nnoremap <leader>t :TagbarToggle<CR>
 

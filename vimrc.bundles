@@ -63,6 +63,9 @@ Plug 'dense-analysis/ale'
 Plug 'tweekmonster/impsort.vim', { 'for': 'python' }
 Plug 'psf/black', { 'for': 'python' }
 
+" JavaScript
+Plug 'ryanolsonx/vim-lsp-javascript', { 'for': 'javascript' }
+
 " Web dev
 Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'wavded/vim-stylus', { 'for': 'stylus' }
