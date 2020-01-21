@@ -24,7 +24,6 @@ Plug 'haya14busa/is.vim'
 Plug 'haya14busa/vim-asterisk'
 Plug 'wellle/targets.vim'
 Plug 'djoshea/vim-autoread'
-Plug 'mhinz/vim-startify'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -64,7 +63,7 @@ Plug 'tweekmonster/impsort.vim', { 'for': 'python' }
 Plug 'psf/black', { 'for': 'python' }
 
 " JavaScript
-Plug 'ryanolsonx/vim-lsp-javascript', { 'for': 'javascript' }
+Plug 'ryanolsonx/vim-lsp-javascript'
 
 " Web dev
 Plug 'groenewege/vim-less', { 'for': 'less' }

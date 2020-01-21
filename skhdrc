@@ -41,14 +41,14 @@ shift + cmd - 9 : yabai -m window --space  9; yabai -m space --focus 9
 shift + cmd - 0 : yabai -m window --space 10; yabai -m space --focus 10
 
 # focus monitor
-ctrl + alt - 1  : yabai -m display --focus 1
-ctrl + alt - 2  : yabai -m display --focus 2
-ctrl + alt - 3  : yabai -m display --focus 3
+alt - 1  : yabai -m display --focus 1
+alt - 2  : yabai -m display --focus 2
+alt - 3  : yabai -m display --focus 3
 
 # send window to monitor and follow focus
-ctrl + cmd - 1  : yabai -m window --display 1; yabai -m display --focus 1
-ctrl + cmd - 2  : yabai -m window --display 2; yabai -m display --focus 2
-ctrl + cmd - 3  : yabai -m window --display 3; yabai -m display --focus 3
+alt + shift - 1  : yabai -m window --display 1; yabai -m display --focus 1
+alt + shift - 2  : yabai -m window --display 2; yabai -m display --focus 2
+alt + shift - 3  : yabai -m window --display 3; yabai -m display --focus 3
 
 # move window
 shift + ctrl - a : yabai -m window --move rel:-20:0
