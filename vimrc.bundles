@@ -24,6 +24,7 @@ Plug 'haya14busa/is.vim'
 Plug 'haya14busa/vim-asterisk'
 Plug 'wellle/targets.vim'
 Plug 'djoshea/vim-autoread'
+Plug 'ruanyl/vim-gh-line'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -71,6 +72,7 @@ Plug 'wavded/vim-stylus', { 'for': 'stylus' }
 Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 Plug 'alvan/vim-closetag', { 'for': 'html' }
 Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
+Plug 'ryanolsonx/vim-lsp-typescript'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
     source ~/.vimrc.bundles.local

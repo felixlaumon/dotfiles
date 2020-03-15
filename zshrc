@@ -6,9 +6,6 @@ SAVEHIST=4096
 
 export TERM="xterm-256color"
 
-# I hate emails
-unset MAILCHECK
-
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 base16_default-dark
@@ -17,10 +14,6 @@ base16_default-dark
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
 bindkey "^R" history-incremental-search-backward
-bindkey "^P" history-search-backward
-
-bindkey "[D" backward-word
-bindkey "[C" forward-word
 
 # z
  . ~/tools/z/z.sh
@@ -59,13 +52,14 @@ set -o ignoreeof
 # gitignore.io
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
+# Speed up pasting with auto-suggest
+# https://github.com/zsh-users/zsh-autosuggestions/issues/238#issuecomment-389324292
 pasteinit() {
-  OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
-  zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
+    OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
+    zle -N self-insert url-quote-magic
 }
-
 pastefinish() {
-  zle -N self-insert $OLD_SELF_INSERT
+    zle -N self-insert $OLD_SELF_INSERT
 }
 zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
