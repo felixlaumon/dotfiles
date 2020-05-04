@@ -618,3 +618,6 @@ c.InteractiveShellApp.exec_lines.append('%autoreload 2')
 ## If True, any %store-d variables will be automatically restored when IPython
 #  starts.
 #c.StoreMagics.autorestore = False
+
+
+c.InlineBackend.figure_format = 'retina'
