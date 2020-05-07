@@ -100,36 +100,36 @@ let g:vim_tags_main_file = '.tags'
 let g:vim_tags_auto_generate = 1
 
 " vim-lsp
-imap <c-space> <Plug>(asyncomplete_force_refresh)
-let g:lsp_diagnostics_enabled = 0  " use ale instead
-let g:lsp_highlight_references_enabled = 0
-let g:lsp_virtual_text_enabled = 0
-let g:lsp_preview_float = 1
-nmap <leader>d :LspDefinition<cr>
-nmap <leader>r :LspRename<cr>
-nmap K :LspHover<cr>
-if executable('pyls')
-    " pip install python-language-server
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'pyls',
-        \ 'cmd': {server_info->['pyls']},
-        \ 'whitelist': ['python'],
-        \ })
-endif
-if executable('docker-langserver')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'docker-langserver',
-        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'docker-langserver --stdio']},
-        \ 'whitelist': ['dockerfile'],
-        \ })
-endif
+" imap <c-space> <Plug>(asyncomplete_force_refresh)
+" let g:lsp_diagnostics_enabled = 0  " use ale instead
+" let g:lsp_highlight_references_enabled = 0
+" let g:lsp_virtual_text_enabled = 0
+" let g:lsp_preview_float = 1
+" nmap <leader>d :LspDefinition<cr>
+" nmap <leader>r :LspRename<cr>
+" nmap K :LspHover<cr>
+" if executable('pyls')
+"     " pip install python-language-server
+"     au User lsp_setup call lsp#register_server({
+"         \ 'name': 'pyls',
+"         \ 'cmd': {server_info->['pyls']},
+"         \ 'whitelist': ['python'],
+"         \ })
+" endif
+" if executable('docker-langserver')
+"     au User lsp_setup call lsp#register_server({
+"         \ 'name': 'docker-langserver',
+"         \ 'cmd': {server_info->[&shell, &shellcmdflag, 'docker-langserver --stdio']},
+"         \ 'whitelist': ['dockerfile'],
+"         \ })
+" endif
 
 " asyncomplete.vim
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
-set completeopt+=preview
-autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+" inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
+" set completeopt+=preview
+" autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " vim-julia
 let g:latex_to_unicode_suggestions = 0

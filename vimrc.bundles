@@ -53,18 +53,20 @@ Plug 'tpope/vim-commentary'
 Plug 'jpalardy/vim-slime'
 
 " Language server
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
+" Plug 'prabirshrestha/asyncomplete.vim'
+" Plug 'prabirshrestha/async.vim'
+" Plug 'prabirshrestha/vim-lsp'
+" Plug 'prabirshrestha/asyncomplete-lsp.vim'
+" Plug 'ryanolsonx/vim-lsp-typescript', { 'for': 'typescript' }
+" Plug 'ryanolsonx/vim-lsp-javascript', { 'for': 'javascript' }
 Plug 'dense-analysis/ale'
+
+" TabNine
+Plug 'zxqfl/tabnine-vim'
 
 " Python
 Plug 'tweekmonster/impsort.vim', { 'for': 'python' }
 Plug 'psf/black', { 'for': 'python' }
-
-" JavaScript
-Plug 'ryanolsonx/vim-lsp-javascript', { 'for': 'javascript' }
 
 " Web dev
 Plug 'groenewege/vim-less', { 'for': 'less' }
@@ -72,7 +74,6 @@ Plug 'wavded/vim-stylus', { 'for': 'stylus' }
 Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 Plug 'alvan/vim-closetag', { 'for': 'html' }
 Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
-Plug 'ryanolsonx/vim-lsp-typescript'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
     source ~/.vimrc.bundles.local
