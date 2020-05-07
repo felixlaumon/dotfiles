@@ -1,5 +1,4 @@
 " For neovim
-let g:python_host_prog = '/home/felixlau/anaconda/bin/python'
 runtime! plugin/python_setup.vim
 
 let mapleader = ","
@@ -43,8 +42,8 @@ let NERDTreeDirArrows = 1
 
 " vim-asterisk
 let g:asterisk#keeppos = 1
-map *   <Plug>(asterisk-*)<Plug>(is-nohl-1)
-map #   <Plug>(asterisk-#)<Plug>(is-nohl-1)
+map *  <Plug>(asterisk-z*)<Plug>(is-nohl-1)
+map #  <Plug>(asterisk-z#)<Plug>(is-nohl-1)
 
 " gitgutter
 let g:gitgutter_realtime = 0
@@ -88,6 +87,7 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " js
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType typescript setlocal ts=2 sts=2 sw=2 expandtab
 
 " tagbar
 nnoremap <leader>t :TagbarToggle<CR>
@@ -130,11 +130,6 @@ let g:vim_tags_auto_generate = 1
 " inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
 " set completeopt+=preview
 " autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
-
-" vim-julia
-let g:latex_to_unicode_suggestions = 0
-let g:latex_to_unicode_eager = 0
-let g:latex_to_unicode_auto = 0
 
 " surround.vim
 nmap <silent> dsf ds)db
