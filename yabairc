@@ -36,6 +36,8 @@ yabai -m rule --add app="kitty" manage=on
 yabai -m rule --add app="Notion" manage=on
 yabai -m rule --add app="Todoist" manage=on
 yabai -m rule --add app="GoodNotes 5" manage=on
+yabai -m rule --add app="Slack" layer=above
+yabai -m rule --add app="zoom.us" layer=above
 
 yabai -m rule --add title="^$" manage=off
 

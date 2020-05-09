@@ -81,6 +81,14 @@ let g:vim_markdown_math=1
 let g:vim_markdown_frontmatter=1
 let g:markdown_fenced_languages = ['html', 'css', 'javascript', 'ruby', 'python', 'bash=sh', 'yaml', 'json']
 
+" vim-pydocstring
+let g:pydocstring_formatter = 'numpy'
+let g:pydocstring_enable_mapping = 0
+nmap <silent> <leader>s <Plug>(pydocstring)
+
+" vim-black
+nmap <leader>k :Black<CR>
+
 " yaml
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
@@ -100,36 +108,13 @@ let g:vim_tags_main_file = '.tags'
 let g:vim_tags_auto_generate = 1
 
 " vim-lsp
-" imap <c-space> <Plug>(asyncomplete_force_refresh)
-" let g:lsp_diagnostics_enabled = 0  " use ale instead
-" let g:lsp_highlight_references_enabled = 0
-" let g:lsp_virtual_text_enabled = 0
-" let g:lsp_preview_float = 1
-" nmap <leader>d :LspDefinition<cr>
-" nmap <leader>r :LspRename<cr>
-" nmap K :LspHover<cr>
-" if executable('pyls')
-"     " pip install python-language-server
-"     au User lsp_setup call lsp#register_server({
-"         \ 'name': 'pyls',
-"         \ 'cmd': {server_info->['pyls']},
-"         \ 'whitelist': ['python'],
-"         \ })
-" endif
-" if executable('docker-langserver')
-"     au User lsp_setup call lsp#register_server({
-"         \ 'name': 'docker-langserver',
-"         \ 'cmd': {server_info->[&shell, &shellcmdflag, 'docker-langserver --stdio']},
-"         \ 'whitelist': ['dockerfile'],
-"         \ })
-" endif
-
-" asyncomplete.vim
-" inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-" inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
-" set completeopt+=preview
-" autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+let g:lsp_diagnostics_enabled = 0  " use ale instead
+let g:lsp_highlight_references_enabled = 1
+let g:lsp_virtual_text_enabled = 0
+let g:lsp_preview_float = 1
+nmap <leader>d :LspDefinition<cr>
+nmap <leader>r :LspRename<cr>
+nmap K :LspHover<cr>
 
 " surround.vim
 nmap <silent> dsf ds)db

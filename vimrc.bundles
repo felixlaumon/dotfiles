@@ -48,12 +48,9 @@ Plug 'szw/vim-tags'
 Plug 'chriskempson/base16-vim'
 
 " Language server
-" Plug 'prabirshrestha/asyncomplete.vim'
-" Plug 'prabirshrestha/async.vim'
-" Plug 'prabirshrestha/vim-lsp'
-" Plug 'prabirshrestha/asyncomplete-lsp.vim'
-" Plug 'ryanolsonx/vim-lsp-typescript', { 'for': 'typescript' }
-" Plug 'ryanolsonx/vim-lsp-javascript', { 'for': 'javascript' }
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
 Plug 'dense-analysis/ale'
 
 " TabNine
@@ -62,11 +59,14 @@ Plug 'zxqfl/tabnine-vim'
 " Python
 Plug 'psf/black', { 'for': 'python' }
 Plug 'tweekmonster/impsort.vim', { 'for': 'python' }
+Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 
 " Programming
 Plug 'jpalardy/vim-slime'
 Plug 'tarekbecker/vim-yaml-formatter', { 'for': 'yaml' }
 Plug 'tpope/vim-commentary'
+Plug 'tyru/open-browser.vim'
+Plug 'tyru/open-browser-github.vim'
 
 " Web dev
 Plug 'alvan/vim-closetag', { 'for': 'html' }
