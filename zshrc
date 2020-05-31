@@ -71,6 +71,8 @@ zstyle :bracketed-paste-magic paste-finish pastefinish
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+unset CONDA_SHLVL
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$($HOME/anaconda/bin/conda shell.zsh hook 2> /dev/null)"
