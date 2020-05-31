@@ -302,6 +302,7 @@ endfunction
 let g:lightline = {}
 let g:lightline.colorscheme = 'wombat'
 set showtabline=2
+let g:lightline.tabline = {'left': [['buffers']]}
 let g:lightline.active = {'left': [['mode', 'paste'], ['cocstatus', 'currentfunction', 'readonly', 'filename', 'modified']]}
 let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
 let g:lightline.component_type = {'buffers': 'tabsel'}
