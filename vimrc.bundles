@@ -21,7 +21,6 @@ Plug 'tpope/vim-surround'
 Plug 'troydm/easybuffer.vim'
 Plug 'tyru/caw.vim'
 Plug 'wellle/targets.vim'
-Plug 'wellle/targets.vim'
 
 " Git
 Plug 'airblade/vim-gitgutter'
@@ -45,17 +44,20 @@ Plug 'szw/vim-tags'
 " Color
 Plug 'chriskempson/base16-vim'
 
-" " Language server
-" Plug 'prabirshrestha/async.vim'
-" Plug 'prabirshrestha/vim-lsp'
-" Plug 'mattn/vim-lsp-settings'
-" Plug 'dense-analysis/ale'
+let use_lsp = 0
+if use_lsp
+    " Language server
+    Plug 'prabirshrestha/async.vim'
+    Plug 'prabirshrestha/vim-lsp'
+    Plug 'mattn/vim-lsp-settings'
+    Plug 'dense-analysis/ale'
 
-" " TabNine
-" Plug 'zxqfl/tabnine-vim'
-
-" coc
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    TabNine
+    Plug 'zxqfl/tabnine-vim'
+else
+    " coc
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+endif
 
 " Python
 Plug 'psf/black', { 'for': 'python', 'branch': 'stable' }
@@ -69,7 +71,6 @@ Plug 'tarekbecker/vim-yaml-formatter', { 'for': 'yaml' }
 Plug 'preservim/nerdcommenter'
 Plug 'tyru/open-browser.vim'
 Plug 'tyru/open-browser-github.vim'
-Plug 'sheerun/vim-polyglot'
 
 " Web dev
 Plug 'alvan/vim-closetag', { 'for': 'html' }
@@ -83,3 +84,8 @@ if filereadable(expand("~/.vimrc.bundles.local"))
 endif
 
 call plug#end()
+
+autocmd VimEnter *
+  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \|   PlugInstall --sync | q
+  \| endif
