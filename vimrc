@@ -353,6 +353,9 @@ augroup vimrcEx
 
     " Allow stylesheets to autocomplete hyphenated words
     autocmd FileType css,scss,sass setlocal iskeyword+=-
+
+    " Support // as comment in JSON
+    autocmd FileType json syntax match Comment +\/\/.\+$+
 augroup END
 
 " Split
