@@ -57,7 +57,7 @@ Plug 'dense-analysis/ale'
 Plug 'zxqfl/tabnine-vim'
 
 " Python
-Plug 'psf/black', { 'for': 'python' }
+Plug 'psf/black', { 'for': 'python', 'branch': 'stable' }
 Plug 'tweekmonster/impsort.vim', { 'for': 'python' }
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 
