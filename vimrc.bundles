@@ -16,8 +16,6 @@ Plug 'milkypostman/vim-togglelist'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ruanyl/vim-gh-line'
 Plug 'scrooloose/nerdtree'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'troydm/easybuffer.vim'
@@ -47,26 +45,31 @@ Plug 'szw/vim-tags'
 " Color
 Plug 'chriskempson/base16-vim'
 
-" Language server
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-Plug 'dense-analysis/ale'
+" " Language server
+" Plug 'prabirshrestha/async.vim'
+" Plug 'prabirshrestha/vim-lsp'
+" Plug 'mattn/vim-lsp-settings'
+" Plug 'dense-analysis/ale'
 
-" TabNine
-Plug 'zxqfl/tabnine-vim'
+" " TabNine
+" Plug 'zxqfl/tabnine-vim'
+
+" coc
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Python
 Plug 'psf/black', { 'for': 'python', 'branch': 'stable' }
 Plug 'tweekmonster/impsort.vim', { 'for': 'python' }
-Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
+Plug 'heavenshell/vim-pydocstring'
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 
 " Programming
 Plug 'jpalardy/vim-slime'
 Plug 'tarekbecker/vim-yaml-formatter', { 'for': 'yaml' }
-Plug 'tpope/vim-commentary'
+Plug 'preservim/nerdcommenter'
 Plug 'tyru/open-browser.vim'
 Plug 'tyru/open-browser-github.vim'
+Plug 'sheerun/vim-polyglot'
 
 " Web dev
 Plug 'alvan/vim-closetag', { 'for': 'html' }
