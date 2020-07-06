@@ -55,6 +55,7 @@ function pip_install_toolchain() {
 }
 
 function j() {
+    export PYTHONPATH=~/devel/$1
     cd ~/devel/$1 && conda activate $1
 }
 

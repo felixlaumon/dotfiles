@@ -16,13 +16,10 @@ Plug 'milkypostman/vim-togglelist'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ruanyl/vim-gh-line'
 Plug 'scrooloose/nerdtree'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'troydm/easybuffer.vim'
 Plug 'tyru/caw.vim'
-Plug 'wellle/targets.vim'
 Plug 'wellle/targets.vim'
 
 " Git
@@ -47,24 +44,31 @@ Plug 'szw/vim-tags'
 " Color
 Plug 'chriskempson/base16-vim'
 
-" Language server
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-Plug 'dense-analysis/ale'
+let use_lsp = 0
+if use_lsp
+    " Language server
+    Plug 'prabirshrestha/async.vim'
+    Plug 'prabirshrestha/vim-lsp'
+    Plug 'mattn/vim-lsp-settings'
+    Plug 'dense-analysis/ale'
 
-" TabNine
-Plug 'zxqfl/tabnine-vim'
+    TabNine
+    Plug 'zxqfl/tabnine-vim'
+else
+    " coc
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+endif
 
 " Python
-Plug 'psf/black', { 'for': 'python' }
+Plug 'psf/black', { 'for': 'python', 'branch': 'stable' }
 Plug 'tweekmonster/impsort.vim', { 'for': 'python' }
-Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
+Plug 'heavenshell/vim-pydocstring'
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 
 " Programming
 Plug 'jpalardy/vim-slime'
 Plug 'tarekbecker/vim-yaml-formatter', { 'for': 'yaml' }
-Plug 'tpope/vim-commentary'
+Plug 'preservim/nerdcommenter'
 Plug 'tyru/open-browser.vim'
 Plug 'tyru/open-browser-github.vim'
 
@@ -80,3 +84,8 @@ if filereadable(expand("~/.vimrc.bundles.local"))
 endif
 
 call plug#end()
+
+autocmd VimEnter *
+  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \|   PlugInstall --sync | q
+  \| endif
