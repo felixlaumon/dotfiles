@@ -63,7 +63,7 @@ endif
 Plug 'psf/black', { 'for': 'python', 'branch': 'stable' }
 Plug 'tweekmonster/impsort.vim', { 'for': 'python' }
 Plug 'heavenshell/vim-pydocstring'
-Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+Plug 'numirias/semshi', { 'for': 'python', 'do': ':UpdateRemotePlugins'}
 
 " Programming
 Plug 'jpalardy/vim-slime'
