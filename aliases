@@ -51,7 +51,8 @@ function pip_install_toolchain() {
     pip install \
         neovim flake8 pylint black python-language-server \
         ipython jupyter notebook jupyter_contrib_nbextensions \
-        numpy pandas matplotlib seaborn scikit-learn scikit-image
+        numpy pandas matplotlib seaborn scikit-learn scikit-image \
+        tqdm
 }
 
 function j() {
