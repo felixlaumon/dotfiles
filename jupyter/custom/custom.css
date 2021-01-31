@@ -1,0 +1,7 @@
+.CodeMirror-lines, div.output_area pre {
+    font-family: "SF Mono", "Input Mono", monospace;
+}
+
+.notebook_app {
+    font-family: system-ui, sans-serif;
+}
