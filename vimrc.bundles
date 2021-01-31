@@ -60,7 +60,7 @@ else
 endif
 
 " Python
-Plug 'psf/black', { 'for': 'python', 'branch': 'stable' }
+Plug 'psf/black', { 'for': 'python', 'tag': '19.10b0' }
 Plug 'tweekmonster/impsort.vim', { 'for': 'python' }
 Plug 'heavenshell/vim-pydocstring'
 Plug 'numirias/semshi', { 'for': 'python', 'do': ':UpdateRemotePlugins'}
