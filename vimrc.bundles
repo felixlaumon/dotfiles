@@ -52,7 +52,7 @@ if use_lsp
     Plug 'mattn/vim-lsp-settings'
     Plug 'dense-analysis/ale'
 
-    TabNine
+    " TabNine
     Plug 'zxqfl/tabnine-vim'
 else
     " coc
@@ -78,6 +78,8 @@ Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
 Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'wavded/vim-stylus', { 'for': 'stylus' }
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
     source ~/.vimrc.bundles.local
