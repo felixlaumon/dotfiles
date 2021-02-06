@@ -48,7 +48,7 @@ function run_nb() {
 }
 
 function pip_install_toolchain() {
-    pip install \
+    pip install -U \
         neovim flake8 pylint black python-language-server \
         ipython jupyter notebook jupyter_contrib_nbextensions \
         numpy pandas matplotlib seaborn scikit-learn scikit-image \
