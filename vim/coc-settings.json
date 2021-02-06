@@ -36,5 +36,15 @@
       "offsetColumn": 1,
       "formatLines": 1
     }
-  }
+  },
+  "yaml.schemas": {
+    "kubernetes": "/*.yaml"
+  },
+  "jedi.jediSettings.autoImportModules": [
+    "numpy",
+    "pandas",
+    "torch",
+    "scikit-image",
+    "scikit-learn"
+  ]
 }
