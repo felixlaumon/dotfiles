@@ -44,7 +44,7 @@ bindsym $meta+q kill
 
 # start dmenu (a program launcher)
 # bindsym $meta+space exec --no-startup-id dmenu_run
-bindsym $alt+space exec rofi -lines 8 -padding 18 -width 35 -location 0 -show drun -sidebar-mode -columns 1 -font 'Inter Regular 10' -theme solarized
+bindsym $alt+space exec rofi -lines 8 -padding 18 -width 35 -location 0 -show drun -theme ~/.config/rofi/launcher.rasi
 # A more modern dmenu replacement is rofi:
 # bindcode $meta+40 exec rofi -modi drun,run -show drun
 # There also is i3-dmenu-desktop which only displays applications shipping a
