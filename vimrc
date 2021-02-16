@@ -261,6 +261,23 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
+" coc-explorer
+
+let g:coc_explorer_global_presets = {
+\   'floatingLeftside': {
+\     'position': 'floating',
+\     'floating-position': 'left',
+\     'floating-width': 50,
+\     'open-action-strategy': 'sourceWindow',
+\   },
+\   'buffer': {
+\     'sources': [{'name': 'buffer', 'expand': v:true}]
+\   },
+\ }
+" Use preset argument to open it
+nmap <leader>e :CocCommand explorer --preset floatingLeftside<CR>
+nmap <leader>eb :CocCommand explorer --preset buffer<CR>
+
 " coc ends ================================================================
 
 " surround.vim
