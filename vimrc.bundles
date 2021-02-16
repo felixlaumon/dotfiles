@@ -44,20 +44,8 @@ Plug 'szw/vim-tags'
 " Color
 Plug 'chriskempson/base16-vim'
 
-let use_lsp = 0
-if use_lsp
-    " Language server
-    Plug 'prabirshrestha/async.vim'
-    Plug 'prabirshrestha/vim-lsp'
-    Plug 'mattn/vim-lsp-settings'
-    Plug 'dense-analysis/ale'
-
-    " TabNine
-    Plug 'zxqfl/tabnine-vim'
-else
-    " coc
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-endif
+" coc
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Python
 Plug 'psf/black', { 'for': 'python', 'tag': '19.10b0' }
