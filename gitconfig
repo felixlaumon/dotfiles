@@ -5,3 +5,5 @@
     default = simple
 [include]
     path = ~/.gitconfig.local
+[pull]
+    rebase = false
