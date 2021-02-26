@@ -40,6 +40,7 @@
   "yaml.schemas": {
     "kubernetes": "/*.yaml"
   },
+  "tabnine.priority": 50,
   "jedi.jediSettings.autoImportModules": [
     "numpy",
     "pandas",

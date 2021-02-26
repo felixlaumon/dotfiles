@@ -5,6 +5,7 @@ bind status P !git push origin
 bind stash D !?git stash drop %(stash)
 bind stash A !?git stash apply %(stash)
 bind generic + !git commit --amend
+bind status a !?git commit --amend
 
 # Options
 set tab-size = 4

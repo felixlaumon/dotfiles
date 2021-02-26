@@ -3,6 +3,9 @@ let mapleader = ","
 " Use jk for Esc
 imap jk <Esc>
 
+" Copy to localhost:8378
+nnoremap <leader>Y :call system('nc -w 1 0.0.0.0 8378', @0)<CR>
+
 " Move cursor by displayed line when wrapping
 noremap <silent> k gk
 noremap <silent> j gj
