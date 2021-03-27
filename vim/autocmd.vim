@@ -11,6 +11,7 @@ autocmd FileType sql setlocal ts=2 sts=2 sw=2 expandtab
 " js
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType typescript setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType json setlocal ts=2 sts=2 sw=2 expandtab
 
 " Trim whitespace when saving
 autocmd BufWritePre * %s/\s\+$//e
