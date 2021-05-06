@@ -33,3 +33,5 @@ Temporary Items
 
 !bin
 vim/bundle/
+config/coc/extensions/node_modules
+config/coc/extensions/package-lock.json
