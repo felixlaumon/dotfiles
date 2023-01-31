@@ -56,7 +56,15 @@ bind-key -Tcopy-mode-vi 'y' send -X copy-selection
 
 # Copy to localhost:8378
 set-option -s set-clipboard off
+
+{{ if eq .chezmoi.os "darwin" -}}
 bind-key -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "nc -w 1 0.0.0.0 8378"
+bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "nc -w 1 0.0.0.0 8378"
+{{ else if eq .chezmoi.os "linux" -}}
+bind-key -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "nc -N 0.0.0.0 8378"
+bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "nc -N 0.0.0.0 8378"
+{{ end -}}
+
 
 # Easy traversal
 is_vim='echo "#{pane_current_command}" | grep -iqE "(^|\/)g?(view|n?vim?)(diff)?$"'
