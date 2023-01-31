@@ -1,7 +1,6 @@
 # use neovim as the visual editor
 export VISUAL=nvim
 export EDITOR=$VISUAL
-export SHELL=/usr/local/bin/zsh
 
 # Auto-update zinit
 ZGEN_RESET_ON_CHANGE=(${HOME}/.zshrc ${HOME}/.zshrc.local ${HOME}/.zshenv ${HOME}/.zshenv.local)
