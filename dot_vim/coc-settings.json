@@ -1,0 +1,13 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": ["python"],
+  "yaml.schemas": {
+    "kubernetes": "/k8s/**/*.yaml",
+    "https://raw.githubusercontent.com/aanand/compose-file/master/schema/data/config_schema_v3.0.json": "docker-compose.yaml"
+  },
+  "python.analysis.diagnosticMode": "openFilesOnly",
+  "python.formatting.provider": "black",
+  "python.linting.flake8Enabled": true,
+  "python.linting.pydocstyleEnabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.analysis.autoImportCompletions": false
+}

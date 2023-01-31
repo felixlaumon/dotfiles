@@ -1,0 +1,72 @@
+# Unix
+alias e='$EDITOR'
+alias rcp='rsync -av --progress'
+alias download='aria2c -x 8 -s 8'
+
+# Pretty print the path
+alias path='echo $PATH | tr -s ":" "\n"'
+
+# GPU
+alias watch_gpu_util='watch -n 10 "nvidia-smi -q -d UTILIZATION | grep \"GPU Utilization Samples\" -A 5"'
+alias watch_gpu='watch -n 0.5 nvidia-smi'
+
+# xvfb
+alias xvfb="xvfb-run -f ~/.Xauthority -a -s '-screen 0 1400x900x24'"
+
+# kubectl
+alias k=kubectl
+
+# h2
+alias h2="ssh -C -R 8378:localhost:8378 -t felixlau@hydrogen.felixlau.me 'tmux new-session -A -s default'"
+alias h2_local="ssh -C -R 8378:localhost:8378 -t felixlau@hydrogen.local 'tmux new-session -A -s default'"
+alias h2_ip="ssh -C -R 8378:localhost:8378 -t felixlau@192.168.1.10 'tmux new-session -A -s default'"
+
+alias h2m="mssh felixlau@hydrogen.local tmux new-session -A -s default"
+alias h2m_local="mssh felixlau@hydrogen.local tmux new-session -A -s default"
+alias h2m_ip="mssh felixlau@192.168.1.10 tmux new-session -A -s default"
+
+# chezmoi
+alias cm="chezmoi"
+alias cma="chezmoi apply -v"
+
+# Utility methods
+function run_nb() {
+    file=$(mktemp)
+    jupyter nbconvert --to python $1 --output $file && ipython $file.py
+    rm $file
+}
+
+function pip_install_neovim_toolchain() {
+    pip install -U \
+        neovim flake8 pylint black pyright typing-extensions
+}
+
+function pip_install_toolchain() {
+    pip_install_neovim_toolchain
+    pip install -U \
+        ipython ipdb \
+        jupyter notebook jupyter_contrib_nbextensions pigar \
+        numpy pandas matplotlib seaborn scikit-learn scikit-image \
+        tqdm \
+        pandas-stubs
+}
+
+function j() {
+    export PYTHONPATH=~/devel/$1
+    cd ~/devel/$1 && conda activate $1
+}
+
+function mssh() {
+    ssh -f -R 8378:localhost:8378 -t $1 sleep 1000000000 &
+    # ssh_pid=$!
+    host=$1
+    shift
+    cmd=$@
+    cmd="tmux new-session -A -s default"
+    # mosh $host -- $cmd
+    mosh $host --predict always -- tmux new-session -A -s default
+    # kill -9 $ssh_pid
+}
+
+# Include custom aliases
+# [[ -f ~/.aliases.local ]] && source ~/.aliases.local

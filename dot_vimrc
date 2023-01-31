@@ -1,0 +1,48 @@
+" For neovim
+runtime! plugin/python_setup.vim
+
+if filereadable(expand("~/.vimrc.bundles"))
+    source ~/.vimrc.bundles
+endif
+
+" Color
+" https://github.com/neoclide/coc.nvim/wiki/F.A.Q#the-selection-highlight-not-looks-good
+autocmd ColorScheme * hi CocMenuSel ctermbg=237 guibg=#13354A
+
+if exists('$BASE16_THEME')
+      \ && (!exists('g:colors_name') || g:colors_name != 'base16-$BASE16_THEME')
+    let base16colorspace=256
+    colorscheme base16-$BASE16_THEME
+endif
+
+source ~/.vim/autocmd.vim
+source ~/.vim/keymapping.vim
+source ~/.vim/settings.vim
+
+source ~/.vim/plugins/coc.vim
+source ~/.vim/plugins/easybuffer.vim
+source ~/.vim/plugins/telescope.vim
+source ~/.vim/plugins/gitgutter.vim
+source ~/.vim/plugins/lightline.vim
+
+if has('nvim')
+    source ~/.vim/plugins/nvim-tree.vim
+    source ~/.vim/plugins/nvim-treesitter.vim
+    source ~/.vim/plugins/nvim-treesitter-context.vim
+    source ~/.vim/plugins/comment.vim
+endif
+
+source ~/.vim/plugins/surround.vim
+source ~/.vim/plugins/tagbar.vim
+source ~/.vim/plugins/vim-asterisk.vim
+source ~/.vim/plugins/vim-markdown.vim
+source ~/.vim/plugins/vim-pydocstring.vim
+source ~/.vim/plugins/vim-slime.vim
+source ~/.vim/plugins/vim-tags.vim
+source ~/.vim/plugins/vim-tmux-navigator.vim
+source ~/.vim/plugins/indent-blankline.vim
+
+" Local config
+if filereadable($HOME . "/.vimrc.local")
+    source ~/.vimrc.local
+endif

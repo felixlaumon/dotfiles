@@ -1,0 +1,11 @@
+[user]
+    email = felixlaumon@gmail.com
+    name = Felix Lau
+[push]
+    default = simple
+[include]
+    path = ~/.gitconfig.local
+[pull]
+    rebase = false
+[init]
+	defaultBranch = main

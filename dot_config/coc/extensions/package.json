@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "coc-css": ">=1.2.6",
+    "coc-diagnostic": ">=0.23.3",
+    "coc-docker": ">=0.5.0",
+    "coc-html": ">=1.4.1",
+    "coc-json": ">=1.6.1",
+    "coc-marketplace": ">=1.9.0",
+    "coc-pairs": ">=1.3.0",
+    "coc-pyright": ">=1.1.269",
+    "coc-snippets": ">=3.1.1",
+    "coc-sql": ">=0.10.3",
+    "coc-tsserver": ">=1.11.5",
+    "coc-vimlsp": ">=0.12.8",
+    "coc-yaml": ">=1.8.0"
+  }
+}
