@@ -1,6 +1,3 @@
-" Copy to localhost:8378
-nnoremap <leader>Y :call system('nc -w 1 0.0.0.0 8378', @0)<CR>
-
 " yaml
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
@@ -12,6 +9,9 @@ autocmd FileType sql setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType typescript setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType json setlocal ts=2 sts=2 sw=2 expandtab
+
+" lua
+autocmd FileType lua setlocal ts=2 sts=2 sw=2 expandtab
 
 " Trim whitespace when saving
 autocmd BufWritePre * %s/\s\+$//e
