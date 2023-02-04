@@ -29,6 +29,15 @@ alias h2m_ip="mssh felixlau@192.168.1.10 tmux new-session -A -s default"
 alias cm="chezmoi"
 alias cma="chezmoi apply -v"
 
+# exa and bat
+if command -v bat &> /dev/null; then
+    alias ccat=$(which cat)
+    alias cat=bat
+fi
+if command -v exa &> /dev/null; then
+    alias ls=exa
+fi
+
 # Utility methods
 function run_nb() {
     file=$(mktemp)
