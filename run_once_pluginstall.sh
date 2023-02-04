@@ -1,2 +1,2 @@
 #!/bin/sh
-nvim -u $HOME/.vimrc.bundles +PlugInstall +PlugClean! +qa
+vim -u $HOME/.vimrc.bundles +PlugInstall +PlugClean! +qa
