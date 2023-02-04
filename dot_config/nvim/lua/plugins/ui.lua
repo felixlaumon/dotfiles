@@ -135,9 +135,6 @@ return {
         extensions = { "neo-tree" },
       }
     end,
-    dependencies = {
-      { "RRethy/nvim-base16" }
-    }
   },
 
   {

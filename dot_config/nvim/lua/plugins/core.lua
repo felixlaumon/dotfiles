@@ -2,7 +2,7 @@ local Util = require("config.util")
 
 
 return {
-  { "tinted-theming/base16-vim" },
+  { "RRethy/nvim-base16", lazy = true, priority = 1000 },
 
   { "numToStr/Comment.nvim",
     opts = {
