@@ -1,81 +1,3 @@
--- return {
---   {
---     'VonHeikemen/lsp-zero.nvim',
---     branch = 'v1.x',
---
---     dependencies = {
---       -- LSP Support
---       {'neovim/nvim-lspconfig'},
---       {'williamboman/mason.nvim'},
---       {'williamboman/mason-lspconfig.nvim'},
---
---       -- Autocompletion
---       {'hrsh7th/nvim-cmp'},
---       {'hrsh7th/cmp-nvim-lsp'},
---       {'hrsh7th/cmp-buffer'},
---       {'hrsh7th/cmp-path'},
---       {'saadparwaiz1/cmp_luasnip'},
---       {'hrsh7th/cmp-nvim-lua'},
---       {"folke/neodev.nvim"},
---
---       -- Snippets
---       {'L3MON4D3/LuaSnip'},
---       {'rafamadriz/friendly-snippets'},
---     },
---
---     opts = function ()
---       local lsp = require("lsp-zero")
---
---       lsp.preset("recommended")
---
---       lsp.set_preferences({
---         set_lsp_keymaps = false,
---       })
---
---       lsp.ensure_installed({
---         'tsserver',
---         'sumneko_lua',
---         'pyright',
---       })
---
---       lsp.nvim_workspace()
---
---       vim.diagnostic.config({
---         -- TODO virtual text does not work
---         virtual_text = { spacing = 4, prefix = "●" },
---       })
---
---       lsp.setup()
---     end,
---
---     keys = {
---       { "K", vim.lsp.buf.hover },
---       { "<leader>d", vim.lsp.buf.definition },
---       { "<leader>gr", vim.lsp.buf.references },
---       { "<leader>rn", vim.lsp.buf.rename },
---       { "[g", vim.diagnostic.goto_prev },
---       { "]g", vim.diagnostic.goto_next },
---     },
---
---   },
---
---   -- TODO does not actually illuminate but just underline
---   {
---     "RRethy/vim-illuminate",
---     event = "BufReadPost",
---     opts = {
---       large_file_cutoff = 5000,
---       min_count_to_highlight = 2,
---     },
---     config = function(_, opts)
---       require("illuminate").configure(opts)
---     end,
---   },
---
---   { "folke/neodev.nvim" },
--- }
-
--- TODO autocomplete does not pop up...
 return {
   {
     "hrsh7th/nvim-cmp",
@@ -103,7 +25,7 @@ return {
           ["<C-f>"] = cmp.mapping.scroll_docs(4),
           ["<C-Space>"] = cmp.mapping.complete(),
           ["<C-e>"] = cmp.mapping.abort(),
-          ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+          ["<CR>"] = cmp.mapping.confirm({ select = true }),
         }),
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
@@ -231,7 +153,8 @@ return {
       return {
         sources = {
           nls.builtins.formatting.stylua,
-          nls.builtins.diagnostics.flake8,
+          nls.builtins.formatting.black,
+          nls.builtins.code_actions.eslint,
         },
       }
     end,

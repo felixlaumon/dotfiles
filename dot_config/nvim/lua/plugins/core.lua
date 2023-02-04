@@ -1,5 +1,8 @@
+local Util = require("config.util")
+
+
 return {
-  { "chriskempson/base16-vim" },
+  { "tinted-theming/base16-vim" },
 
   { "numToStr/Comment.nvim",
     opts = {
@@ -11,14 +14,39 @@ return {
 
   {
     "nvim-telescope/telescope.nvim",
+    cmd = "Telescope",
+    version = false,
     keys = {
-      { "<c-p>", "<cmd>Telescope find_files<cr>", desc = "Find files"},
-      { "<leader>f", "<cmd>Telescope git_files<cr>", desc = "Find git files"},
-      { "<leader>w", "<cmd>Telescope grep_string<cr>", desc = "Find current word"},
-      { "<c-\\>", "<cmd>Telescope live_grep<cr>", desc = "Live grep"},
+      { "<c-p>", Util.telescope("files"), desc = "Find files"},
+      { "<leader>b", "<cmd>Telescope buffers<cr>", desc = "Find files"},
+      { "<leader>w", Util.telescope("grep_string"), desc = "Find current word"},
+      { "<c-\\>", Util.telescope("live_grep"), desc = "Live grep"},
+      {
+        "<leader>.",
+        Util.telescope("lsp_document_symbols", {
+          symbols = {
+            "Class",
+            "Function",
+            "Method",
+            "Constructor",
+            "Interface",
+            "Module",
+            "Struct",
+            "Trait",
+            "Field",
+            "Property",
+          },
+        }),
+        desc = "Goto Symbol",
+      },
       -- TODO resume?
-      -- TODO symbols
     },
+    opts = {
+      defaults = {
+        prompt_prefix = " ",
+        selection_caret = " ",
+      }
+    }
   },
 
   {
@@ -52,16 +80,32 @@ return {
     end,
 
     opts = {
+      default_component_configs = {
+        indent = {
+          padding = 0,
+        },
+        name = {
+          use_git_status_colors = true
+        },
+        git_status = {
+          symbols = {
+            added = "",
+            modified = "",
+            deleted = "",
+          }
+        }
+      },
       filesystem = {
         bind_to_cwd = false,
         follow_current_file = true,
       },
       window = {
+        width = 30,
         mappings = {
           ["<space>"] = "none",
         },
       },
-    },
+    }
   },
 
   {

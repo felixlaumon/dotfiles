@@ -12,42 +12,36 @@ bindkey "^R" history-incremental-search-backward
 # z
  . ~/tools/z/z.sh
 
-# load zgen
-source "${HOME}/tools/zgen/zgen.zsh"
+# load zgenom
+source "${HOME}/.zgenom/zgenom.zsh"
 
-zstyle ':omz:update' mode disabled
-
-# check if there's no init script
-if ! zgen saved; then
-    echo "Creating a zgen save"
-
-    zgen oh-my-zsh
+if ! zgenom saved; then
+    zgenom ohmyzsh
 
     # plugins
-    zgen oh-my-zsh plugins/git
-    zgen oh-my-zsh plugins/kubectl
-    zgen oh-my-zsh plugins/docker
-    zgen oh-my-zsh plugins/docker-compose
+    zgenom oh-my-zsh plugins/git
+    zgenom oh-my-zsh plugins/kubectl
+    zgenom oh-my-zsh plugins/docker
+    zgenom oh-my-zsh plugins/docker-compose
 
     export NVM_LAZY_LOAD=true
-    zgen load lukechilds/zsh-nvm
-    zgen load zsh-users/zsh-syntax-highlighting
+    zgenom load lukechilds/zsh-nvm
+    zgenom load zsh-users/zsh-syntax-highlighting
 
     # completions
-    zgen load zsh-users/zsh-autosuggestions
-    zgen load zsh-users/zsh-completions src
+    zgenom load zsh-users/zsh-autosuggestions
+    zgenom load zsh-users/zsh-completions src
 
-    zgen load joshskidmore/zsh-fzf-history-search
+    zgenom load joshskidmore/zsh-fzf-history-search
 
     # Theme
-    zgen load spaceship-prompt/spaceship-prompt spaceship
+    zgenom load spaceship-prompt/spaceship-prompt spaceship
 
     # Color
-    zgen load chriskempson/base16-shell
-    base16_default-dark
+    zgenom load tinted-theming/base16-shell
 
     # save all to init script
-    zgen save
+    zgenom save
 fi
 
 # Prevent exiting shell by ctrl-d

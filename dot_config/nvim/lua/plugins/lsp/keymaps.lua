@@ -7,9 +7,14 @@ function M.get()
   M._keys = M._keys or {
     { "<leader>cd", vim.diagnostic.open_float, desc = "Line Diagnostics" },
     { "<leader>cl", "<cmd>LspInfo<cr>", desc = "Lsp Info" },
-    { "<leader>d", "<cmd>Telescope lsp_definitions<cr>", desc = "Goto Definition" },
+    { "<leader>d", vim.lsp.buf.definition, desc = "Goto Definition" },
     { "<leader>D", vim.lsp.buf.declaration, desc = "Goto Declaration" },
-    { "gr", "<cmd>Telescope lsp_references<cr>", desc = "References" },
+    { "gr", vim.lsp.buf.references, desc = "References" },
+
+    -- TODO does not work without invoking Telescope first
+    -- { "<leader>d", "<cmd>Telescope lsp_definitions<cr>", desc = "Goto Definition" },
+    -- { "gr", "<cmd>Telescope lsp_references<cr>", desc = "References" },
+
     { "K", vim.lsp.buf.hover, desc = "Hover" },
     { "<c-k>", vim.lsp.buf.signature_help, mode = "i", desc = "Signature Help", has = "signatureHelp" },
     { "]g", M.diagnostic_goto(true), desc = "Next Diagnostic" },

@@ -1,3 +1,7 @@
+# theme
+export BASE16_THEME_DEFAULT=default-dark
+export BASE16_THEME=default-dark
+
 # use neovim as the visual editor
 export VISUAL=nvim
 export EDITOR=$VISUAL

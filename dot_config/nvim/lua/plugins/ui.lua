@@ -151,25 +151,6 @@ return {
     },
   },
 
-  -- {
-  --   "echasnovski/mini.indentscope",
-  --   version = false,
-  --   event = "BufReadPre",
-  --   opts = {
-  --     symbol = "│",
-  --     options = { try_as_border = true },
-  --   },
-  --   config = function(_, opts)
-  --     vim.api.nvim_create_autocmd("FileType", {
-  --       pattern = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason" },
-  --       callback = function()
-  --         vim.b.miniindentscope_disable = true
-  --       end,
-  --     })
-  --     require("mini.indentscope").setup(opts)
-  --   end,
-  -- },
-
   {
     "folke/noice.nvim",
     event = "VeryLazy",
@@ -213,6 +194,7 @@ return {
         highlight = true,
         depth_limit = 5,
         icons = require("config.icons").kinds,
+        safe_output = true,
       }
     end,
   },

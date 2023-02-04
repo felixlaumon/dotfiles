@@ -69,5 +69,7 @@ map("n", "<leader><cr>", "<cmd>a<cr><cr>.<cr>")
 
 -- Save file
 map({ "i", "v", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
+map("n", "W", "<cmd>w<cr>")
 -- Quit file
 map("n", "<C-q>", "<cmd>q<cr><esc>", { desc = "Quit" })
+map("n", "Q", "<cmd>q<cr>")
