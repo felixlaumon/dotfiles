@@ -43,46 +43,30 @@ return {
   {
     "lewis6991/gitsigns.nvim",
     event = "BufReadPre",
-    opts = {
-      signs = {
-        add = { text = "+" },
-        change = { text = "~" },
-        delete = { text = "_" },
-        topdelete = { text = "‾" },
-        changedelete = { text = "~" },
-        untracked = { text = "+" },
-      },
-      on_attach = function(buffer)
-        local gs = package.loaded.gitsigns
+    opts = function ()
+      local icons = require("config.icons")
+      local opt = {
+        signs = {
+          add = { text = icons.git.added },
+          change = { text = icons.git.modified },
+          delete = { text = icons.git.removed },
+          topdelete = { text = icons.git.removed },
+          changedelete = { text = icons.git.removed },
+          untracked = { text = icons.git.added },
+        },
+        on_attach = function(buffer)
+          local gs = package.loaded.gitsigns
 
-        local function map(mode, l, r, desc)
-          vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc })
-        end
+          local function map(mode, l, r, desc)
+            vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc })
+          end
 
-        -- stylua: ignore start
-        map("n", "<leader>ghb", function() gs.blame_line({ full = true }) end, "Blame Line")
-      end,
-    },
-  },
-
-  {
-    "RRethy/vim-illuminate",
-    event = "BufReadPost",
-    opts = { delay = 200 },
-    config = function(_, opts)
-      require("illuminate").configure(opts)
-      vim.api.nvim_create_autocmd("FileType", {
-        callback = function()
-          local buffer = vim.api.nvim_get_current_buf()
-          pcall(vim.keymap.del, "n", "]]", { buffer = buffer })
-          pcall(vim.keymap.del, "n", "[[", { buffer = buffer })
+          -- stylua: ignore start
+          map("n", "<leader>gb", function() gs.blame_line({ full = false }) end, "Blame Line")
         end,
-      })
+      }
+      return opt
     end,
-    keys = {
-      { "]]", function() require("illuminate").goto_next_reference(false) end, desc = "Next Reference", },
-      { "[[", function() require("illuminate").goto_prev_reference(false) end, desc = "Prev Reference" },
-    },
   },
 
   {
@@ -116,5 +100,13 @@ return {
       { "<leader>xT", "<cmd>TodoTrouble keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme (Trouble)" },
       { "<leader>st", "<cmd>TodoTelescope<cr>", desc = "Todo" },
     },
+  },
+
+  {
+    "echasnovski/mini.pairs",
+    event = "VeryLazy",
+    config = function(_, opts)
+      require("mini.pairs").setup(opts)
+    end,
   },
 }

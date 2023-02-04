@@ -1,11 +1,14 @@
+local opt = vim.opt
+
 -- Tab
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
+opt.expandtab = true
+opt.smartindent = true
 
 -- Ignore
-vim.opt.wildignore = {
+opt.wildignore = {
   ".svn",
   "CVS",
   ".git",
@@ -36,20 +39,42 @@ vim.opt.wildignore = {
 }
 
 -- Other settings
-vim.opt.wrap = false
-vim.opt.number = true
-vim.opt.numberwidth = 4
-vim.opt.cursorline = true
-vim.opt.ruler = true
-vim.opt.autoread = true
-vim.opt.scrolloff = 10
+opt.spelllang = { "en" }
+opt.wrap = false
+opt.number = true
+opt.numberwidth = 4
+opt.cursorline = true
+opt.ruler = true
+opt.autoread = true
+opt.scrolloff = 10
+opt.sidescrolloff = 8
+opt.termguicolors = true
+opt.signcolumn = 'yes'
+opt.completeopt = "menu,menuone,noselect"
+opt.conceallevel = 3
+opt.grepprg = "rg --vimgrep"
+opt.laststatus = 0
+opt.pumblend = 10
+opt.pumheight = 10
+opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" }
+opt.shiftround = true
+opt.shortmess:append { W = true, I = true, c = true }
+opt.showmode = false
+opt.splitbelow = true
+opt.splitright = true
+opt.timeoutlen = 300
+opt.wildmode = "longest:full,full"
+opt.updatetime = 200
+opt.winminwidth = 5
 
 -- Highlight
-vim.opt.incsearch = true
-vim.opt.hlsearch = true
+opt.incsearch = true
+opt.inccommand = "nosplit"
+opt.hlsearch = true
+opt.smartcase = true
 
 -- Spellcheck
-vim.opt.spell = true
+opt.spell = true
 --- TODO how to do hi clear in lua?
 vim.api.nvim_command("hi clear SpellBad")
 vim.api.nvim_command("hi clear SpellCap")
@@ -57,11 +82,13 @@ vim.api.nvim_command("hi clear SpellRare")
 vim.api.nvim_command("hi SpellBad cterm=underline")
 
 -- Replace all occurrences by default
-vim.opt.gdefault = true
+opt.gdefault = true
 
 -- Undo and backup
-vim.opt.undofile = true
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/tmp/undo"
-vim.opt.backup = true
-vim.opt.backupdir = os.getenv("HOME") .. "/.vim/tmp/backup"
-vim.opt.swapfile = false
+opt.undofile = true
+opt.undodir = os.getenv("HOME") .. "/.vim/tmp/undo"
+opt.backup = true
+opt.backupdir = os.getenv("HOME") .. "/.vim/tmp/backup"
+opt.swapfile = false
+
+vim.g.markdown_recommended_style = 0

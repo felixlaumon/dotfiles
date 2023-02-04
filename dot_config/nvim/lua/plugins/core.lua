@@ -11,15 +11,13 @@ return {
 
   {
     "nvim-telescope/telescope.nvim",
-    dependencies = {
-      { "nvim-lua/plenary.nvim", lazy = true },
-    },
     keys = {
       { "<c-p>", "<cmd>Telescope find_files<cr>", desc = "Find files"},
       { "<leader>f", "<cmd>Telescope git_files<cr>", desc = "Find git files"},
       { "<leader>w", "<cmd>Telescope grep_string<cr>", desc = "Find current word"},
       { "<c-\\>", "<cmd>Telescope live_grep<cr>", desc = "Live grep"},
       -- TODO resume?
+      -- TODO symbols
     },
   },
 
@@ -29,7 +27,6 @@ return {
     branch = "v2.x",
 
     dependencies = {
-      { "nvim-lua/plenary.nvim", lazy = true },
       { "nvim-tree/nvim-web-devicons", lazy = true },
       { "MunifTanjim/nui.nvim", lazy = true },
     },
@@ -112,11 +109,4 @@ return {
       { "zC", function () require('ufo').closeAllFolds() end },
     }
   },
-
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    opts = {
-      show_current_context = true,
-    }
-  }
 }

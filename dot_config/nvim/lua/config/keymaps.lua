@@ -1,39 +1,75 @@
+local function map(mode, lhs, rhs, opts)
+  local keys = require("lazy.core.handler").handlers.keys
+  -- do not create the keymap if a lazy keys handler exists
+  if not keys.active[keys.parse({ lhs, mode = mode }).id] then
+    vim.keymap.set(mode, lhs, rhs, opts)
+  end
+end
+
+
 -- Yank to localhost:8378
-vim.keymap.set("n", "<leader>Y", "<cmd>call system('nc -w 1 0.0.0.0 8378', @0)<cr>")
+map("n", "<leader>Y", "<cmd>call system('nc -w 1 0.0.0.0 8378', @0)<cr>")
 
 -- Move cursor by displayed line when wrapping
-vim.keymap.set("n", "k", "gk", { silent = true })
-vim.keymap.set("n", "j", "gj", { silent = true })
+map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 
 -- Clear highlight
-vim.keymap.set("n", "<leader>/", "<cmd>nohls<cr>", { silent = true })
+map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
+map({ "i", "n" }, "<leader>/", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
 
--- Disable arrow keys
-vim.keymap.set("n", "<left>", "<nop>")
-vim.keymap.set("n", "<right>", "<nop>")
-vim.keymap.set("n", "<up>", "<nop>")
-vim.keymap.set("n", "<down>", "<nop>")
 
--- Use ctrl-arrow key for resize
-vim.keymap.set("n", "<c-left>", "<cmd>vertical resize +2<cr>")
-vim.keymap.set("n", "<c-right>", "<cmd>vertical resize +2<cr>")
-vim.keymap.set("n", "<c-up>", "<cmd>resize +2<cr>")
-vim.keymap.set("n", "<c-left>", "<cmd>resize +2<cr>")
+-- Use arrow key for resize
+map("n", "<left>", "<cmd>vertical resize +2<cr>")
+map("n", "<right>", "<cmd>vertical resize +2<cr>")
+map("n", "<up>", "<cmd>resize +2<cr>")
+map("n", "<left>", "<cmd>resize +2<cr>")
+
+-- Move lines
+map("n", "<C-S-j>", ":m .+1<cr>==", { desc = "Move down" })
+map("v", "<C-S-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
+map("i", "<C-S-j>", "<Esc>:m .+1<cr>==gi", { desc = "Move down" })
+map("n", "<C-S-k>", ":m .-2<cr>==", { desc = "Move up" })
+map("v", "<C-S-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
+map("i", "<C-S-k>", "<Esc>:m .-2<cr>==gi", { desc = "Move up" })
 
 -- Split
-vim.keymap.set("n", "<leader>v", "<c-w>v<c-w>l")
-vim.keymap.set("n", "<leader>h", "<c-w>s<c-w>j")
+map("n", "<leader>v", "<c-w>v<c-w>l")
+map("n", "<leader>h", "<c-w>s<c-w>j")
 
 -- Center search
-vim.keymap.set("n", "n", "nzz")
-vim.keymap.set("n", "N", "Nzz")
+map("n", "n", "nzz")
+map("n", "N", "Nzz")
 
-vim.keymap.set("n", "}", "}zz")
-vim.keymap.set("n", "{}", "{zz")
+map("n", "}", "}zz")
+map("n", "{}", "{zz")
+
+-- better indenting
+map("v", "<", "<gv")
+map("v", "<", "<gv")
+map("v", ">", ">gv")
+map("v", ">", ">gv")
+
+-- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
+map("n", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
+map("n", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
+map("x", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
+map("x", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
+map("o", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
+map("o", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
+map("n", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
+map("n", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
+map("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
+map("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
+map("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
+map("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
 
 -- Insert new line with enter without going to insert mode
-vim.keymap.set("n", "<leader><cr>", "<cmd>a<cr><cr>.<cr>")
+map("n", "<leader><cr>", "<cmd>a<cr><cr>.<cr>")
 
--- W for :w and Q for :q
-vim.keymap.set("n", "W", "<cmd>w<cr>")
-vim.keymap.set("n", "Q", "<cmd>q<cr>")
+-- Save file
+map({ "i", "v", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
+map({ "i", "v", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
+
+-- Q for :q
+map("n", "Q", "<cmd>q<cr>")
