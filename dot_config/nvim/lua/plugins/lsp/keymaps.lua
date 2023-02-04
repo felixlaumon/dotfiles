@@ -11,7 +11,7 @@ function M.get()
     { "<leader>D", vim.lsp.buf.declaration, desc = "Goto Declaration" },
     { "gr", vim.lsp.buf.references, desc = "References" },
 
-    -- TODO does not work without invoking Telescope first
+    -- TODO: does not work without invoking Telescope first
     -- { "<leader>d", "<cmd>Telescope lsp_definitions<cr>", desc = "Goto Definition" },
     -- { "gr", "<cmd>Telescope lsp_references<cr>", desc = "References" },
 

@@ -53,7 +53,6 @@ return {
     end,
   },
 
-  -- TODO fugitive?
   {
     "lewis6991/gitsigns.nvim",
     event = "BufReadPre",
@@ -95,12 +94,11 @@ return {
     opts = { use_diagnostic_signs = true },
     keys = {
       { "<leader>x", "<cmd>TroubleToggle document_diagnostics<cr>", desc = "Document Diagnostics (Trouble)" },
-      -- TODO does not work
-      -- { "<leader>X", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace Diagnostics (Trouble)" },
+      -- TODO: does not work
+      { "<leader>X", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace Diagnostics (Trouble)" },
     },
   },
 
-  -- TODO does not work
   {
     "folke/todo-comments.nvim",
     cmd = { "TodoTrouble", "TodoTelescope" },

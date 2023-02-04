@@ -39,7 +39,7 @@ return {
         }),
         desc = "Goto Symbol",
       },
-      -- TODO resume?
+      -- TODO: resume?
     },
     opts = {
       defaults = {
