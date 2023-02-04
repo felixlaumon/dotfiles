@@ -30,13 +30,9 @@ alias cm="chezmoi"
 alias cma="chezmoi apply -v"
 
 # exa and bat
-if command -v bat &> /dev/null; then
-    alias ccat=$(which cat)
-    alias cat=bat
-fi
-if command -v exa &> /dev/null; then
-    alias ls=exa
-fi
+alias ccat=$(which cat)
+alias cat=bat
+alias ls=exa
 
 # Utility methods
 function run_nb() {
