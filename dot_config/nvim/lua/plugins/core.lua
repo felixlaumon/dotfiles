@@ -4,7 +4,8 @@ local Util = require("config.util")
 return {
   { "RRethy/nvim-base16", lazy = true, priority = 1000 },
 
-  { "numToStr/Comment.nvim",
+  {
+    "numToStr/Comment.nvim",
     opts = {
       mappings = {
         basic = true
@@ -123,6 +124,7 @@ return {
 
   {
     "kevinhwang91/nvim-ufo",
+    lazy = true,
 
     dependencies = {
       { "kevinhwang91/promise-async", lazy = true },
@@ -149,8 +151,8 @@ return {
     end,
 
     keys = {
-      { "zO", function () require('ufo').openAllFolds() end },
-      { "zC", function () require('ufo').closeAllFolds() end },
+      { "zO", function () require('ufo').openAllFolds() end, desc = "Open all folds" },
+      { "zC", function () require('ufo').closeAllFolds() end, desc = "Close all folds" },
     }
   },
 }
