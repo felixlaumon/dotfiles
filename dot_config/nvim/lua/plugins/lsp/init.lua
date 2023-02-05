@@ -168,7 +168,8 @@ return {
         "shellcheck",
         "shfmt",
         "pyright",
-        "lua-language-server"
+        "lua-language-server",
+        "yaml-language-server",
       },
     },
     config = function(_, opts)

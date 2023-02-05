@@ -19,7 +19,7 @@
     stripComponents = 1
     refreshPeriod = "168h"
 
-[".zgenom"]
+["tools/zgenom"]
     type = "archive"
     url = "https://github.com/jandamm/zgenom/archive/master.tar.gz"
     exact = true

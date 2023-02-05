@@ -13,8 +13,8 @@ bindkey "^R" history-incremental-search-backward
  . ~/tools/z/z.sh
 
 # load zgenom
-source "${HOME}/.zgenom/zgenom.zsh"
-
+export ZGEN_DIR=$HOME/.zgenom
+source "${HOME}/tools/zgenom/zgenom.zsh"
 if ! zgenom saved; then
     zgenom ohmyzsh
 
