@@ -39,6 +39,7 @@ opt.wildignore = {
 }
 
 -- Other settings
+opt.mouse = ""
 opt.spelllang = { "en" }
 opt.wrap = false
 opt.number = true

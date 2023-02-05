@@ -19,9 +19,9 @@
     stripComponents = 1
     refreshPeriod = "168h"
 
-["tools/zgen"]
+[".zgenom"]
     type = "archive"
-    url = "https://github.com/tarjoilija/zgen/archive/master.tar.gz"
+    url = "https://github.com/jandamm/zgenom/archive/master.tar.gz"
     exact = true
     stripComponents = 1
     refreshPeriod = "168h"
