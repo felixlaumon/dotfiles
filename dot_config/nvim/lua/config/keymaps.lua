@@ -65,7 +65,7 @@ map("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result
 map("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
 
 -- lazygit
-map("n", "<leader>g", function() Util.float_term({ "lazygit" }, {}) end, { desc = "Lazygit (root dir)" })
+map("n", "<leader>g", function() Util.float_term({ "lazygit" }, {}) end, { desc = "Lazygit" })
 
 -- Insert new line with enter without going to insert mode
 map("n", "<leader><cr>", "<cmd>a<cr><cr>.<cr>")
