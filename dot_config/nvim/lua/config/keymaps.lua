@@ -1,3 +1,5 @@
+local Util = require("config.util")
+
 local function map(mode, lhs, rhs, opts)
   local keys = require("lazy.core.handler").handlers.keys
   -- do not create the keymap if a lazy keys handler exists
@@ -5,7 +7,6 @@ local function map(mode, lhs, rhs, opts)
     vim.keymap.set(mode, lhs, rhs, opts)
   end
 end
-
 
 -- Yank to localhost:8378
 map("n", "<leader>Y", "<cmd>call system('nc -w 1 0.0.0.0 8378', @0)<cr>")
@@ -17,7 +18,6 @@ map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 -- Clear highlight
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
 map({ "i", "n" }, "<leader>/", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
-
 
 -- Use arrow key for resize
 map("n", "<left>", "<cmd>vertical resize +2<cr>")
@@ -63,6 +63,9 @@ map("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result
 map("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
 map("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
 map("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
+
+-- lazygit
+map("n", "<leader>gg", function() Util.float_term({ "lazygit" }, {}) end, { desc = "Lazygit (root dir)" })
 
 -- Insert new line with enter without going to insert mode
 map("n", "<leader><cr>", "<cmd>a<cr><cr>.<cr>")
