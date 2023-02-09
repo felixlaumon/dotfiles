@@ -69,6 +69,16 @@ return {
   },
 
   {
+    'sindrets/diffview.nvim',
+    -- TODO: doesn't work with lazy
+    -- lazy = true,
+    cmds = { "DiffviewOpen", "DiffviewFileHistory", },
+    dependencies = {
+      { 'nvim-lua/plenary.nvim', lazy = true, }
+    }
+  },
+
+  {
     "echasnovski/mini.bufremove",
     lazy = true,
     keys = {

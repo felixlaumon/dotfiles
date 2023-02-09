@@ -84,12 +84,13 @@ return {
         options = {
           theme = "auto",
           globalstatus = true,
+          component_separators = { left = '|', right = '|'},
+          section_separators = { left = '', right = ''},
           disabled_filetypes = { statusline = { "lazy", "alpha" } },
         },
         sections = {
           lualine_a = { "mode" },
-          lualine_b = { "branch" },
-          lualine_c = {
+          lualine_b = {
             {
               "diagnostics",
               symbols = {
@@ -108,17 +109,6 @@ return {
           },
           lualine_x = {
             {
-              function() return require("noice").api.status.command.get() end,
-              cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
-              color = fg("Statement")
-            },
-            {
-              function() return require("noice").api.status.mode.get() end,
-              cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
-              color = fg("Constant") ,
-            },
-            { require("lazy.status").updates, cond = require("lazy.status").has_updates, color = fg("Special") },
-            {
               "diff",
               symbols = {
                 added = icons.git.added,
@@ -126,10 +116,6 @@ return {
                 removed = icons.git.removed,
               },
             },
-          },
-          lualine_y = {
-            { "progress", separator = "", padding = { left = 1, right = 0 } },
-            { "location", padding = { left = 0, right = 1 } },
           },
         },
         extensions = { "neo-tree" },
