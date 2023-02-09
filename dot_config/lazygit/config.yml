@@ -1,0 +1,11 @@
+gui:
+  scrollHeight: 8
+  showIcons: true
+  commandLogSize: 8
+git:
+  parseEmoji: true
+keybinding:
+  universal:
+    quit: 'Q'
+    return: 'q'
+    quitWithoutChangingDirectory: ''

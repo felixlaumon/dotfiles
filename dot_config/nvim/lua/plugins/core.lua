@@ -99,11 +99,14 @@ return {
       filesystem = {
         bind_to_cwd = false,
         follow_current_file = true,
+        hide_dotfiles = false,
       },
       window = {
         width = 30,
         mappings = {
           ["<space>"] = "none",
+          ["v"] = "open_vsplit",
+          ["h"] = "open_split",
         },
       },
     }

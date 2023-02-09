@@ -29,6 +29,8 @@ alias h2m_ip="mssh felixlau@192.168.1.10 tmux new-session -A -s default"
 alias cm="chezmoi"
 alias cma="chezmoi apply -v"
 
+alias lg="lazygit"
+
 # exa and bat
 alias ccat=$(which cat)
 alias cat=bat
@@ -74,4 +76,4 @@ function mssh() {
 }
 
 # Include custom aliases
-# [[ -f ~/.aliases.local ]] && source ~/.aliases.local
+[[ -f ~/.aliases.local ]] && source ~/.aliases.local

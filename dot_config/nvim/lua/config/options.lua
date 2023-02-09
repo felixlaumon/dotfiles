@@ -39,6 +39,7 @@ opt.wildignore = {
 }
 
 -- Other settings
+opt.modelines = 1
 opt.mouse = ""
 opt.spelllang = { "en" }
 opt.wrap = false
@@ -46,6 +47,8 @@ opt.number = true
 opt.numberwidth = 4
 opt.cursorline = true
 opt.ruler = true
+opt.textwidth = 80
+opt.colorcolumn = "+1"
 opt.autoread = true
 opt.scrolloff = 10
 opt.sidescrolloff = 8
@@ -72,6 +75,7 @@ opt.winminwidth = 5
 opt.incsearch = true
 opt.inccommand = "nosplit"
 opt.hlsearch = true
+opt.ignorecase = true
 opt.smartcase = true
 
 -- Spellcheck
