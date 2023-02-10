@@ -17,31 +17,35 @@ return {
     "nvim-telescope/telescope.nvim",
     cmd = "Telescope",
     version = false,
-    keys = {
-      { "<c-p>", Util.telescope("files"), desc = "Find files"},
-      { "<leader>b", "<cmd>Telescope buffers<cr>", desc = "Find files"},
-      { "<leader>w", Util.telescope("grep_string"), desc = "Find current word"},
-      { "<c-\\>", Util.telescope("live_grep"), desc = "Live grep"},
-      {
-        "<leader>.",
-        Util.telescope("lsp_document_symbols", {
-          symbols = {
-            "Class",
-            "Function",
-            "Method",
-            "Constructor",
-            "Interface",
-            "Module",
-            "Struct",
-            "Trait",
-            "Field",
-            "Property",
-          },
-        }),
-        desc = "Goto Symbol",
-      },
-      -- TODO: resume?
-    },
+    keys = function ()
+      -- local actions = require("telescope.actions")
+      return {
+        { "<c-p>", Util.telescope("files"), desc = "Find files"},
+        { "<leader>b", "<cmd>Telescope buffers<cr>", desc = "Find files"},
+        { "<leader>w", Util.telescope("grep_string"), desc = "Find current word"},
+        { "<c-\\>", Util.telescope("live_grep"), desc = "Live grep"},
+        { "<c-g>", Util.telescope("resume"), desc = "Resume last search"},
+        -- { "<esc>", actions.close },
+        {
+          "<leader>.",
+          Util.telescope("lsp_dynamic_workspace_symbols", {
+            symbols = {
+              "Class",
+              "Function",
+              "Method",
+              "Constructor",
+              "Interface",
+              "Module",
+              "Struct",
+              "Trait",
+              "Field",
+              "Property",
+            },
+          }),
+          desc = "Goto Symbol",
+        },
+      }
+    end,
     opts = {
       defaults = {
         prompt_prefix = " ",

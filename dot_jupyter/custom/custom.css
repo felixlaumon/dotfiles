@@ -1,7 +1,8 @@
 @import url(http://fonts.googleapis.com/css?family=IBM+Plex+Mono);
+@import url(https://iosevka-webfonts.github.io/iosevka-term/iosevka-term.css)
 
 .CodeMirror-lines, div.output_area pre {
-    font-family: "Iosevka", "SF Mono", "IBM Plex Mono", monospace;
+    font-family: "Iosevka Term Web", "SF Mono", "IBM Plex Mono", monospace;
 }
 
 .notebook_app {

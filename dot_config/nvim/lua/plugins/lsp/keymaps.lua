@@ -5,8 +5,8 @@ M._keys = nil
 function M.get()
   local format = require("plugins.lsp.format").format
   M._keys = M._keys or {
-    { "<leader>cd", vim.diagnostic.open_float, desc = "Line Diagnostics" },
-    { "<leader>cl", "<cmd>LspInfo<cr>", desc = "Lsp Info" },
+    { "<leader>ld", vim.diagnostic.open_float, desc = "Line Diagnostics" },
+    { "<leader>li", "<cmd>LspInfo<cr>", desc = "Lsp Info" },
     { "<leader>d", vim.lsp.buf.definition, desc = "Goto Definition" },
     { "<leader>D", vim.lsp.buf.declaration, desc = "Goto Declaration" },
     { "gr", vim.lsp.buf.references, desc = "References" },
