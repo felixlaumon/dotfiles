@@ -120,4 +120,17 @@ return {
       require("mini.pairs").setup(opts)
     end,
   },
+
+  { "ConradIrwin/vim-bracketed-paste", lazy = true },
+
+  {
+    "haya14busa/vim-asterisk",
+    lazy = true,
+    config = function ()
+      vim.g["asterisk#keeppos"] = 1
+    end,
+    keys = {
+      { "*", "<Plug>(asterisk-z*)<Plug>(is-nohl-1)" },
+    }
+  },
 }
