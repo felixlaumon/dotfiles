@@ -1,3 +1,5 @@
+# vim: set filetype=zsh:
+
 # Unix
 alias e='$EDITOR'
 alias rcp='rsync -av --progress'
@@ -17,9 +19,9 @@ alias xvfb="xvfb-run -f ~/.Xauthority -a -s '-screen 0 1400x900x24'"
 alias k=kubectl
 
 # h2
-alias h2="ssh -C -R 8378:localhost:8378 -t felixlau@hydrogen.felixlau.me 'tmux new-session -A -s default'"
-alias h2_local="ssh -C -R 8378:localhost:8378 -t felixlau@hydrogen.local 'tmux new-session -A -s default'"
-alias h2_ip="ssh -C -R 8378:localhost:8378 -t felixlau@192.168.1.10 'tmux new-session -A -s default'"
+alias h2="TERM=xterm-256color ssh -C -R 8378:localhost:8378 -t felixlau@hydrogen.felixlau.me 'tmux new-session -A -s default'"
+alias h2_local="TERM=xterm-256color ssh -C -R 8378:localhost:8378 -t felixlau@hydrogen.local 'tmux new-session -A -s default'"
+alias h2_ip="TERM=xterm-256color ssh -C -R 8378:localhost:8378 -t felixlau@192.168.1.10 'tmux new-session -A -s default'"
 
 alias h2m="mssh felixlau@hydrogen.local tmux new-session -A -s default"
 alias h2m_local="mssh felixlau@hydrogen.local tmux new-session -A -s default"
@@ -64,15 +66,11 @@ function j() {
 }
 
 function mssh() {
-    ssh -f -R 8378:localhost:8378 -t $1 sleep 1000000000 &
-    # ssh_pid=$!
+    ssh -f -T -t -R 8378:localhost:8378 -t $1 sleep 1000000000
+    ssh_pid=$(pgrep -f 'ssh.*-f')
     host=$1
-    shift
-    cmd=$@
-    cmd="tmux new-session -A -s default"
-    # mosh $host -- $cmd
     mosh $host --predict always -- tmux new-session -A -s default
-    # kill -9 $ssh_pid
+    kill -9 $ssh_pid
 }
 
 # Include custom aliases

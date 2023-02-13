@@ -4,6 +4,9 @@
 export VISUAL=nvim
 export EDITOR=$VISUAL
 
+# Force xterm-256color
+export TERM=xterm-256color
+
 # Change config directory
 export XDG_CONFIG_HOME="$HOME/.config"
 
