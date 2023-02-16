@@ -3,28 +3,28 @@
     url = "https://github.com/tmux-plugins/tpm/archive/master.tar.gz"
     exact = true
     stripComponents = 1
-    refreshPeriod = "168h"
+    refreshPeriod = "24h"
 
 [".rbenv"]
     type = "archive"
     url = "https://github.com/rbenv/rbenv/archive/master.tar.gz"
     exact = true
     stripComponents = 1
-    refreshPeriod = "168h"
+    refreshPeriod = "24h"
 
 ["tools/zgenom"]
     type = "archive"
     url = "https://github.com/jandamm/zgenom/archive/master.tar.gz"
     exact = true
     stripComponents = 1
-    refreshPeriod = "168h"
+    refreshPeriod = "24h"
 
 ["tools/z"]
     type = "archive"
     url = "https://github.com/rupa/z/archive/master.tar.gz"
     exact = true
     stripComponents = 1
-    refreshPeriod = "168h"
+    refreshPeriod = "24h"
 
 [".vim/autoload/plug.vim"]
     type = "file"

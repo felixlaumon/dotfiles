@@ -67,6 +67,7 @@ return {
 
   {
     "neovim/nvim-lspconfig",
+    version = false,
     event = "BufReadPre",
 
     dependencies = {
