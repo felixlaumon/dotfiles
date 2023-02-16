@@ -44,6 +44,10 @@ map("n", "N", "Nzz")
 map("n", "}", "}zz")
 map("n", "{}", "{zz")
 
+-- Do not jump to next occurence
+map("n", "*", "*``")
+map("n", "#", "#``")
+
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
 map("n", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
 map("n", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
