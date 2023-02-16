@@ -2,7 +2,11 @@ local Util = require("config.util")
 
 
 return {
-  { "RRethy/nvim-base16", lazy = true, priority = 1000 },
+  {
+    "RRethy/nvim-base16",
+    lazy = false,
+    priority = 1000,
+  },
 
   {
     "numToStr/Comment.nvim",
