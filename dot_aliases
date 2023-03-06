@@ -66,11 +66,12 @@ function j() {
 }
 
 function mssh() {
-    ssh -f -T -t -R 8378:localhost:8378 -t $1 sleep 1000000000
-    ssh_pid=$(pgrep -f 'ssh.*-f')
+    # -f to background; -N to not excute anything; -S to specific scoket
+    # -M for master mode; -R to forward port to local
+    ssh -f -N -S /tmp/$1.ssh_socket -M -R 8378:localhost:8378 $1
     host=$1
-    mosh $host --predict always -- tmux new-session -A -s default
-    kill -9 $ssh_pid
+    mosh $host -- tmux new-session -A -s default
+    ssh -S /tmp/$1.ssh_socket -O exit $1
 }
 
 # Include custom aliases
