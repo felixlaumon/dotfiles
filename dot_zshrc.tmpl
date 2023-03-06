@@ -46,6 +46,10 @@ if ! zgenom saved; then
     zgenom save
 fi
 
+# Disable oh-my-zsh
+zstyle ':omz:update' mode disabled
+
+# Set theme
 base16_default-dark
 
 # Prevent exiting shell by ctrl-d
