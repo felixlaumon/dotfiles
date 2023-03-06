@@ -47,7 +47,8 @@ function run_nb() {
 
 function pip_install_neovim_toolchain() {
     pip install -U \
-        neovim flake8 pylint black pyright typing-extensions
+        neovim flake8 pylint black pyright typing-extensions \
+        ruff ruff-lsp
 }
 
 function pip_install_toolchain() {

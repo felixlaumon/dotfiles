@@ -169,6 +169,7 @@ return {
           nls.builtins.formatting.stylua,
           nls.builtins.formatting.black,
           nls.builtins.code_actions.eslint,
+          nls.builtins.diagnostics.ruff,
         },
       }
     end,
