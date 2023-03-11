@@ -50,6 +50,7 @@ opt.ruler = true
 opt.textwidth = 120
 opt.colorcolumn = "+1"
 opt.autoread = true
+opt.autowrite = true
 opt.scrolloff = 10
 opt.sidescrolloff = 8
 opt.termguicolors = true

@@ -91,9 +91,9 @@ return {
 
     opts = {
       diagnostics = {
-        underline = true,
+        underline = { severity = vim.diagnostic.severity.WARN },
         update_in_insert = false,
-        virtual_text = { spacing = 4, prefix = "●" },
+        virtual_text = { spacing = 4, prefix = "●", severity = vim.diagnostic.severity.ERROR },
         severity_sort = true,
       },
       autoformat = false,
@@ -167,7 +167,7 @@ return {
       return {
         sources = {
           nls.builtins.formatting.stylua,
-          nls.builtins.formatting.black,
+          nls.builtins.formatting.black.with({ extra_args = { "--line-length", "150" }}),
           nls.builtins.code_actions.eslint,
           nls.builtins.diagnostics.ruff,
         },

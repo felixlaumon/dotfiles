@@ -17,12 +17,14 @@ function M.get()
 
     { "K", vim.lsp.buf.hover, desc = "Hover" },
     { "<c-k>", vim.lsp.buf.signature_help, mode = "i", desc = "Signature Help", has = "signatureHelp" },
-    { "]g", M.diagnostic_goto(true), desc = "Next Diagnostic" },
-    { "[g", M.diagnostic_goto(false), desc = "Prev Diagnostic" },
+    { "]g", M.diagnostic_goto(true, vim.diagnostic.severity.ERROR), desc = "Next Diagnostic (Error)" },
+    { "[g", M.diagnostic_goto(false, vim.diagnostic.severity.ERROR), desc = "Prev Diagnostic (Error)" },
+    { "]d", M.diagnostic_goto(true), desc = "Next Diagnostic (All)" },
+    { "[d", M.diagnostic_goto(false), desc = "Prev Diagnostic (All)" },
     { "<leader>ca", vim.lsp.buf.code_action, desc = "Code Action", mode = { "n", "v" }, has = "codeAction" },
     { "<leader>f", format, desc = "Format Document", has = "documentFormatting" },
     { "<leader>f", format, desc = "Format Range", mode = "v", has = "documentRangeFormatting" },
-    { "<leader>r", M.rename, expr = true, desc = "Rename", has = "rename" },
+    { "<leader>r", M.rename, desc = "Rename", has = "rename" },
   }
   return M._keys
 end
