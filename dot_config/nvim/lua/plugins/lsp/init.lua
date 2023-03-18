@@ -8,9 +8,11 @@ return {
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "saadparwaiz1/cmp_luasnip",
+      "onsails/lspkind.nvim",
     },
     opts = function()
       local cmp = require("cmp")
+      local lspkind = require('lspkind')
       return {
         completion = {
           completeopt = "menu,menuone,noinsert",
@@ -48,13 +50,11 @@ return {
           { name = "path" },
         }),
         formatting = {
-          format = function(_, item)
-            local icons = require("config.icons").kinds
-            if icons[item.kind] then
-              item.kind = icons[item.kind] .. item.kind
-            end
-            return item
-          end,
+          format = lspkind.cmp_format({
+            mode = 'symbol_text',
+            maxwidth = 50,
+            ellipsis_char = '...',
+          }),
         },
         experimental = {
           ghost_text = {

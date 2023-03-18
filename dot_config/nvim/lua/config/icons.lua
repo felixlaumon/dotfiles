@@ -10,8 +10,6 @@ local M = {
     modified = " ",
     removed = " ",
   },
-  kinds = {
-  },
 }
 
 return M
