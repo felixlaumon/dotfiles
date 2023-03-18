@@ -4,20 +4,14 @@ return {
     keys = {
       {
         "<leader>dn",
-        function()
-          require("notify").dismiss({ silent = true, pending = true })
-        end,
+        function() require("notify").dismiss { silent = true, pending = true } end,
         desc = "Delete all Notifications",
       },
     },
     opts = {
       timeout = 1000,
-      max_height = function()
-        return math.floor(vim.o.lines * 0.75)
-      end,
-      max_width = function()
-        return math.floor(vim.o.columns * 0.75)
-      end,
+      max_height = function() return math.floor(vim.o.lines * 0.75) end,
+      max_width = function() return math.floor(vim.o.columns * 0.75) end,
     },
   },
 
@@ -26,11 +20,11 @@ return {
     lazy = true,
     init = function()
       vim.ui.select = function(...)
-        require("lazy").load({ plugins = { "dressing.nvim" } })
+        require("lazy").load { plugins = { "dressing.nvim" } }
         return vim.ui.select(...)
       end
       vim.ui.input = function(...)
-        require("lazy").load({ plugins = { "dressing.nvim" } })
+        require("lazy").load { plugins = { "dressing.nvim" } }
         return vim.ui.input(...)
       end
     end,
@@ -60,18 +54,18 @@ return {
       },
     },
     keys = {
-      { "<s-h>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" }},
-      { "<s-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" }},
-      { "<[b>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" }},
-      { "<]b>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" }},
-    }
+      { "<s-h>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" } },
+      { "<s-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" } },
+      { "<[b>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" } },
+      { "<]b>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" } },
+    },
   },
 
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
     opts = function(_)
-      local icons = require("config.icons")
+      local icons = require "config.icons"
 
       local function fg(name)
         return function()
@@ -84,8 +78,8 @@ return {
         options = {
           theme = "auto",
           globalstatus = true,
-          component_separators = { left = '|', right = '|'},
-          section_separators = { left = '', right = ''},
+          component_separators = { left = "|", right = "|" },
+          section_separators = { left = "", right = "" },
           disabled_filetypes = { statusline = { "lazy", "alpha" } },
         },
         sections = {
@@ -151,11 +145,29 @@ return {
       },
     },
     keys = {
-      { "<leader>snl", function() require("noice").cmd("last") end, desc = "Noice Last Message" },
-      { "<leader>snh", function() require("noice").cmd("history") end, desc = "Noice History" },
-      { "<leader>sna", function() require("noice").cmd("all") end, desc = "Noice All" },
-      { "<c-f>", function() if not require("noice.lsp").scroll(4) then return "<c-f>" end end, silent = true, expr = true, desc = "Scroll forward", mode = {"i", "n", "s"} },
-      { "<c-b>", function() if not require("noice.lsp").scroll(-4) then return "<c-b>" end end, silent = true, expr = true, desc = "Scroll backward", mode = {"i", "n", "s"}},
+      { "<leader>snl", function() require("noice").cmd "last" end, desc = "Noice Last Message" },
+      { "<leader>snh", function() require("noice").cmd "history" end, desc = "Noice History" },
+      { "<leader>sna", function() require("noice").cmd "all" end, desc = "Noice All" },
+      {
+        "<c-f>",
+        function()
+          if not require("noice.lsp").scroll(4) then return "<c-f>" end
+        end,
+        silent = true,
+        expr = true,
+        desc = "Scroll forward",
+        mode = { "i", "n", "s" },
+      },
+      {
+        "<c-b>",
+        function()
+          if not require("noice.lsp").scroll(-4) then return "<c-b>" end
+        end,
+        silent = true,
+        expr = true,
+        desc = "Scroll backward",
+        mode = { "i", "n", "s" },
+      },
     },
   },
 
@@ -165,9 +177,7 @@ return {
     init = function()
       vim.g.navic_silence = true
       require("config.util").on_attach(function(client, buffer)
-        if client.server_capabilities.documentSymbolProvider then
-          require("nvim-navic").attach(client, buffer)
-        end
+        if client.server_capabilities.documentSymbolProvider then require("nvim-navic").attach(client, buffer) end
       end)
     end,
     opts = function()

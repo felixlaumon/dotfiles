@@ -7,7 +7,7 @@ return {
       highlight = { enable = true },
       indent = {
         enable = true,
-        disable = { "python", },
+        disable = { "python" },
       },
       context_commentstring = { enable = true, enable_autocmd = false },
       ensure_installed = {
@@ -28,9 +28,7 @@ return {
         "yaml",
       },
     },
-    config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
-    end,
+    config = function(_, opts) require("nvim-treesitter.configs").setup(opts) end,
   },
 
   {
@@ -43,8 +41,8 @@ return {
   {
     "lewis6991/gitsigns.nvim",
     event = "BufReadPre",
-    opts = function ()
-      local icons = require("config.icons")
+    opts = function()
+      local icons = require "config.icons"
       local opt = {
         signs = {
           add = { text = icons.git.added },
@@ -57,11 +55,9 @@ return {
         on_attach = function(buffer)
           local gs = package.loaded.gitsigns
 
-          local function map(mode, l, r, desc)
-            vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc })
-          end
+          local function map(mode, l, r, desc) vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc }) end
 
-          map("n", "<leader>gb", function() gs.blame_line({ full = false }) end, "Blame Line")
+          map("n", "<leader>gb", function() gs.blame_line { full = false } end, "Blame Line")
         end,
       }
       return opt
@@ -69,13 +65,13 @@ return {
   },
 
   {
-    'sindrets/diffview.nvim',
+    "sindrets/diffview.nvim",
     -- TODO: doesn't work with lazy
     -- lazy = true,
-    cmds = { "DiffviewOpen", "DiffviewFileHistory", },
+    cmds = { "DiffviewOpen", "DiffviewFileHistory" },
     dependencies = {
-      { 'nvim-lua/plenary.nvim', lazy = true, }
-    }
+      { "nvim-lua/plenary.nvim", lazy = true },
+    },
   },
 
   {
@@ -86,8 +82,8 @@ return {
     },
   },
 
-  { 'echasnovski/mini.pairs', lazy = true },
-  { 'echasnovski/mini.surround', lazy = true },
+  { "echasnovski/mini.pairs", lazy = true },
+  { "echasnovski/mini.surround", lazy = true },
 
   {
     "folke/trouble.nvim",
@@ -115,9 +111,7 @@ return {
   {
     "echasnovski/mini.pairs",
     event = "VeryLazy",
-    config = function(_, opts)
-      require("mini.pairs").setup(opts)
-    end,
+    config = function(_, opts) require("mini.pairs").setup(opts) end,
   },
 
   { "ConradIrwin/vim-bracketed-paste", lazy = true },

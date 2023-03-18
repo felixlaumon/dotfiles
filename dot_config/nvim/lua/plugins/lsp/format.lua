@@ -1,4 +1,4 @@
-local Util = require("lazy.core.util")
+local Util = require "lazy.core.util"
 
 local M = {}
 
@@ -21,23 +21,19 @@ function M.format()
   vim.lsp.buf.format(vim.tbl_deep_extend("force", {
     bufnr = buf,
     filter = function(client)
-      if have_nls then
-        return client.name == "null-ls"
-      end
+      if have_nls then return client.name == "null-ls" end
       return client.name ~= "null-ls"
     end,
   }, require("config.util").opts("nvim-lspconfig").format or {}))
 end
 
 function M.on_attach(client, buf)
-  if client.supports_method("textDocument/formatting") then
+  if client.supports_method "textDocument/formatting" then
     vim.api.nvim_create_autocmd("BufWritePre", {
       group = vim.api.nvim_create_augroup("LspFormat." .. buf, {}),
       buffer = buf,
       callback = function()
-        if M.autoformat then
-          M.format()
-        end
+        if M.autoformat then M.format() end
       end,
     })
   end

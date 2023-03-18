@@ -11,23 +11,21 @@ return {
       "onsails/lspkind.nvim",
     },
     opts = function()
-      local cmp = require("cmp")
-      local lspkind = require('lspkind')
+      local cmp = require "cmp"
+      local lspkind = require "lspkind"
       return {
         completion = {
           completeopt = "menu,menuone,noinsert",
         },
         snippet = {
-          expand = function(args)
-            require("luasnip").lsp_expand(args.body)
-          end,
+          expand = function(args) require("luasnip").lsp_expand(args.body) end,
         },
-        mapping = cmp.mapping.preset.insert({
+        mapping = cmp.mapping.preset.insert {
           ["<C-b>"] = cmp.mapping.scroll_docs(-4),
           ["<C-f>"] = cmp.mapping.scroll_docs(4),
           ["<C-Space>"] = cmp.mapping.complete(),
           ["<C-e>"] = cmp.mapping.abort(),
-          ["<CR>"] = cmp.mapping.confirm({ select = true }),
+          ["<CR>"] = cmp.mapping.confirm { select = true },
           ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_next_item()
@@ -42,19 +40,19 @@ return {
               fallback()
             end
           end, { "i", "s" }),
-        }),
-        sources = cmp.config.sources({
+        },
+        sources = cmp.config.sources {
           { name = "nvim_lsp" },
           { name = "luasnip" },
           { name = "buffer" },
           { name = "path" },
-        }),
+        },
         formatting = {
-          format = lspkind.cmp_format({
-            mode = 'symbol_text',
+          format = lspkind.cmp_format {
+            mode = "symbol_text",
             maxwidth = 50,
-            ellipsis_char = '...',
-          }),
+            ellipsis_char = "...",
+          },
         },
         experimental = {
           ghost_text = {
@@ -79,14 +77,12 @@ return {
       -- Autocompletion
       {
         "hrsh7th/cmp-nvim-lsp",
-        cond = function()
-          return require("config.util").has("nvim-cmp")
-        end,
+        cond = function() return require("config.util").has "nvim-cmp" end,
       },
 
       -- Snippets
-      { 'L3MON4D3/LuaSnip' },
-      { 'rafamadriz/friendly-snippets' },
+      { "L3MON4D3/LuaSnip" },
+      { "rafamadriz/friendly-snippets" },
     },
 
     opts = {
@@ -101,17 +97,16 @@ return {
         formatting_options = nil,
         timeout_ms = nil,
       },
-      servers = {
-      },
+      servers = {},
       setup = {
-        ["*"] = function (_, _) end,
+        ["*"] = function(_, _) end,
       },
     },
 
     config = function(_, opts)
-      require("config.util").on_attach(function(client, buffer)
-        require("plugins.lsp.keymaps").on_attach(client, buffer)
-      end)
+      require("config.util").on_attach(
+        function(client, buffer) require("plugins.lsp.keymaps").on_attach(client, buffer) end
+      )
 
       -- diagnostics
       for name, icon in pairs(require("config.icons").diagnostics) do
@@ -127,18 +122,14 @@ return {
         local server_opts = servers[server] or {}
         server_opts.capabilities = capabilities
         if opts.setup[server] then
-          if opts.setup[server](server, server_opts) then
-            return
-          end
+          if opts.setup[server](server, server_opts) then return end
         elseif opts.setup["*"] then
-          if opts.setup["*"](server, server_opts) then
-            return
-          end
+          if opts.setup["*"](server, server_opts) then return end
         end
         require("lspconfig")[server].setup(server_opts)
       end
 
-      local mlsp = require("mason-lspconfig")
+      local mlsp = require "mason-lspconfig"
       local available = mlsp.get_available_servers()
 
       local ensure_installed = {}
@@ -153,8 +144,8 @@ return {
         end
       end
 
-      require("mason-lspconfig").setup({ ensure_installed = ensure_installed })
-      require("mason-lspconfig").setup_handlers({ setup })
+      require("mason-lspconfig").setup { ensure_installed = ensure_installed }
+      require("mason-lspconfig").setup_handlers { setup }
     end,
   },
 
@@ -163,11 +154,11 @@ return {
     event = "BufReadPre",
     dependencies = { "mason.nvim" },
     opts = function()
-      local nls = require("null-ls")
+      local nls = require "null-ls"
       return {
         sources = {
           nls.builtins.formatting.stylua,
-          nls.builtins.formatting.black.with({ extra_args = { "--line-length", "150" }}),
+          nls.builtins.formatting.black.with { extra_args = { "--line-length", "150" } },
           nls.builtins.code_actions.eslint,
           nls.builtins.diagnostics.ruff,
         },
@@ -189,12 +180,10 @@ return {
     },
     config = function(_, opts)
       require("mason").setup(opts)
-      local mr = require("mason-registry")
+      local mr = require "mason-registry"
       for _, tool in ipairs(opts.ensure_installed) do
         local p = mr.get_package(tool)
-        if not p:is_installed() then
-          p:install()
-        end
+        if not p:is_installed() then p:install() end
       end
     end,
   },

@@ -54,7 +54,7 @@ opt.autowrite = true
 opt.scrolloff = 10
 opt.sidescrolloff = 8
 opt.termguicolors = true
-opt.signcolumn = 'yes'
+opt.signcolumn = "yes"
 opt.completeopt = "menu,menuone,noselect"
 opt.conceallevel = 3
 opt.grepprg = "rg --vimgrep"
@@ -82,19 +82,19 @@ opt.smartcase = true
 -- Spellcheck
 opt.spell = true
 --- TODO: how to do hi clear in lua?
-vim.api.nvim_command("hi clear SpellBad")
-vim.api.nvim_command("hi clear SpellCap")
-vim.api.nvim_command("hi clear SpellRare")
-vim.api.nvim_command("hi SpellBad cterm=underline")
+vim.api.nvim_command "hi clear SpellBad"
+vim.api.nvim_command "hi clear SpellCap"
+vim.api.nvim_command "hi clear SpellRare"
+vim.api.nvim_command "hi SpellBad cterm=underline"
 
 -- Replace all occurrences by default
 opt.gdefault = true
 
 -- Undo and backup
 opt.undofile = true
-opt.undodir = os.getenv("HOME") .. "/.nvim/tmp/undo"
+opt.undodir = os.getenv "HOME" .. "/.nvim/tmp/undo"
 opt.backup = true
-opt.backupdir = os.getenv("HOME") .. "/.nvim/tmp/backup"
+opt.backupdir = os.getenv "HOME" .. "/.nvim/tmp/backup"
 opt.swapfile = false
 
 vim.g.markdown_recommended_style = 0

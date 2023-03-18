@@ -1,5 +1,4 @@
-local Util = require("config.util")
-
+local Util = require "config.util"
 
 return {
   {
@@ -14,7 +13,7 @@ return {
     opts = { options = { "buffers", "curdir", "tabpages", "winsize", "help", "globals" } },
     keys = {
       { "<leader>qs", function() require("persistence").load() end, desc = "Restore Session" },
-      { "<leader>ql", function() require("persistence").load({ last = true }) end, desc = "Restore Last Session" },
+      { "<leader>ql", function() require("persistence").load { last = true } end, desc = "Restore Last Session" },
       { "<leader>qd", function() require("persistence").stop() end, desc = "Don't Save Current Session" },
     },
   },
@@ -23,8 +22,8 @@ return {
     "numToStr/Comment.nvim",
     opts = {
       mappings = {
-        basic = true
-      }
+        basic = true,
+      },
     },
   },
 
@@ -32,14 +31,14 @@ return {
     "nvim-telescope/telescope.nvim",
     cmd = "Telescope",
     version = false,
-    keys = function ()
+    keys = function()
       -- local actions = require("telescope.actions")
       return {
-        { "<c-p>", Util.telescope("files"), desc = "Find files"},
-        { "<leader>b", "<cmd>Telescope buffers<cr>", desc = "Find files"},
-        { "<leader>w", Util.telescope("grep_string"), desc = "Find current word"},
-        { "<c-\\>", Util.telescope("live_grep"), desc = "Live grep"},
-        { "<c-g>", Util.telescope("resume"), desc = "Resume last search"},
+        { "<c-p>", Util.telescope "files", desc = "Find files" },
+        { "<leader>b", "<cmd>Telescope buffers<cr>", desc = "Find files" },
+        { "<leader>w", Util.telescope "grep_string", desc = "Find current word" },
+        { "<c-\\>", Util.telescope "live_grep", desc = "Live grep" },
+        { "<c-g>", Util.telescope "resume", desc = "Resume last search" },
         -- { "<esc>", actions.close },
         {
           "<leader>.",
@@ -65,8 +64,8 @@ return {
       defaults = {
         prompt_prefix = " ",
         selection_caret = " ",
-      }
-    }
+      },
+    },
   },
 
   {
@@ -82,9 +81,7 @@ return {
     keys = {
       {
         "-",
-        function()
-          require("neo-tree.command").execute({ toggle = true, dir = vim.loop.cwd() })
-        end,
+        function() require("neo-tree.command").execute { toggle = true, dir = vim.loop.cwd() } end,
         desc = "Explorer NeoTree (cwd)",
       },
     },
@@ -93,9 +90,7 @@ return {
       vim.g.neo_tree_remove_legacy_commands = 1
       if vim.fn.argc() == 1 then
         local stat = vim.loop.fs_stat(vim.fn.argv(0))
-        if stat and stat.type == "directory" then
-          require("neo-tree")
-        end
+        if stat and stat.type == "directory" then require "neo-tree" end
       end
     end,
 
@@ -105,15 +100,15 @@ return {
           padding = 0,
         },
         name = {
-          use_git_status_colors = true
+          use_git_status_colors = true,
         },
         git_status = {
           symbols = {
             added = "",
             modified = "",
             deleted = "",
-          }
-        }
+          },
+        },
       },
       filesystem = {
         bind_to_cwd = false,
@@ -128,7 +123,7 @@ return {
           ["h"] = "open_split",
         },
       },
-    }
+    },
   },
 
   {
@@ -139,9 +134,7 @@ return {
       { "<c-k>", "<cmd>TmuxNavigateUp<cr>", silent = true, desc = "Up pane" },
       { "<c-l>", "<cmd>TmuxNavigateRight<cr>", silent = true, desc = "Right pane" },
     },
-    init = function ()
-        vim.g.tmux_navigator_no_mappings = 1
-    end,
+    init = function() vim.g.tmux_navigator_no_mappings = 1 end,
   },
 
   {
@@ -152,30 +145,30 @@ return {
       { "kevinhwang91/promise-async", lazy = true },
     },
 
-    init = function ()
-      vim.o.foldcolumn = '0'
+    init = function()
+      vim.o.foldcolumn = "0"
       vim.o.foldlevel = 99
       vim.o.foldlevelstart = 99
       vim.o.foldenable = true
 
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities.textDocument.foldingRange = {
-          dynamicRegistration = false,
-          lineFoldingOnly = true
+        dynamicRegistration = false,
+        lineFoldingOnly = true,
       }
       local language_servers = require("lspconfig").util.available_servers()
       for _, ls in ipairs(language_servers) do
-          require('lspconfig')[ls].setup({
-              capabilities = capabilities
-          })
+        require("lspconfig")[ls].setup {
+          capabilities = capabilities,
+        }
       end
-      require('ufo').setup()
+      require("ufo").setup()
     end,
 
     keys = {
-      { "zO", function () require('ufo').openAllFolds() end, desc = "Open all folds" },
-      { "zC", function () require('ufo').closeAllFolds() end, desc = "Close all folds" },
-    }
+      { "zO", function() require("ufo").openAllFolds() end, desc = "Open all folds" },
+      { "zC", function() require("ufo").closeAllFolds() end, desc = "Close all folds" },
+    },
   },
 
   {
@@ -204,7 +197,7 @@ return {
       },
     },
     keys = {
-      { "<leader>t", function () require("aerial").toggle() end, silent = true, desc = "Toggle Aerial" },
+      { "<leader>t", function() require("aerial").toggle() end, silent = true, desc = "Toggle Aerial" },
     },
   },
 }
