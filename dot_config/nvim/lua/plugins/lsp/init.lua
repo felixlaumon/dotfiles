@@ -67,7 +67,6 @@ return {
     "neovim/nvim-lspconfig",
     version = false,
     event = "BufReadPre",
-
     dependencies = {
       { "folke/neoconf.nvim", cmd = "Neoconf", config = true },
       { "folke/neodev.nvim", opts = { experimental = { pathStrict = true } } },
@@ -84,7 +83,6 @@ return {
       { "L3MON4D3/LuaSnip" },
       { "rafamadriz/friendly-snippets" },
     },
-
     opts = {
       diagnostics = {
         underline = { severity = vim.diagnostic.severity.WARN },
@@ -102,7 +100,6 @@ return {
         ["*"] = function(_, _) end,
       },
     },
-
     config = function(_, opts)
       require("config.util").on_attach(
         function(client, buffer) require("plugins.lsp.keymaps").on_attach(client, buffer) end
