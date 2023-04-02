@@ -11,6 +11,9 @@ bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
 bindkey "^R" history-incremental-search-backward
 
+# Disable oh-my-zsh auto-update
+zstyle ':omz:update' mode disabled
+
 # z
  . ~/tools/z/z.sh
 
@@ -45,9 +48,6 @@ if ! zgenom saved; then
     # save all to init script
     zgenom save
 fi
-
-# Disable oh-my-zsh
-zstyle ':omz:update' mode disabled
 
 # Set theme
 base16_default-dark
