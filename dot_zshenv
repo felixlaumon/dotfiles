@@ -21,12 +21,6 @@ export PATH=$PATH:/usr/local/cuda/bin:/opt/cuda/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64/:/usr/local/cuda/extras/CUPTI/lib64/:/opt/cuda/lib64/:/opt/cuda/extras/CUPTI/
 export CUDA_DEVICE_ORDER=PCI_BUS_ID  # Match nvidia-smi device id with CUDA
 
-# Tensorflow
-export TF_CPP_MIN_LOG_LEVEL=1
-
-# Java
-export JAVA_HOME=/usr/lib/jvm/java-8-oracle
-
 # FZF
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
