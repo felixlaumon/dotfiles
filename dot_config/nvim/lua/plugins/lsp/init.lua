@@ -82,6 +82,18 @@ return {
       -- Snippets
       { "L3MON4D3/LuaSnip" },
       { "rafamadriz/friendly-snippets" },
+
+      {
+        "SmiteshP/nvim-navbuddy",
+        dependencies = {
+          "SmiteshP/nvim-navic",
+          "MunifTanjim/nui.nvim",
+        },
+        opts = { lsp = { auto_attach = true } },
+        keys = {
+          { "<leader>nb", function() require("nvim-navbuddy").open() end, desc = "Navbuddy" },
+        },
+      },
     },
     opts = {
       diagnostics = {
@@ -167,11 +179,13 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        "stylua",
+        "json-lsp",
+        "lua-language-server",
+        "pyright",
+        "ruff",
         "shellcheck",
         "shfmt",
-        "pyright",
-        "lua-language-server",
+        "stylua",
         "yaml-language-server",
       },
     },

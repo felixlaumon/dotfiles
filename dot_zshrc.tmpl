@@ -14,22 +14,30 @@ bindkey "^R" history-incremental-search-backward
 # Disable oh-my-zsh auto-update
 zstyle ':omz:update' mode disabled
 
+
 # z
  . ~/tools/z/z.sh
 
 # load zgenom
-export ZGEN_DIR=$HOME/.zgenom
+export ZGENOM_DIR=$HOME/.zgenom
 source "${HOME}/tools/zgenom/zgenom.zsh"
 if ! zgenom saved; then
     zgenom ohmyzsh
 
     # plugins
-    zgenom oh-my-zsh plugins/git
-    zgenom oh-my-zsh plugins/kubectl
+    zgenom oh-my-zsh plugins/cp
     zgenom oh-my-zsh plugins/docker
     zgenom oh-my-zsh plugins/docker-compose
+    zgenom oh-my-zsh plugins/git
+    zgenom oh-my-zsh plugins/kubectl
+    zgenom oh-my-zsh plugins/minikube
+    zgenom oh-my-zsh plugins/npm
+    zgenom oh-my-zsh plugins/pip
+    zgenom oh-my-zsh plugins/sudo
+    {{ if eq .chezmoi.os "darwin" -}}
+    zgenom oh-my-zsh plugins/brew
+    {{ end -}}
 
-    export NVM_LAZY_LOAD=true
     zgenom load lukechilds/zsh-nvm
     zgenom load zsh-users/zsh-syntax-highlighting
 
@@ -48,6 +56,11 @@ if ! zgenom saved; then
     # save all to init script
     zgenom save
 fi
+
+zstyle ':completion:*:*:docker:*' option-stacking yes
+zstyle ':completion:*:*:docker-*:*' option-stacking yes
+zstyle ':omz:plugins:nvm' lazy yes
+zstyle ':omz:plugins:nvm' autoload yes
 
 # Set theme
 base16_default-dark

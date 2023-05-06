@@ -98,6 +98,7 @@ return {
       default_component_configs = {
         indent = {
           padding = 0,
+          with_expanders = true,
         },
         name = {
           use_git_status_colors = true,
