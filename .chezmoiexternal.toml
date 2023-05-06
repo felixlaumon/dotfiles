@@ -5,19 +5,13 @@
     stripComponents = 1
     refreshPeriod = "24h"
 
-[".rbenv"]
-    type = "archive"
-    url = "https://github.com/rbenv/rbenv/archive/master.tar.gz"
-    exact = true
-    stripComponents = 1
-    refreshPeriod = "24h"
-
 ["tools/zgenom"]
     type = "archive"
     url = "https://github.com/jandamm/zgenom/archive/master.tar.gz"
     exact = true
     stripComponents = 1
     refreshPeriod = "24h"
+    exclude = ["sources/**/*"]
 
 ["tools/z"]
     type = "archive"
