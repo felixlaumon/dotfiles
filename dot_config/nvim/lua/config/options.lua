@@ -98,3 +98,5 @@ opt.backupdir = os.getenv "HOME" .. "/.nvim/tmp/backup"
 opt.swapfile = false
 
 vim.g.markdown_recommended_style = 0
+
+-- vim.cmd[[colorscheme tokyonight-night]]

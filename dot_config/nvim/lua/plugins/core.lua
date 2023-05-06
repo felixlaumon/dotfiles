@@ -2,12 +2,6 @@ local Util = require "config.util"
 
 return {
   {
-    "RRethy/nvim-base16",
-    lazy = false,
-    priority = 1000,
-  },
-
-  {
     "folke/persistence.nvim",
     event = "BufReadPre",
     opts = { options = { "buffers", "curdir", "tabpages", "winsize", "help", "globals" } },
