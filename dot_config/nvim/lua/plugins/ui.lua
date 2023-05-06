@@ -143,11 +143,17 @@ return {
         command_palette = true,
         long_message_to_split = true,
       },
+      routes = {
+        {
+          filter = {
+            event = "msg_show",
+            kind = "search_count",
+          },
+          opts = { skip = true },
+        },
+      },
     },
     keys = {
-      { "<leader>snl", function() require("noice").cmd "last" end, desc = "Noice Last Message" },
-      { "<leader>snh", function() require("noice").cmd "history" end, desc = "Noice History" },
-      { "<leader>sna", function() require("noice").cmd "all" end, desc = "Noice All" },
       {
         "<c-f>",
         function()
