@@ -38,6 +38,11 @@ alias ccat=$(which cat)
 alias cat=bat
 alias ls=exa
 
+# docker
+function dcupf() {
+    docker-compose -f $1 up -d --force-recreate --remove-orphans
+}
+
 # Utility methods
 function run_nb() {
     file=$(mktemp)
