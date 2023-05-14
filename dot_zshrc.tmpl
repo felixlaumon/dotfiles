@@ -24,17 +24,17 @@ if ! zgenom saved; then
     zgenom ohmyzsh
 
     # plugins
-    zgenom oh-my-zsh plugins/cp
-    zgenom oh-my-zsh plugins/docker
-    zgenom oh-my-zsh plugins/docker-compose
-    zgenom oh-my-zsh plugins/git
-    zgenom oh-my-zsh plugins/kubectl
-    zgenom oh-my-zsh plugins/minikube
-    zgenom oh-my-zsh plugins/npm
-    zgenom oh-my-zsh plugins/pip
-    zgenom oh-my-zsh plugins/sudo
+    zgenom ohmyzsh plugins/cp
+    zgenom ohmyzsh --completion plugins/docker
+    zgenom ohmyzsh --completion plugins/docker-compose
+    zgenom ohmyzsh --completion plugins/git
+    zgenom ohmyzsh --completion plugins/kubectl
+    zgenom ohmyzsh --completion plugins/minikube
+    zgenom ohmyzsh --completion plugins/npm
+    zgenom ohmyzsh --completion plugins/pip
+    zgenom ohmyzsh plugins/sudo
     {{ if eq .chezmoi.os "darwin" -}}
-    zgenom oh-my-zsh plugins/brew
+    zgenom oh-my-zsh --completion plugins/brew
     {{ end -}}
 
     zgenom load lukechilds/zsh-nvm
@@ -43,7 +43,6 @@ if ! zgenom saved; then
     # completions
     zgenom load zsh-users/zsh-autosuggestions
     zgenom load zsh-users/zsh-completions src
-
     zgenom load joshskidmore/zsh-fzf-history-search
 
     # Theme
