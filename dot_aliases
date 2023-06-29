@@ -31,7 +31,10 @@ alias h2m_ip="mssh felixlau@192.168.10.10 tmux new-session -A -s default"
 alias cm="chezmoi"
 alias cma="chezmoi apply -v"
 
+# git
 alias lg="lazygit"
+alias gl="git pull"
+alias gco="git checkout"
 
 # exa and bat
 alias ccat=$(which cat)
