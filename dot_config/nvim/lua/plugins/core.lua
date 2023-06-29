@@ -195,4 +195,8 @@ return {
       { "<leader>t", function() require("aerial").toggle() end, silent = true, desc = "Toggle Aerial" },
     },
   },
+
+  {
+    "lambdalisue/suda.vim",
+  },
 }
