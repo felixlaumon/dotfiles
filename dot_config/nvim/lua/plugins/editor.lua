@@ -32,6 +32,13 @@ return {
   },
 
   {
+    "nvim-treesitter/nvim-treesitter-context",
+    opts = {
+      mode = "topline",
+    },
+  },
+
+  {
     "windwp/nvim-spectre",
     keys = {
       { "<leader>sr", function() require("spectre").open() end, desc = "Replace in files (Spectre)" },
@@ -121,7 +128,19 @@ return {
   {
     "folke/flash.nvim",
     event = "VeryLazy",
-    opts = {},
+    opts = {
+      search = {
+        incremental = true,
+      },
+      modes = {
+        char = {
+          enabled = false
+        },
+        treesitter = {
+          search = { incremental = true },
+        },
+      },
+    },
     keys = {
       {
         "s",

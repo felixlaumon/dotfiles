@@ -20,7 +20,6 @@ require("lazy").setup {
   defaults = {
     version = "*",
   },
-  checker = { enabled = true },
   performance = {
     rtp = {
       disabled_plugins = {

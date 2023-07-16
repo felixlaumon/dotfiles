@@ -167,7 +167,7 @@ return {
       return {
         sources = {
           nls.builtins.formatting.stylua,
-          nls.builtins.formatting.black.with { extra_args = { "--line-length", "150" } },
+          nls.builtins.formatting.black.with { extra_args = { "--line-length", "120" } },
           nls.builtins.code_actions.eslint,
           nls.builtins.diagnostics.ruff,
         },
