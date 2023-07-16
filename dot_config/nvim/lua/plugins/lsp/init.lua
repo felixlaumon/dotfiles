@@ -76,7 +76,6 @@ return {
       -- Autocompletion
       {
         "hrsh7th/cmp-nvim-lsp",
-        cond = function() return require("config.util").has "nvim-cmp" end,
       },
 
       -- Snippets
