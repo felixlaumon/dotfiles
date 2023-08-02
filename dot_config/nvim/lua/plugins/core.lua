@@ -29,7 +29,7 @@ return {
       -- local actions = require("telescope.actions")
       return {
         { "<c-p>", Util.telescope "files", desc = "Find files" },
-        { "<leader>b", "<cmd>Telescope buffers<cr>", desc = "Find files" },
+        { "<c-b>", "<cmd>Telescope buffers<cr>", desc = "Find files" },
         { "<leader>w", Util.telescope "grep_string", desc = "Find current word" },
         { "<c-\\>", Util.telescope "live_grep", desc = "Live grep" },
         { "<c-g>", Util.telescope "resume", desc = "Resume last search" },

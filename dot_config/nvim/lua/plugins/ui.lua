@@ -35,6 +35,7 @@ return {
     event = "VeryLazy",
     opts = {
       options = {
+        themable = true,
         diagnostics = "nvim_lsp",
         always_show_bufferline = true,
         diagnostics_indicator = function(_, _, diag)
@@ -56,8 +57,6 @@ return {
     keys = {
       { "<s-h>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" } },
       { "<s-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" } },
-      { "<[b>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" } },
-      { "<]b>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" } },
     },
   },
 
@@ -66,13 +65,6 @@ return {
     event = "VeryLazy",
     opts = function(_)
       local icons = require "config.icons"
-
-      local function fg(name)
-        return function()
-          local hl = vim.api.nvim_get_hl_by_name(name, true)
-          return hl and hl.foreground and { fg = string.format("#%06x", hl.foreground) }
-        end
-      end
 
       return {
         options = {
@@ -200,4 +192,12 @@ return {
   { "nvim-tree/nvim-web-devicons", lazy = true },
 
   { "MunifTanjim/nui.nvim", lazy = true },
+
+  {
+    "simrat39/symbols-outline.nvim",
+    lazy = true,
+    keys = {
+      { "<leader>t", "<cmd>SymbolsOutline<cr>", { desc = "Toggle symbols outline" } },
+    },
+  },
 }
