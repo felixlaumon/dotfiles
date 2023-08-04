@@ -26,6 +26,7 @@ function M.get()
       { "<leader>f", format, desc = "Format Document", has = "documentFormatting" },
       { "<leader>f", format, desc = "Format Range", mode = "v", has = "documentRangeFormatting" },
       { "<leader>r", M.rename, desc = "Rename", has = "rename" },
+      { "<leader>i", "<cmd>PyrightOrganizeImports<cr>", desc = "Pyright Organize Imports" },
     }
   return M._keys
 end
