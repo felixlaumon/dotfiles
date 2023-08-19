@@ -65,11 +65,11 @@ return {
   {
     "nvim-neo-tree/neo-tree.nvim",
     cmd = "Neotree",
-    branch = "v2.x",
 
     dependencies = {
-      { "nvim-tree/nvim-web-devicons", lazy = true },
-      { "MunifTanjim/nui.nvim", lazy = true },
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-tree/nvim-web-devicons" },
+      { "MunifTanjim/nui.nvim" },
     },
 
     keys = {
@@ -97,18 +97,12 @@ return {
         name = {
           use_git_status_colors = true,
         },
-        git_status = {
-          symbols = {
-            added = "",
-            modified = "",
-            deleted = "",
-          },
-        },
       },
       filesystem = {
         bind_to_cwd = false,
-        follow_current_file = true,
+        follow_current_file = { enabled = true },
         hide_dotfiles = false,
+        use_libuv_file_watcher = true,
       },
       window = {
         width = 30,
