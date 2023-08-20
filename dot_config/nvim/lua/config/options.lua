@@ -54,6 +54,7 @@ opt.autowrite = true
 opt.scrolloff = 10
 opt.sidescrolloff = 8
 opt.termguicolors = true
+opt.background = "dark"
 opt.signcolumn = "yes"
 opt.completeopt = "menu,menuone,noselect"
 opt.conceallevel = 3
@@ -99,4 +100,4 @@ opt.swapfile = false
 
 vim.g.markdown_recommended_style = 0
 
--- vim.cmd[[colorscheme tokyonight-night]]
+vim.cmd.colorscheme "catppuccin"

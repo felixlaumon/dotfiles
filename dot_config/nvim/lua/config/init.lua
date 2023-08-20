@@ -34,7 +34,6 @@ require("lazy").setup {
   },
 }
 
-require "config.base16"
 require "config.keymaps"
 require "config.options"
 require "config.autocmds"
