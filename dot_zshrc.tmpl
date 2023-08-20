@@ -49,9 +49,6 @@ if ! zgenom saved; then
     # Theme
     zgenom load spaceship-prompt/spaceship-prompt spaceship
 
-    # Color
-    zgenom load tinted-theming/base16-shell
-
     # save all to init script
     zgenom save
 fi
@@ -60,9 +57,6 @@ zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
 zstyle ':omz:plugins:nvm' lazy yes
 zstyle ':omz:plugins:nvm' autoload yes
-
-# Set theme
-base16_default-dark
 
 # Prevent exiting shell by ctrl-d
 set -o ignoreeof
@@ -90,6 +84,10 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 {{ end -}}
 
 unset CONDA_SHLVL
+
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
