@@ -134,7 +134,7 @@ return {
       },
       modes = {
         char = {
-          enabled = false
+          enabled = false,
         },
         treesitter = {
           search = { incremental = true },
@@ -187,5 +187,11 @@ return {
       { "]]", desc = "Next Reference" },
       { "[[", desc = "Prev Reference" },
     },
+  },
+
+  {
+    "lukas-reineke/headlines.nvim",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    config = true,
   },
 }

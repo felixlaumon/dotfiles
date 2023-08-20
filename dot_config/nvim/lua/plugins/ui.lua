@@ -52,6 +52,7 @@ return {
             text_align = "left",
           },
         },
+        highlights = require("catppuccin.groups.integrations.bufferline").get(),
       },
     },
     keys = {
@@ -192,12 +193,4 @@ return {
   { "nvim-tree/nvim-web-devicons", lazy = true },
 
   { "MunifTanjim/nui.nvim", lazy = true },
-
-  {
-    "simrat39/symbols-outline.nvim",
-    lazy = true,
-    keys = {
-      { "<leader>t", "<cmd>SymbolsOutline<cr>", { desc = "Toggle symbols outline" } },
-    },
-  },
 }
