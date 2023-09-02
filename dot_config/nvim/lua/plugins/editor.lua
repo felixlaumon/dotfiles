@@ -133,11 +133,11 @@ return {
         incremental = true,
       },
       modes = {
-        char = {
+        search = {
           enabled = false,
         },
-        treesitter = {
-          search = { incremental = true },
+        char = {
+          enabled = false,
         },
       },
     },
