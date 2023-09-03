@@ -1,47 +1,24 @@
-" For neovim
-runtime! plugin/python_setup.vim
+set nocompatible
+filetype off
 
-if filereadable(expand("~/.vimrc.bundles"))
-    source ~/.vimrc.bundles
-endif
+" General
+filetype plugin indent on
+syntax on
 
-" Color
-" https://github.com/neoclide/coc.nvim/wiki/F.A.Q#the-selection-highlight-not-looks-good
-autocmd ColorScheme * hi CocMenuSel ctermbg=237 guibg=#13354A
-if exists('$BASE16_THEME')
-      \ && (!exists('g:colors_name') || g:colors_name != 'base16-$BASE16_THEME')
-    let base16colorspace=256
-    colorscheme base16-$BASE16_THEME
-endif
-
-source ~/.vim/autocmd.vim
-source ~/.vim/keymapping.vim
-source ~/.vim/settings.vim
-
-source ~/.vim/plugins/coc.vim
-source ~/.vim/plugins/easybuffer.vim
-source ~/.vim/plugins/telescope.vim
-source ~/.vim/plugins/gitgutter.vim
-source ~/.vim/plugins/lightline.vim
-
-if has('nvim')
-    source ~/.vim/plugins/nvim-tree.vim
-    source ~/.vim/plugins/nvim-treesitter.vim
-    source ~/.vim/plugins/nvim-treesitter-context.vim
-    source ~/.vim/plugins/comment.vim
-endif
-
-source ~/.vim/plugins/surround.vim
-source ~/.vim/plugins/tagbar.vim
-source ~/.vim/plugins/vim-asterisk.vim
-source ~/.vim/plugins/vim-markdown.vim
-source ~/.vim/plugins/vim-pydocstring.vim
-source ~/.vim/plugins/vim-slime.vim
-source ~/.vim/plugins/vim-tags.vim
-source ~/.vim/plugins/vim-tmux-navigator.vim
-source ~/.vim/plugins/indent-blankline.vim
-
-" Local config
-if filereadable($HOME . "/.vimrc.local")
-    source ~/.vimrc.local
-endif
+set number
+set numberwidth=4
+set cursorline
+set autoindent
+set autoread
+set autowrite
+set encoding=utf-8
+set hlsearch
+set ignorecase
+set incsearch
+set list
+set smartcase
+set scrolloff=10
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
