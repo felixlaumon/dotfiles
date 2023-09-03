@@ -5,20 +5,20 @@ filetype off
 filetype plugin indent on
 syntax on
 
-set number
-set numberwidth=4
-set cursorline
 set autoindent
 set autoread
 set autowrite
+set cursorline
 set encoding=utf-8
+set expandtab
 set hlsearch
 set ignorecase
 set incsearch
 set list
-set smartcase
+set number
+set numberwidth=4
 set scrolloff=10
-set tabstop=4
-set softtabstop=4
 set shiftwidth=4
-set expandtab
+set smartcase
+set softtabstop=4
+set tabstop=4
