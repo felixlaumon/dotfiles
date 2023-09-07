@@ -14,11 +14,11 @@ set expandtab
 set hlsearch
 set ignorecase
 set incsearch
-set list
 set number
 set numberwidth=4
 set scrolloff=10
 set shiftwidth=4
+set shortmess=I
 set smartcase
 set softtabstop=4
 set tabstop=4
