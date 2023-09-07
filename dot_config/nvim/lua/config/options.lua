@@ -12,3 +12,4 @@ opt.relativenumber = false -- Relative line numbers
 opt.scrolloff = 10 -- Lines of context
 
 opt.mouse = ""
+opt.clipboard = ""
