@@ -15,18 +15,32 @@ return {
     },
   },
 
-  -- {
-  --   "hrsh7th/cmp-nvim-lsp",
-  --   opts = function()
-  --     local cmp = require("cmp")
-  --     return {
-  --       window = {
-  --         completion = cmp.config.window.bordered(),
-  --         documentation = cmp.config.window.bordered(),
-  --       },
-  --     }
-  --   end,
-  -- },
+  {
+    "neovim/nvim-lspconfig",
+    init = function()
+      local keys = require("lazyvim.plugins.lsp.keymaps").get()
+      keys[#keys + 1] = { "<leader>co", "<cmd>PyrightOrganizeImports<cr>", desc = "Pyright Organize Imports" }
+    end,
+    opts = {
+      autoformat = false,
+      diagnostics = {
+        virtual_text = { severity = vim.diagnostic.severity.ERROR },
+      },
+    },
+  },
+
+  {
+    "hrsh7th/cmp-nvim-lsp",
+    opts = function()
+      local cmp = require("cmp")
+      return {
+        window = {
+          completion = cmp.config.window.bordered(),
+          documentation = cmp.config.window.bordered(),
+        },
+      }
+    end,
+  },
 
   {
     "jose-elias-alvarez/null-ls.nvim",

@@ -9,7 +9,7 @@ return {
       { "<leader>/", vim.NIL },
       {
         "<leader>.",
-        Util.telescope("lsp_document_symbols", {
+        Util.telescope("lsp_dynamic_workspace_symbols", {
           symbols = {
             "Class",
             "Function",
@@ -23,7 +23,7 @@ return {
             "Property",
           },
         }),
-        desc = "Goto Symbol",
+        desc = "Goto Symbol (Workspace)",
       },
     },
   },
