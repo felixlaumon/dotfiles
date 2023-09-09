@@ -83,5 +83,11 @@ function mssh() {
     ssh -S /tmp/$1.ssh_socket -O exit $1
 }
 
+function click_debug() {
+    prog=$1
+    shift
+    ipython --pdb $(which $prog) -- $@
+}
+
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
