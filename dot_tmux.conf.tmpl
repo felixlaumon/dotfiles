@@ -122,7 +122,7 @@ set-option -g status-interval 5
 set-option -g status-justify "centre"
 set-option -g status-left-length 70
 set-option -g status-right-length 90
-set -g status-left "#(cat /etc/hostname || hostname) | #(curl --max-time 2 -s http://checkip.amazonaws.com)"
+set -g status-left "#(cat /etc/hostname || hostname)"
 set -g status-right "#(~/.tmux/plugins/tmux-mem-cpu-load/tmux-mem-cpu-load --interval 2) | %a %h-%d %H:%M:%S"
 
 # increase scrollback lines
