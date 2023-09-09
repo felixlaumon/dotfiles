@@ -3,6 +3,7 @@ gui:
   showRandomTip: false
   showIcons: true
   commandLogSize: 8
+  showBottomLine: false
 git:
   parseEmoji: true
 keybinding:
