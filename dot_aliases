@@ -39,7 +39,7 @@ alias gco="git checkout"
 # exa and bat
 alias ccat=$(which cat)
 alias cat=bat
-alias ls=exa
+alias ls=eza
 
 # docker
 function dcupf() {
