@@ -39,6 +39,7 @@ alias gco="git checkout"
 # exa and bat
 alias ccat=$(which cat)
 alias cat=bat
+alias lls=$(which ls)
 alias ls=eza
 
 # docker
