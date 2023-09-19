@@ -64,10 +64,11 @@ function pip_install_toolchain() {
     pip_install_neovim_toolchain
     pip install -U \
         ipython ipdb \
-        jupyter notebook jupyter_contrib_nbextensions pigar \
+        jupyter notebook jupyter_contrib_nbextensions \
         numpy pandas matplotlib seaborn scikit-learn scikit-image \
         tqdm \
-        pandas-stubs
+        pandas-stubs \
+        pipreqs
 }
 
 function j() {
