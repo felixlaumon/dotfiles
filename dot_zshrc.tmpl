@@ -26,6 +26,7 @@ if ! zgenom saved; then
 
     # plugins
     zgenom ohmyzsh plugins/cp
+    zgenom ohmyzsh plugins/sudo
     zgenom ohmyzsh --completion plugins/docker
     zgenom ohmyzsh --completion plugins/docker-compose
     zgenom ohmyzsh --completion plugins/git
@@ -33,7 +34,6 @@ if ! zgenom saved; then
     zgenom ohmyzsh --completion plugins/minikube
     zgenom ohmyzsh --completion plugins/npm
     zgenom ohmyzsh --completion plugins/pip
-    zgenom ohmyzsh plugins/sudo
     {{ if eq .chezmoi.os "darwin" -}}
     zgenom oh-my-zsh --completion plugins/brew
     {{ end -}}
@@ -42,9 +42,9 @@ if ! zgenom saved; then
     zgenom load zsh-users/zsh-syntax-highlighting
 
     # completions
+    zgenom load joshskidmore/zsh-fzf-history-search
     zgenom load zsh-users/zsh-autosuggestions
     zgenom load zsh-users/zsh-completions src
-    zgenom load joshskidmore/zsh-fzf-history-search
 
     # Theme
     zgenom load spaceship-prompt/spaceship-prompt spaceship
