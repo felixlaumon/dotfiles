@@ -22,7 +22,6 @@ return {
       keys[#keys + 1] = { "<leader>co", "<cmd>PyrightOrganizeImports<cr>", desc = "Pyright Organize Imports" }
     end,
     opts = {
-      autoformat = false,
       diagnostics = {
         virtual_text = { severity = vim.diagnostic.severity.ERROR },
       },
