@@ -1,11 +1,16 @@
 [user]
-    email = felixlaumon@gmail.com
-    name = Felix Lau
+  email = felixlaumon@gmail.com
+  name = Felix Lau
 [push]
-    default = simple
+  default = simple
 [include]
-    path = ~/.gitconfig.local
+  path = ~/.gitconfig.local
 [pull]
-    rebase = false
+  rebase = false
 [init]
-	defaultBranch = main
+  defaultBranch = main
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
