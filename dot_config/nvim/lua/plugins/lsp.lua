@@ -40,16 +40,24 @@ return {
       }
     end,
   },
-
   {
-    "nvimtools/none-ls.nvim",
-    opts = function()
-      local nls = require("null-ls")
-      return {
-        sources = {
-          nls.builtins.formatting.black.with({ extra_args = { "--line-length", "120" } }),
+    "stevearc/conform.nvim",
+    opts = {
+      formatters_by_ft = {
+        ["python"] = { "black", "isort" },
+      },
+      formatters = {
+        black = {
+          args = {
+            "--stdin-filename",
+            "$FILENAME",
+            "--quiet",
+            "--line-length",
+            "120",
+            "-",
+          },
         },
-      }
-    end,
+      },
+    },
   },
 }

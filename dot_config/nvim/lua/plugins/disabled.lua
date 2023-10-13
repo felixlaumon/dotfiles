@@ -1,3 +1,4 @@
 return {
-  { "goolord/alpha-nvim", enabled = false },
+  { "glepnir/dashboard-nvim", enabled = false },
+  { "echasnovski/mini.pairs", enabled = false },
 }

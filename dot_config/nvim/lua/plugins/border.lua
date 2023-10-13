@@ -34,10 +34,6 @@ return {
     end,
   },
   {
-    "none-ls.nvim",
-    opts = { border = BORDER_STYLE },
-  },
-  {
     "mason.nvim",
     opts = {
       ui = { border = BORDER_STYLE },
