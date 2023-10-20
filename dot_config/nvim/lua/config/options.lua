@@ -1,4 +1,5 @@
 vim.g.mapleader = ","
+vim.g.autoformat = false
 
 local opt = vim.opt
 
@@ -11,5 +12,3 @@ opt.mouse = ""
 opt.clipboard = ""
 
 opt.splitkeep = "cursor"
-
-opt.disable_autoformat = false

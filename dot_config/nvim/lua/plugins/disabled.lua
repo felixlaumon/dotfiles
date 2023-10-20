@@ -1,4 +1,4 @@
 return {
-  { "glepnir/dashboard-nvim", enabled = false },
+  { "nvimdev/dashboard-nvim", enabled = false },
   { "echasnovski/mini.pairs", enabled = false },
 }
