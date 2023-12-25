@@ -1,6 +1,5 @@
 # vim: set filetype=zsh:
 
-# Unix
 alias e='$EDITOR'
 alias rcp='rsync -av --progress'
 alias download='aria2c -x 8 -s 8'
@@ -29,7 +28,10 @@ alias h2m_ip="mssh felixlau@192.168.10.10 tmux new-session -A -s default"
 
 # chezmoi
 alias cm="chezmoi"
-alias cma="chezmoi apply -v"
+alias cma="chezmoi apply -v --no-pager"
+
+# micromamba
+alias conda="micromamba"
 
 # git
 alias lg="lazygit"
