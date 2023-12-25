@@ -14,17 +14,19 @@ return {
     keys = {
       {
         "<c-\\>",
-        function() require("telescope").extensions.live_grep_args.live_grep_args() end,
-        desc = "Live Ripgrep"
+        function()
+          require("telescope").extensions.live_grep_args.live_grep_args()
+        end,
+        desc = "Live Ripgrep",
       },
       {
         "<c-p>",
         "<cmd>Telescope find_files<cr>",
-        desc = "Find files"
+        desc = "Find files",
       },
       {
         "<leader>/",
-        vim.NIL
+        vim.NIL,
       },
       {
         "<leader>.",

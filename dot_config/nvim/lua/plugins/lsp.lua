@@ -48,13 +48,9 @@ return {
       },
       formatters = {
         black = {
-          args = {
-            "--stdin-filename",
-            "$FILENAME",
-            "--quiet",
+          prepend_args = {
             "--line-length",
             "120",
-            "-",
           },
         },
       },
