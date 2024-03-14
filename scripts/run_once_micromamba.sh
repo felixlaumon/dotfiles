@@ -1,2 +1,2 @@
 #!/bin/sh
-"${SHELL}" <(curl -L micro.mamba.pm/install.sh)
+curl -L micro.mamba.pm/install.sh | sh
