@@ -30,8 +30,8 @@ alias h2m_ip="mssh felixlau@192.168.10.10 tmux new-session -A -s default"
 alias cm="chezmoi"
 alias cma="chezmoi apply -v --no-pager"
 
-# micromamba
-alias conda="micromamba"
+# conda
+alias ca="conda activate"
 
 # git
 alias lg="lazygit"

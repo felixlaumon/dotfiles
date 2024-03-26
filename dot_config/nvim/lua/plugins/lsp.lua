@@ -5,7 +5,7 @@ return {
       ensure_installed = {
         "black",
         "isort",
-        "pyright",
+        "basedpyright",
         "ruff",
         "shellcheck",
         "shfmt",
