@@ -19,7 +19,10 @@ return {
     "neovim/nvim-lspconfig",
     init = function()
       local keys = require("lazyvim.plugins.lsp.keymaps").get()
-      keys[#keys + 1] = { "<leader>co", "<cmd>PyrightOrganizeImports<cr>", desc = "Pyright Organize Imports" }
+      keys[#keys + 1] = { "<leader>cli", "<cmd>LspInfo<cr>", desc = "LspInfo" }
+      keys[#keys + 1] = { "<leader>cll", vim.lsp.codelens.run, desc = "Run Code Lens" }
+      keys[#keys + 1] = { "<leader>cld", vim.lsp.codelens.refresh, desc = "Refresh Code Lens" }
+      keys[#keys + 1] = { "<leader>clr", "<cmd>LspRestart<cr>", desc = "Restart Lsp" }
     end,
     opts = {
       diagnostics = {
