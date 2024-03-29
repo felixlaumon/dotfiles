@@ -28,6 +28,12 @@ return {
       diagnostics = {
         virtual_text = { severity = vim.diagnostic.severity.ERROR },
       },
+      inlay_hints = {
+        enabled = true,
+      },
+      codelens = {
+        enabled = true,
+      },
     },
   },
 
@@ -57,6 +63,15 @@ return {
           },
         },
       },
+    },
+  },
+  {
+    "zeioth/garbage-day.nvim",
+    dependencies = "neovim/nvim-lspconfig",
+    event = "VeryLazy",
+    opts = {
+      grace_period = 60 * 10,
+      wakeup_delay = 500,
     },
   },
 }

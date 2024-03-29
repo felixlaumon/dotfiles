@@ -52,4 +52,4 @@ map("n", "<leader><cr>", "<cmd>a<cr><cr>.<cr>")
 map("n", "W", "<cmd>w<cr>")
 
 -- Quit
-map("n", "Q", "<cmd>q<cr>")
+map("n", "Q", "<cmd>qa<cr>")
