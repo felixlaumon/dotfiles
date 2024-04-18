@@ -29,7 +29,7 @@ return {
         virtual_text = { severity = vim.diagnostic.severity.ERROR },
       },
       inlay_hints = {
-        enabled = true,
+        enabled = false,
       },
       codelens = {
         enabled = true,

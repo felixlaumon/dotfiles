@@ -1,6 +1,7 @@
 vim.g.mapleader = ","
 vim.g.autoformat = false
-vim.g.lazyvim_python_lsp = "basedpyright"
+-- vim.g.lazyvim_python_lsp = "basedpyright"
+vim.g.lazyvim_python_lsp = "pyright"
 
 local opt = vim.opt
 
