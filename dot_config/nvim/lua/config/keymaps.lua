@@ -49,7 +49,7 @@ map("n", "#", "#``")
 map("n", "<leader><cr>", "<cmd>a<cr><cr>.<cr>")
 
 -- Save
-map("n", "W", "<cmd>w<cr>")
+map("n", "<C-s>", "<cmd>w<cr>")
 
 -- Quit
-map("n", "Q", "<cmd>qa<cr>")
+map("n", "<C-q>", "<cmd>qa<cr>")

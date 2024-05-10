@@ -5,7 +5,7 @@ return {
       ensure_installed = {
         "black",
         "isort",
-        "basedpyright",
+        "pyright",
         "ruff",
         "shellcheck",
         "shfmt",
@@ -32,7 +32,7 @@ return {
         enabled = false,
       },
       codelens = {
-        enabled = true,
+        enabled = false,
       },
     },
   },
