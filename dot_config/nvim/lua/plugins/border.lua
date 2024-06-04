@@ -15,6 +15,18 @@ return {
       })
     end,
   },
+  {
+    "hrsh7th/cmp-nvim-lsp",
+    opts = function()
+      local cmp = require("cmp")
+      return {
+        window = {
+          completion = cmp.config.window.bordered(),
+          documentation = cmp.config.window.bordered(),
+        },
+      }
+    end,
+  },
   -- lazyvim.plugins.editor
   {
     "which-key.nvim",
