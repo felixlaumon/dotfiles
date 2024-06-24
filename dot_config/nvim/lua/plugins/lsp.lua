@@ -32,7 +32,7 @@ return {
         enabled = false,
       },
       codelens = {
-        enabled = true,
+        enabled = false,
       },
     },
   },
@@ -40,7 +40,7 @@ return {
     "stevearc/conform.nvim",
     opts = {
       formatters_by_ft = {
-        ["python"] = { "black", "isort" },
+        ["python"] = { "ruff_format", "ruff_organize_imports" },
       },
       formatters = {
         black = {
@@ -52,13 +52,13 @@ return {
       },
     },
   },
-  {
-    "zeioth/garbage-day.nvim",
-    dependencies = "neovim/nvim-lspconfig",
-    event = "VeryLazy",
-    opts = {
-      grace_period = 60 * 10,
-      wakeup_delay = 500,
-    },
-  },
+  -- {
+  --   "zeioth/garbage-day.nvim",
+  --   dependencies = "neovim/nvim-lspconfig",
+  --   event = "VeryLazy",
+  --   opts = {
+  --     grace_period = 60 * 10,
+  --     wakeup_delay = 500,
+  --   },
+  -- },
 }

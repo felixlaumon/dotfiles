@@ -1,4 +1,4 @@
-local Util = require("lazyvim.util")
+local Pick = require("lazyvim.util.pick")
 
 return {
   {
@@ -20,37 +20,49 @@ return {
     },
     keys = {
       {
-        "<c-\\>",
-        function()
-          require("telescope").extensions.live_grep_args.live_grep_args()
-        end,
-        desc = "Live Ripgrep",
-      },
-      {
         "<c-p>",
-        "<cmd>Telescope find_files<cr>",
-        desc = "Find files",
+        function()
+          require("telescope.builtin").git_files({ show_untracked = true })
+        end,
+        desc = "Find Git Files",
       },
       {
         "<leader>/",
         vim.NIL,
       },
       {
+        "<c-\\>",
+        function()
+          require("telescope").extensions.live_grep_args.live_grep_args()
+        end,
+        desc = "Live Grep",
+      },
+      -- {
+      --   "<c-s-|>",
+      --   function()
+      --     local lga_actions = require("telescope-live-grep-args.actions")
+      --     lga_actions.quote_prompt({ postfix = " --iglob " })
+      --   end,
+      --   desc = "Live Grep with iglob",
+      -- },
+      {
         "<leader>.",
-        Util.telescope("lsp_dynamic_workspace_symbols", {
-          symbols = {
-            "Class",
-            "Function",
-            "Method",
-            "Constructor",
-            "Interface",
-            "Module",
-            "Struct",
-            "Trait",
-            "Field",
-            "Property",
-          },
-        }),
+        function()
+          Pick.open("lsp_dynamic_workspace_symbols", {
+            symbols = {
+              "Class",
+              "Function",
+              "Method",
+              "Constructor",
+              "Interface",
+              "Module",
+              "Struct",
+              "Trait",
+              "Field",
+              "Property",
+            },
+          })
+        end,
         desc = "Goto Symbol (Workspace)",
       },
     },
@@ -67,6 +79,9 @@ return {
           preview_cutoff = 120,
         },
       },
+      live_grep_args = {
+        auto_quoting = true
+      }
     },
   },
 }
