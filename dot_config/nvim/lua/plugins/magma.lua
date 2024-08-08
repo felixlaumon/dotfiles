@@ -2,9 +2,9 @@ return {
   {
     "folke/which-key.nvim",
     opts = {
-      defaults = {
-        ["<leader>m"] = { name = "+molten" },
-      },
+      spec = {
+        { "<leader>m", group = "molten" },
+      }
     },
   },
 
