@@ -1,8 +1,20 @@
 local wezterm = require("wezterm")
+local session_manager = require("wezterm-session-manager/session-manager")
 
 local config = wezterm.config_builder()
 local act = wezterm.action
 
+config.font = wezterm.font("JetBrains Mono")
+
+config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
+
+config.tab_bar_at_bottom = true
+
+-- Always confirm before closing
+config.skip_close_confirmation_for_processes_named = {}
+
+-- navigation.nvim
+-- https://github.com/numToStr/Navigator.nvim/wiki/WezTerm-Integration
 local function isViProcess(pane)
 	-- get_foreground_process_name On Linux, macOS and Windows,
 	-- the process can be queried to determine this path. Other operating systems
@@ -35,11 +47,16 @@ wezterm.on("ActivatePaneDirection-down", function(window, pane)
 	conditionalActivatePane(window, pane, "Down", "j")
 end)
 
-config.font = wezterm.font("JetBrains Mono")
-
-config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
-
-config.tab_bar_at_bottom = true
+-- wezterm-session-manager
+wezterm.on("save_session", function(window)
+	session_manager.save_state(window)
+end)
+wezterm.on("load_session", function(window)
+	session_manager.load_state(window)
+end)
+wezterm.on("restore_session", function(window)
+	session_manager.restore_state(window)
+end)
 
 config.keys = {
 	-- Split with LEADER-v LEADER-h
@@ -124,6 +141,13 @@ config.keys = {
 		action = act.ClearScrollback("ScrollbackAndViewport"),
 	},
 
+	-- Zoom
+	{
+		key = "z",
+		mods = "LEADER",
+		action = wezterm.action.TogglePaneZoomState,
+	},
+
 	-- TODO: add LEADER-CTRL-R to repawn the pane
 
 	-- Send "CTRL-A" to the terminal when pressing CTRL-A, CTRL-A
@@ -132,10 +156,15 @@ config.keys = {
 		mods = "LEADER|CTRL",
 		action = act.SendKey({ key = "a", mods = "CTRL" }),
 	},
+
+	-- wezterm-session-manager
+	{ key = "s", mods = "CTRL|LEADER", action = wezterm.action({ EmitEvent = "save_session" }) },
+	{ key = "l", mods = "CTRL|LEADER", action = wezterm.action({ EmitEvent = "load_session" }) },
+	{ key = "r", mods = "CTRL|LEADER", action = wezterm.action({ EmitEvent = "restore_session" }) },
 }
 
 -- LEADER-123 to jump to tab
-for i = 1, 7 do
+for i = 1, 9 do
 	-- CTRL+ALT + number to activate that tab
 	table.insert(config.keys, {
 		key = tostring(i),

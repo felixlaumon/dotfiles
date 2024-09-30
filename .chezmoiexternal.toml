@@ -19,3 +19,9 @@
     exact = true
     stripComponents = 1
     refreshPeriod = "24h"
+
+# [".config/wezterm/wezterm-session-manager"]
+#     type = "archive"
+#     url = "https://github.com/danielcopper/wezterm-session-manager/archive/master.tar.gz"
+#     stripComponents = 1
+#     refreshPeriod = "24h"
