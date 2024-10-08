@@ -1,5 +1,9 @@
 # vim: set filetype=zsh:
 
+{{ if eq .chezmoi.os "darwin" -}}
+eval "$(/opt/homebrew/bin/brew shellenv)"
+{{ end -}}
+
 # history settings
 setopt hist_ignore_all_dups inc_append_history
 HISTFILE=~/.zhistory
@@ -78,10 +82,6 @@ zstyle :bracketed-paste-magic paste-finish pastefinish
 
 # aliases
 source ~/.aliases
-
-{{ if eq .chezmoi.os "darwin" -}}
-eval "$(/opt/homebrew/bin/brew shellenv)"
-{{ end -}}
 
 unset CONDA_SHLVL
 
