@@ -1,7 +1,7 @@
 return {
   {
     "numToStr/Navigator.nvim",
-    config = function()
+    init = function()
       require("Navigator").setup()
     end,
     keys = {

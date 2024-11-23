@@ -6,6 +6,10 @@ return {
         max_name_length = 60,
         max_prefix_length = 60,
         always_show_bufferline = true,
+        indicator = {
+          style = "underline",
+        },
+        show_tab_indicator = true,
       },
     },
   },

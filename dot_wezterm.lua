@@ -16,7 +16,7 @@ config.skip_close_confirmation_for_processes_named = {}
 config.unix_domains = {
   {
     name = "unix",
-    local_echo_threshold_ms = 10,
+    -- local_echo_threshold_ms = 50,
   },
 }
 config.default_gui_startup_args = { "connect", "unix" }
@@ -25,7 +25,9 @@ config.default_gui_startup_args = { "connect", "unix" }
 -- https://github.com/numToStr/Navigator.nvim/wiki/WezTerm-Integration
 local function isViProcess(pane)
   local process_name = pane:get_foreground_process_name()
-  return process_name == "nvim"
+  -- return process_name == "nvim"
+  -- return process_name:match("nvim")
+  return false
 end
 
 local function conditionalActivatePane(window, pane, pane_direction, vim_direction)
