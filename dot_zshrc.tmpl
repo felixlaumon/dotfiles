@@ -27,22 +27,22 @@ export ZGENOM_DIR=$HOME/.zgenom
 export ZGEN_DIR=$HOME/.zgenom
 source "${HOME}/tools/zgenom/zgenom.zsh"
 if ! zgenom saved; then
-    zgenom ohmyzsh
+    # zgenom ohmyzsh
 
     # plugins
-    zgenom ohmyzsh plugins/cp
-    zgenom ohmyzsh --completion plugins/docker
-    zgenom ohmyzsh --completion plugins/docker-compose
-    zgenom ohmyzsh --completion plugins/git
-    zgenom ohmyzsh --completion plugins/kubectl
-    zgenom ohmyzsh --completion plugins/minikube
-    zgenom ohmyzsh --completion plugins/npm
-    zgenom ohmyzsh --completion plugins/pip
+    # zgenom ohmyzsh plugins/cp
+    # zgenom ohmyzsh --completion plugins/docker
+    # zgenom ohmyzsh --completion plugins/docker-compose
+    # zgenom ohmyzsh --completion plugins/git
+    # zgenom ohmyzsh --completion plugins/kubectl
+    # zgenom ohmyzsh --completion plugins/minikube
+    # zgenom ohmyzsh --completion plugins/npm
+    # zgenom ohmyzsh --completion plugins/pip
     {{ if eq .chezmoi.os "darwin" -}}
-    zgenom oh-my-zsh --completion plugins/brew
+    # zgenom oh-my-zsh --completion plugins/brew
     {{ end -}}
 
-    zgenom load lukechilds/zsh-nvm
+    # zgenom load lukechilds/zsh-nvm
     zgenom load zsh-users/zsh-syntax-highlighting
 
     # completions

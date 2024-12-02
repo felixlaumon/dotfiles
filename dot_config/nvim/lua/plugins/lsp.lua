@@ -13,6 +13,41 @@ return {
       },
     },
   },
+  {
+    "stevearc/conform.nvim",
+    opts = {
+      formatters_by_ft = {
+        ["python"] = { "ruff_format", "ruff_organize_imports" },
+      },
+      formatters = {
+        black = {
+          prepend_args = {
+            "--line-length",
+            "120",
+          },
+        },
+      },
+    },
+  },
+  {
+    "zeioth/garbage-day.nvim",
+    dependencies = "neovim/nvim-lspconfig",
+    event = "VeryLazy",
+    opts = {
+      grace_period = 60 * 10,
+      wakeup_delay = 500,
+    },
+  },
+  {
+    "saghen/blink.cmp",
+    opts = {
+      trigger = {
+        signature_help = {
+          enabled = true,
+        },
+      },
+    },
+  },
   -- {
   --   "neovim/nvim-lspconfig",
   --   init = function()
@@ -34,39 +69,4 @@ return {
   --     },
   --   },
   -- },
-  {
-    "stevearc/conform.nvim",
-    opts = {
-      formatters_by_ft = {
-        ["python"] = { "ruff_format", "ruff_organize_imports" },
-      },
-      formatters = {
-        black = {
-          prepend_args = {
-            "--line-length",
-            "120",
-          },
-        },
-      },
-    },
-  },
-  -- {
-  --   "zeioth/garbage-day.nvim",
-  --   dependencies = "neovim/nvim-lspconfig",
-  --   event = "VeryLazy",
-  --   opts = {
-  --     grace_period = 60 * 10,
-  --     wakeup_delay = 500,
-  --   },
-  -- },
-  {
-    "saghen/blink.cmp",
-    opts = {
-      trigger = {
-        signature_help = {
-          enabled = true,
-        },
-      },
-    },
-  },
 }
