@@ -42,7 +42,11 @@ if ! zgenom saved; then
     # zgenom oh-my-zsh --completion plugins/brew
     {{ end -}}
 
-    # zgenom load lukechilds/zsh-nvm
+    # Edit the current command line in $EDITOR
+    autoload -U edit-command-line
+    zle -N edit-command-line
+    bindkey '\C-x\C-e' edit-command-line
+
     zgenom load zsh-users/zsh-syntax-highlighting
 
     # completions
@@ -88,6 +92,10 @@ unset CONDA_SHLVL
 autoload -Uz compinit
 zstyle ':completion:*' menu select
 fpath+=~/.zfunc
+
+# n
+export N_PREFIX=$HOME/.n
+export PATH=$HOME/.n/bin:$PATH
 
 # # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
