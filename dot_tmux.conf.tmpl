@@ -17,7 +17,7 @@ set-option -a terminal-features 'tmux-256color:RGB'
 # Allow double ctrl-a to go to the beginning of the line
 bind-key C-a send-prefix
 
-set -g allow-passthrough 1
+set-option -g allow-passthrough all
 
 # default statusbar colors
 set-option -g status-style bg=colour235,fg=colour136

@@ -3,6 +3,7 @@ SPACESHIP_PROMPT_ORDER=(
     uv
     node
     line_sep
+    host
     time
     dir
     git
@@ -12,10 +13,10 @@ SPACESHIP_PROMPT_ORDER=(
     line_sep
     char
 )
+SPACESHIP_HOST_PREFIX=''
 SPACESHIP_TIME_SHOW=true
 SPACESHIP_TIME_PREFIX=''
 SPACESHIP_USER_SHOW=needed
-SPACESHIP_HOST_SHOW=false
 SPACESHIP_DIR_PREFIX=''
 SPACESHIP_DIR_TRUNC_REPO=false
 SPACESHIP_DIR_TRUNC=0
