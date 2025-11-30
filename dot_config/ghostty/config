@@ -1,0 +1,15 @@
+font-family = "JetBrains Mono"
+font-size = 12
+adjust-cell-height = -1
+adjust-cell-width = -2
+
+theme = tokyonight_night
+
+background-opacity = 0.9
+background-blur = 20
+
+window-save-state = always
+macos-titlebar-style = tabs
+cursor-click-to-move = true
+
+keybind = shift+enter=text:\n

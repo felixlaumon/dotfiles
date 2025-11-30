@@ -17,14 +17,9 @@ alias xvfb="xvfb-run -f ~/.Xauthority -a -s '-screen 0 1400x900x24'"
 # kubectl
 alias k=kubectl
 
-# h2
-alias h2="TERM=xterm-256color ssh -C -R 8378:localhost:8378 -t felixlau@h2.felixlau.me 'tmux new-session -A -s default'"
-alias h2_local="TERM=xterm-256color ssh -C -R 8378:localhost:8378 -t felixlau@hydrogen.local 'tmux new-session -A -s default'"
-alias h2_ip="TERM=xterm-256color ssh -C -R 8378:localhost:8378 -t felixlau@192.168.10.10 'tmux new-session -A -s default'"
-
-alias h2m="mssh felixlau@h2.felixlau.me tmux new-session -A -s default"
-alias h2m_local="mssh felixlau@hydrogen.local tmux new-session -A -s default"
-alias h2m_ip="mssh felixlau@192.168.10.10 tmux new-session -A -s default"
+# server
+alias h2="ssh -C -R 8378:localhost:8378 -t felixlau@hydrogen 'tmux new-session -A -s default'"
+alias he="ssh -C -R 8378:localhost:8378 -t felixlau@helium 'tmux new-session -A -s default'"
 
 # chezmoi
 alias cm="chezmoi"
